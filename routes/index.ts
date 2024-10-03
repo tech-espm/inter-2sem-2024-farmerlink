@@ -41,6 +41,46 @@ class IndexRoute {
 
 		res.render("index/produtos", opcoes);
 	}
+
+	public async noticias(req: app.Request, res: app.Response) {
+		let opcoes = {
+			titulo: "Notícias"
+		};
+
+		res.render("index/noticias", opcoes);
+	}
+
+	public async perfil(req: app.Request, res: app.Response) {
+		let opcoes = {
+			titulo: "Perfil do Agricultor"
+		};
+
+		res.render("index/perfil", opcoes);
+	}
+
+	public async cadastro(req: app.Request, res: app.Response) {
+		let opcoes = {
+			titulo: "Cadastro"
+		};
+
+		res.render("index/cadastro", opcoes);
+	}
+
+	public async login(req: app.Request, res: app.Response) {
+		let opcoes = {
+			titulo: "Login"
+		};
+
+		res.render("index/login", opcoes);
+	}
+
+	public async destaques(req: app.Request, res: app.Response) {
+		let opcoes = {
+			titulo: "Destaque do Mês"
+		};
+
+		res.render("index/destaque", opcoes);
+	}
 }
 
 export = IndexRoute;
