@@ -5,6 +5,12 @@ img {
 html, body {
 	/* Para fazer o rodapé ficar sempre na parte inferior da página ;) */
 	min-height: 100vh;
+	font-family: sans-serif;
+}
+
+h1 {
+	font-weight: bold;
+	font-size: 30px;
 }
 
 .limitador {
