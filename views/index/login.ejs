@@ -1,11 +1,107 @@
-<div class="container-fluid">
+<style>
+	.imagem-fundo {
+		background-image: url(/public/img/login_fundo.png);
+		background-repeat: no-repeat;
+		min-height: 530px;
+	}
 
-	<h1>
-		Projeto
-	</h1>
+	.botao {
+		border-width: 1px;
+		border-style: solid;
+		background-color: #114f2d;
+		padding: 20px 30px;
+		border-radius: 5px;
+	}
 
-	<p>
-		Oi, mundo! 😊
-	</p>
+	.formatar-link-botao {
+		text-decoration: none;
+		color: white;
+		font-weight: bold;
+	}
 
+	.centralizar {
+		text-align: center;
+	}
+
+	.coluna-padding-top {
+		padding-top: 80px;
+	}
+
+	.formatar-link-cadastrar {
+		color: #114f2d;
+		font-weight: bold;
+	}
+
+	.centralizar-img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+</style>
+
+<div class="imagem-fundo">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-4 offset-md-4 coluna-padding-top">
+				<h1 class="centralizar">
+					Entre na sua conta
+				</h1>
+				<img src="/public/img/login_foto_perfil.png" width="100px" alt="Ícone fazendeiro Farmer Link" class="centralizar-img"/>
+				<div>
+					<label for="inputEmailTelefone">
+						E-mail ou telefone
+					</label>
+					<br />
+					<input id="inputEmailTelefone" type="text" maxlength="100" size="40px"/>
+				</div>
+				<div>
+					<label for="inputSenha">
+						Senha
+					</label>
+					<br />
+					<input id="inputSenha" type="text" maxlength="100" size="40px"/>
+				</div>
+				<button type="button" onclick="efetuarLogin()" style="width: 375px; background-color: #114f2d; color: white; font-weight: bold; margin-top: 20px; margin-bottom: 20px;">Entrar</button>
+				<p class="centralizar">
+					Novo na Farmer Link?
+					<a href="https://google.com" target="_blank" class="formatar-link-cadastrar">Cadastrar</a>
+				</p>
+			</div>
+		</div>
+	</div>
 </div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-3 offset-md-1 centralizar">
+			<p>
+			<img src="/public/img/entrega_rapida.png" width="50px" alt="Ícone de caixa"/>
+				Entrega rápida
+			</p>
+		</div>
+		<div class="col-md-4 centralizar">
+			<p>
+			<img src="/public/img/qualidade_garantida.png" width="50px" alt="Ícone sinal positivo"/>
+				Qualidade garantida
+			</p>
+		</div>
+		<div class="col-md-3 centralizar">
+			<p>
+			<img src="/public/img/eco_friendly.png" width="50px" alt="Ícone folha"/>
+				Eco friendly
+			</p>
+		</div>
+	</div>
+</div>
+
+<script>
+	function efetuarLogin() {
+		let inputEmailTelefone = document.getElementById("inputEmailTelefone");
+		let inputSenha = document.getElementById("inputSenha");
+
+		let emailTelefone = inputEmailTelefone.value;
+		let senha = inputSenha.value;
+	}
+</script>

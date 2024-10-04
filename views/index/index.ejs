@@ -5,20 +5,6 @@
 		min-height: 530px;
 	}
 
-	.botao {
-		border-width: 1px;
-		border-style: solid;
-		background-color: #114f2d;
-		padding: 20px 30px;
-		border-radius: 5px;
-	}
-
-	.formatar-link-botao {
-		text-decoration: none;
-		color: white;
-		font-weight: bold;
-	}
-
 	.coluna-centralizar {
 		text-align: center;
 	}
@@ -26,19 +12,41 @@
 	.coluna-padding-top {
 		padding-top: 100px;
 	}
+
+	.coluna-padding-left {
+		padding-left: 75px;
+	}
+
+	.coluna-justificar {
+		text-align: justify;
+	}
+
+	.espacamento-top-texto {
+		padding-top: 20px;
+	}
+
+	.espacamento-bottom-texto {
+		padding-bottom: 20px;
+	}
+
 </style>
 
 <div class="imagem-fundo">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-lg-4 offset-lg-1 coluna-padding-top">
+			<div class="col-md-5 offset-md-1 coluna-padding-top coluna-padding-left">
 				<h1>
-					Conheça nossos Farmers, e aproveite ALGO!
+					Conheça nossos Farmers, ou se torne um deles!
 				</h1>
-				<p>
-					KSJRI3KERJSDFIJSDOIFJSIFSFaaaaaaaaaaaaa...
+				<p class="coluna-justificar espacamento-top-texto">
+					De frutas a verduras, a seleção dos nossos agricultores é cuidadosamente escolhida para levar até você o melhor da colheita.
 				</p>
-				<a class="botao formatar-link-botao" href="https://google.com" target="_blank">Catálogo</a>
+				<p class="coluna-justificar espacamento-bottom-texto">
+					Descubra produtos livres de agrotóxicos, cheios de nutrientes e sabor. Direto do campo para sua mesa!
+				</p>
+				<div class="col-md-4 offset-md-4">
+					<button type="button" style="border-width: 1px; border-style: solid; background-color: #114f2d; padding: 20px 25px; border-radius: 5px; text-decoration: none; color: white; font-weight: bold;">Produtores</button>
+				</div>
 			</div>
 		</div>
 	</div>
