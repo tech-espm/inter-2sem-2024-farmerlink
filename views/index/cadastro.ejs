@@ -1,11 +1,211 @@
-<div class="container-fluid">
+<style>
+	.imagem-fundo {
+		background-image: url(/public/img/fundo_cadastro.png);
+		background-repeat: no-repeat;
+		min-height: 1225px;
+	}
 
-	<h1>
-		Projeto
-	</h1>
+	.coluna-centralizar {
+		text-align: center;
+	}
 
-	<p>
-		Oi, mundo! 😊
-	</p>
+	.centralizar {
+		text-align: center;
+	}
 
+	.coluna-padding-top {
+		padding-top: 105px;
+	}
+
+	.formatar-link-cadastrar {
+		color: #114f2d;
+		font-weight: bold;
+	}
+
+	.centralizar-img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	.img-coluna-1 {
+		background-image: url(/public/img/img_colunas_1.png);
+		background-size: cover;
+		padding: 342px 0px 0px 0px;
+    }
+
+	.img-coluna-2 {
+		background-image: url(/public/img/img_colunas_2.png);
+		background-size: cover;
+		padding: 342px 0px 0px 0px;
+    }
+
+	.img-coluna-3 {
+		background-image: url(/public/img/img_colunas_3.png);
+		background-size: cover;
+		padding: 342px 0px 0px 0px;
+    }
+
+	.img-coluna-4 {
+		background-image: url(/public/img/img_colunas_4.png);
+		background-size: cover;
+		padding: 342px 0px 0px 0px;
+    }
+
+	.padding-right-left-dados {
+		padding-left: 20px;
+	}
+
+	.padding-bottom-texto {
+		padding-bottom: 20px;
+	}
+
+	.padding-top-texto {
+		padding-top: 40px;
+	}
+
+	.padding-bottom-botao {
+		padding-bottom: 40px;
+	}
+
+	.padding-bottom-input {
+		padding-bottom: 10px;
+	}
+
+</style>
+
+<div class="imagem-fundo">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-4 offset-md-4 centralizar coluna-padding-top">
+				<h1>
+					Junte-se a nós
+				</h1>
+				<p class="padding-bottom-texto">
+					Torne-se um farmer ou compre de nossos farmers
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-2 m-1 img-coluna-1">
+			</div>
+			<div class="col-md-2 img-coluna-2 m-1">
+			</div>
+			<div class="col-md-2 img-coluna-3 m-1">
+			</div>
+			<div class="col-md-2 img-coluna-4 m-1">
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-8 offset-md-2">
+				<div class="col-md-10 offset-md-1 padding-right-left-dados">
+					<div class="padding-top-texto padding-bottom-input">
+						<label for="inputNomeCompleto">
+							Nome completo
+						</label>
+						<br />
+						<input id="inputNomeCompleto" type="text" maxlength="100" size="70px"/>
+					</div>
+					<div class="padding-bottom-input">
+						<label for="inputEmail">
+							E-mail
+						</label>
+						<br />
+						<input id="inputEmail" type="email" maxlength="100" size="70px"/>
+					</div>
+					<div class="padding-bottom-input">
+						<label for="inputTelefone">
+							Telefone
+						</label>
+						<br />
+						<input id="inputTelefone" type="number" maxlength="11" size="70px"/>
+					</div>
+					<div class="padding-bottom-input">
+						<label for="inputCPF">
+							CPF
+						</label>
+						<br />
+						<input id="inputCPF" type="number" maxlength="11" size="70px"/>
+					</div>
+					<div class="padding-bottom-input">
+						<label for="inputDataDeNascimento">
+							Data de nascimento
+						</label>
+						<br />
+						<input id="inputDataDeNascimento" type="date" min="1" />
+					</div>
+					<div class="padding-bottom-botao">
+						<label for="inputTipoDeConta">
+							Meu objetivo na Farmer Link é:
+						</label>
+						<div>
+							<input type="checkbox" id="comprarProdutos" name="Comprar produtos"/>
+							<label for="inputTipoDeConta">Comprar produtos</label>
+						</div>
+						<div>
+							<input type="checkbox" id="venderProdutos" name="Vender produtos" />
+							<label for="inputTipoDeConta">Vender produtos</label>
+						</div>
+					</div>
+					<div class="col-md-4 offset-md-4">
+						<button type="button" onclick="efetuarCadastro()" style="border-style: none; background-color: #114f2d; padding: 15px 65px; border-radius: 5px; text-decoration: none; color: white; font-weight: bold;">Cadastrar</button>
+					</div>
+					<div class="col-md-6 offset-md-3">
+						<p class="centralizar">
+							Já tem uma conta?
+							<a href="https://google.com" target="_blank" class="formatar-link-cadastrar">Login</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-3 offset-md-1 coluna-centralizar">
+			<p>
+			<img src="/public/img/entrega_rapida.png" width="50px" alt="Ícone de caixa"/>
+				Entrega rápida
+			</p>
+		</div>
+		<div class="col-md-4 coluna-centralizar">
+			<p>
+			<img src="/public/img/qualidade_garantida.png" width="50px" alt="Ícone sinal positivo"/>
+				Qualidade garantida
+			</p>
+		</div>
+		<div class="col-md-3 coluna-centralizar">
+			<p>
+			<img src="/public/img/eco_friendly.png" width="50px" alt="Ícone folha"/>
+				Eco friendly
+			</p>
+		</div>
+	</div>
+</div>
+
+<script>
+	function efetuarCadastro() {
+		let inputNomeCompleto = document.getElementById("inputNomeCompleto");
+		let inputEmail = document.getElementById("inputEmail");
+		let inputTelefone = document.getElementById("inputTelefone");
+		let inputCPF = document.getElementById("inputCPF");
+		let inputDataDeNascimento = document.getElementById("inputDataDeNascimento");
+		//akemi: falta a parte do tipo de conta
+
+		let nomeCompleto = inputEmailTelefone.value;
+		let email = inputSenha.value;
+		let telefone = parseInt(inputTelefone.value);
+		let cpf = parseInt(inputCPF.value);
+		let dataDeNascimento = parseInt(inputDataDeNascimento.value);
+		//akemi: falta a parte do tipo de conta
+	}
+</script>
