@@ -1,249 +1,135 @@
 <style>
 
-	img{
-		width: 100%;
-	}
-	
-	*{
-		max-width: 1366px;
-		margin: 0px auto;
-		font-family: Ubuntu;
-	}
-	
-	.logo{
-		height: 100px;
-		width: 100px;
-	}
-	.logo-texto{
-		font-size: 35px;
-		color: green;
-		text-decoration: none;
-		
-	}
-	
-	.fundo-verde{
-		background-color: #E8F8D3;
-		max-width: 1360px;
-		max-height: 1190px;
-		height: 1190px;
-		border-radius: 75px;
-	}
-	
-	.texto-no-centro{
-		text-align: center;
-	}
-	
-	.texto-na-esquerda{
-		text-align: left;
-	   
-	}
-	
-	.arrumar-not{
-		margin-right: 42px;
-		margin-left: 42px;
-	}
-	
-	.separacao{
-		margin: 25px 30px;
-	}
-	
-	.separacao-texto-noticias{
-		padding: 30px;
-		text-align: center;
-		text-decoration: none;
-	}
-	
-	.separacao-final-noticias{
-		margin: 30px;
-	}
-	
-	.separação-div-noticias{
-		margin: 90px;
-	}
-	
-	.fundo-branco-peq{
-		background-color: aliceblue;
+	img {
 		border-radius: 30px;
 	}
-	
-	.fundo-imagem{
-		padding: 25px 100px;
+
+	h1 {
+		font-weight: bold;
+		font-size: 30px;
+	}
+
+	h2 {
+		font-weight: bold;
+		font-size: 25px;
+	}
+
+	.imagem-fundo {
+		background-image: url(/public/img/fundo_noticias.png);
+		background-repeat: no-repeat;
+		min-height: 1233px;
 	}
 	
-	.icones-rodape{
-		height: 50px;
-		width: 50px;
-		margin: 0px 10px auto auto;
-		background-color: rgb(183, 183, 183);
-		border-radius: 100px;
+	.coluna-centralizar {
+		text-align: center;
 	}
-	
-	.topo{
-		margin: auto auto auto 30px;
+
+	.coluna-padding-top {
+		padding-top: 100px;
 	}
-	
-	.topo-links{
-		align-content: center;
-		padding: 10px;
-		text-decoration: none;
-		
+
+	.padding-bottom-texto {
+		padding-bottom: 20px;
 	}
-	
-	.perfil-foto{
-		height: 50px;
-		width: 50px;
-	}
-	
-	.padding-basico{
-		padding:40px;
-	}
-	
-	.perfil-icones{
-		height: 30px;
-		width: 30px;
-		
-	}
-	
-	.separacao-2-linhas{
-		padding-bottom: 9px;
-	}
-	
-	.fundo-verde-escuro{
-		background-color: #C2D5A9;
-	}
+
+	.img-coluna-noticia {
+		background-image: url(/public/img/campo_noticias.jpg);
+		background-size: cover;
+		padding: 342px 0px 0px 0px;
+    }
+
 </style>
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>notícias</title>
-    <link rel="stylesheet" href="CSS.css">  
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-</head>
-<body>
-
-
-
-
-    
-
-
-
-
-    <div class="fundo-verde separacao">
-        <h1 class="texto-no-centro separacao-final-noticias">Notícias</h1>
-        <p class="separacao-texto-noticias">Veja nossas notícias diversas</a>
-
-
-
-        <div class="container text-center">
-            <div class="row align-items-start">
-                <div class="col ">
-                <img src="/public/img/fotos.png" class="fundo-branco-peq fundo-imagem">
-                <h3 class="texto-na-esquerda arrumar-not">Titulo Exemplo</h3>
-                <p class="texto-na-esquerda arrumar-not">Titulo Exemplo</p>
-
-                </div>
-                <div class="col">
-                    <img src="/public/img/fotos.png" class="fundo-branco-peq fundo-imagem">
-                    <h3 class="texto-na-esquerda arrumar-not">Titulo Exemplo</h3>
-                    <p class="texto-na-esquerda arrumar-not">Titulo Exemplo</p>
-                </div>
-                <div class="col">
-                    <img src="/public/img/fotos.png" class="fundo-branco-peq fundo-imagem">
-                    <h3 class="texto-na-esquerda arrumar-not">Titulo Exemplo</h3>
-                    <p class="texto-na-esquerda arrumar-not">Titulo Exemplo</p>
-                </div>
-            </div>
-        </div>
-        
-
-
-            <div class="container text-center separação-div-noticias">
-                <div class="row align-items-start">
-                    <div class="col ">
-                    <img src="/public/img/fotos.png" class="fundo-branco-peq fundo-imagem">
-                    <h3 class="texto-na-esquerda arrumar-not">Titulo Exemplo</h3>
-                    <p class="texto-na-esquerda arrumar-not">Titulo Exemplo</p>
-    
-                    </div>
-                    <div class="col">
-                        <img src="/public/img/fotos.png" class="fundo-branco-peq fundo-imagem">
-                        <h3 class="texto-na-esquerda arrumar-not">Titulo Exemplo</h3>
-                        <p class="texto-na-esquerda arrumar-not">Titulo Exemplo</p>
-                    </div>
-                    <div class="col">
-                        <img src="/public/img/fotos.png" class="fundo-branco-peq fundo-imagem">
-                        <h3 class="texto-na-esquerda arrumar-not">Titulo Exemplo</h3>
-                        <p class="texto-na-esquerda arrumar-not">Titulo Exemplo</p>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-
-                <div class="container text-center separação-final-noticias">
-                    <div class="row align-items-start">
-                        <div class="col ">
-                        <img src="/public/img/fotos.png" class="fundo-branco-peq fundo-imagem">
-                        <h3 class="texto-na-esquerda arrumar-not">Titulo Exemplo</h3>
-                        <p class="texto-na-esquerda arrumar-not">Titulo Exemplo</p>
-        
-                        </div>
-                        <div class="col">
-                            <img src="/public/img/fotos.png" class="fundo-branco-peq fundo-imagem">
-                            <h3 class="texto-na-esquerda arrumar-not">Titulo Exemplo</h3>
-                            <p class="texto-na-esquerda arrumar-not">Titulo Exemplo</p>
-                        </div>
-                        <div class="col">
-                            <img src="/public/img/fotos.png" class="fundo-branco-peq fundo-imagem">
-                            <h3 class="texto-na-esquerda arrumar-not">Titulo Exemplo</h3>
-                            <p class="texto-na-esquerda arrumar-not">Titulo Exemplo</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </div>
-
-
-
-
-
-
-
-
-
-    <div class="container text-center">
-        <div class="row align-items-start">
-          <div class="col">
-            <img src="/public/img/entrega_rapida.png" class="icones-rodape"> <a>Entrega Rápida</a>
-          </div>
-          <div class="col">
-            <img src="/public/img/qualidade_garantida.png" class="icones-rodape"> <a>Qualidade Garantida</a>
-          </div>
-          <div class="col">
-            <img src="/public/img/eco_friendly.png"  class="icones-rodape"> <a>Eco Friendly</a>
-          </div>
-        </div>
-      </div>
-
-
-
-
-
-
-
-
-
-
-</body>
-</html>
+<div class="imagem-fundo">
+<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-4 offset-md-4 coluna-centralizar coluna-padding-top">
+				<h1>
+					Notícias
+				</h1>
+				<p class="padding-bottom-texto">
+					Veja as nossas notícias mais recentes
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-4 offset-md-2 mb-3">
+				<img src="/public/img/campo_noticias.jpg" alt="Foto do campo">
+				<h2>
+					Título exemplo
+				</h2>
+				<p>
+					Texto exemplo
+				</p>
+			</div>
+			<div class="col-md-4 mb-3">
+				<img src="/public/img/campo_noticias.jpg" alt="Foto do campo">
+				<h2>
+					Título exemplo
+				</h2>
+				<p>
+					Texto exemplo
+				</p>
+			</div>
+			<div class="col-md-4 offset-md-2 mb-3">
+				<img src="/public/img/campo_noticias.jpg" alt="Foto do campo">
+				<h2>
+					Título exemplo
+				</h2>
+				<p>
+					Texto exemplo
+				</p>
+			</div>
+			<div class="col-md-4 mb-3">
+				<img src="/public/img/campo_noticias.jpg" alt="Foto do campo">
+				<h2>
+					Título exemplo
+				</h2>
+				<p>
+					Texto exemplo
+				</p>
+			</div>			<div class="col-md-4 offset-md-2 mb-3">
+				<img src="/public/img/campo_noticias.jpg" alt="Foto do campo">
+				<h2>
+					Título exemplo
+				</h2>
+				<p>
+					Texto exemplo
+				</p>
+			</div>
+			<div class="col-md-4 mb-3">
+				<img src="/public/img/campo_noticias.jpg" alt="Foto do campo">
+				<h2>
+					Título exemplo
+				</h2>
+				<p>
+					Texto exemplo
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-3 offset-md-1 coluna-centralizar">
+			<p>
+			<img src="/public/img/entrega_rapida.png" width="50px" alt="Ícone de caixa"/>
+				Entrega rápida
+			</p>
+		</div>
+		<div class="col-md-4 coluna-centralizar">
+			<p>
+			<img src="/public/img/qualidade_garantida.png" width="50px" alt="Ícone sinal positivo"/>
+				Qualidade garantida
+			</p>
+		</div>
+		<div class="col-md-3 coluna-centralizar">
+			<p>
+			<img src="/public/img/eco_friendly.png" width="50px" alt="Ícone folha"/>
+				Eco friendly
+			</p>
+		</div>
+	</div>
+</div>

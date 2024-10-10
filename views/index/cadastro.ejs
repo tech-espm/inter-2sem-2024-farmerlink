@@ -1,8 +1,19 @@
 <style>
+
+	h1 {
+		font-weight: bold;
+		font-size: 30px;
+	}
+
+	h2 {
+		font-weight: bold;
+		font-size: 25px;
+	}
+
 	.imagem-fundo {
 		background-image: url(/public/img/fundo_cadastro.png);
 		background-repeat: no-repeat;
-		min-height: 1225px;
+		min-height: 1440px;
 	}
 
 	.coluna-centralizar {
@@ -14,7 +25,7 @@
 	}
 
 	.coluna-padding-top {
-		padding-top: 105px;
+		padding-top: 100px;
 	}
 
 	.formatar-link-cadastrar {
@@ -34,24 +45,28 @@
 		background-image: url(/public/img/img_colunas_1.png);
 		background-size: cover;
 		padding: 342px 0px 0px 0px;
+		border-radius: 30px;
     }
 
 	.img-coluna-2 {
 		background-image: url(/public/img/img_colunas_2.png);
 		background-size: cover;
 		padding: 342px 0px 0px 0px;
+		border-radius: 30px;
     }
 
 	.img-coluna-3 {
 		background-image: url(/public/img/img_colunas_3.png);
 		background-size: cover;
 		padding: 342px 0px 0px 0px;
+		border-radius: 30px;
     }
 
 	.img-coluna-4 {
 		background-image: url(/public/img/img_colunas_4.png);
 		background-size: cover;
 		padding: 342px 0px 0px 0px;
+		border-radius: 30px;
     }
 
 	.padding-right-left-dados {
@@ -72,6 +87,10 @@
 
 	.padding-bottom-input {
 		padding-bottom: 10px;
+	}
+
+	.padding-top-botao {
+		padding-top: 30px;
 	}
 
 </style>
@@ -108,58 +127,42 @@
 			<div class="col-md-8 offset-md-2">
 				<div class="col-md-10 offset-md-1 padding-right-left-dados">
 					<div class="padding-top-texto padding-bottom-input">
-						<label for="inputNomeCompleto">
-							Nome completo
-						</label>
-						<br />
-						<input id="inputNomeCompleto" type="text" maxlength="100" size="70px"/>
-					</div>
-					<div class="padding-bottom-input">
-						<label for="inputEmail">
-							E-mail
-						</label>
-						<br />
-						<input id="inputEmail" type="email" maxlength="100" size="70px"/>
-					</div>
-					<div class="padding-bottom-input">
-						<label for="inputTelefone">
-							Telefone
-						</label>
-						<br />
-						<input id="inputTelefone" type="number" maxlength="11" size="70px"/>
-					</div>
-					<div class="padding-bottom-input">
-						<label for="inputCPF">
-							CPF
-						</label>
-						<br />
-						<input id="inputCPF" type="number" maxlength="11" size="70px"/>
-					</div>
-					<div class="padding-bottom-input">
-						<label for="inputDataDeNascimento">
-							Data de nascimento
-						</label>
-						<br />
-						<input id="inputDataDeNascimento" type="date" min="1" />
-					</div>
-					<div class="padding-bottom-botao">
-						<label for="inputTipoDeConta">
-							Meu objetivo na Farmer Link é:
-						</label>
-						<div>
-							<input type="checkbox" id="comprarProdutos" name="Comprar produtos"/>
-							<label for="inputTipoDeConta">Comprar produtos</label>
-						</div>
-						<div>
-							<input type="checkbox" id="venderProdutos" name="Vender produtos" />
-							<label for="inputTipoDeConta">Vender produtos</label>
+						<div class="mb-2">
+							<label for="inputNomeCompleto" class="form-label">Nome completo</label>
+							<input type="text" id="inputNomeCompleto" class="form-control" maxlength="100"/>
 						</div>
 					</div>
-					<div class="col-md-4 offset-md-4">
-						<button type="button" onclick="efetuarCadastro()" style="border-style: none; background-color: #114f2d; padding: 15px 65px; border-radius: 5px; text-decoration: none; color: white; font-weight: bold;">Cadastrar</button>
+					<div class="padding-bottom-input">
+						<div class="mb-2">
+							<label for="inputEmail" class="form-label">E-mail</label>
+							<input type="email" id="inputEmail" class="form-control" maxlength="70"/>
+						</div>
+					</div>
+					<div class="padding-bottom-input">
+						<div class="mb-2">
+							<label for="inputTelefone" class="form-label">Telefone</label>
+							<input type="number" id="inputTelefone" class="form-control" maxlength="70"/>
+						</div>
+					</div>
+					<div class="padding-bottom-input">
+						<div class="mb-2">
+							<label for="inputCPF" class="form-label">CPF</label>
+							<input type="number" id="inputCPF" class="form-control" maxlength="11" maxlength="70"/>
+						</div>
+					</div>
+					<div class="padding-bottom-input">
+						<div class="mb-2">
+							<label for="inputDataDeNascimento" class="form-label">Data de nascimento</label>
+							<input type="date" id="inputDataDeNascimento" class="form-control" min="1"/>
+						</div>
+					</div>
+					<div>
+						<div class="d-grid padding-top-botao">
+							<button type="button" onclick="efetuaefetuarCadastro()" class="btn btn-primary">Cadastrar</button>
+						</div>
 					</div>
 					<div class="col-md-6 offset-md-3">
-						<p class="centralizar">
+						<p class="centralizar padding-top-botao">
 							Já tem uma conta?
 							<a href="https://google.com" target="_blank" class="formatar-link-cadastrar">Login</a>
 						</p>
@@ -199,13 +202,11 @@
 		let inputTelefone = document.getElementById("inputTelefone");
 		let inputCPF = document.getElementById("inputCPF");
 		let inputDataDeNascimento = document.getElementById("inputDataDeNascimento");
-		//akemi: falta a parte do tipo de conta
 
 		let nomeCompleto = inputEmailTelefone.value;
 		let email = inputSenha.value;
 		let telefone = parseInt(inputTelefone.value);
 		let cpf = parseInt(inputCPF.value);
 		let dataDeNascimento = parseInt(inputDataDeNascimento.value);
-		//akemi: falta a parte do tipo de conta
 	}
 </script>

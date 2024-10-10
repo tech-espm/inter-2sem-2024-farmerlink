@@ -1,8 +1,18 @@
 <style>
+
+	h1 {
+		font-weight: bold;
+		font-size: 30px;
+	}
+
+	h2 {
+		font-weight: bold;
+		font-size: 25px;
+	}
 	.imagem-fundo {
-		background-image: url(/public/img/login_fundo.png);
+		background-image: url(/public/img/fundo_login.png);
 		background-repeat: no-repeat;
-		min-height: 530px;
+		min-height: 716px;
 	}
 
 	.centralizar {
@@ -10,7 +20,7 @@
 	}
 
 	.coluna-padding-top {
-		padding-top: 65px;
+		padding-top: 100px;
 	}
 
 	.formatar-link-cadastrar {
@@ -26,8 +36,8 @@
 		padding-bottom: 20px;
 	}
 
-	.padding-bottom-input {
-		padding-bottom: 10px;
+	.padding-top-botao {
+		padding-top: 30px;
 	}
 
 </style>
@@ -40,20 +50,20 @@
 					Entre na sua conta
 				</h1>
 				<img src="/public/img/login_foto_perfil.png" width="100px" alt="Ícone fazendeiro Farmer Link" class="centralizar-img"/>
-				<div class="padding-bottom-input">
-					<div class="mb-3">
-						<label for="inputEmailTelefone" class="form-label">E-mail ou telefone</label>
-						<input type="text" id="inputEmailTelefone" class="form-control" maxlength="100" size="40px"/>
-					</div>
+				<div class="mb-2">
+					<label for="inputEmail" class="form-label">E-mail</label>
+					<input type="text" id="inputEmail" class="form-control" maxlength="100" size="40px"/>
 				</div>
-				<div class="padding-bottom-input">
-					<label for="inputSenha">
-						Senha
-					</label>
-					<br />
-					<input id="inputSenha" type="text" maxlength="100" size="40px"/>
+				<div class="mb-2">
+					<label for="inputSenha" class="form-label">Senha</label>
+					<input type="password" id="inputSenha" class="form-control" maxlength="100" size="40px"/>
 				</div>
-				<button type="button" onclick="efetuarLogin()" style="width: 375px; background-color: #114f2d; color: white; font-weight: bold; margin-top: 20px; margin-bottom: 20px; border-width: 1px; border-style: none; border-radius: 5px;">Entrar</button>
+				<div class="d-grid padding-top-botao">
+					<button type="button" onclick="efetuarLogin()" class="btn btn-primary">Entrar</button>
+				</div>
+				<p class="centralizar padding-top-botao">
+					<a href="https://google.com" target="_blank" class="formatar-link-cadastrar">Esqueci minha senha</a>
+				</p>
 				<p class="centralizar">
 					Novo na Farmer Link?
 					<a href="https://google.com" target="_blank" class="formatar-link-cadastrar">Cadastrar</a>
@@ -87,10 +97,10 @@
 
 <script>
 	function efetuarLogin() {
-		let inputEmailTelefone = document.getElementById("inputEmailTelefone");
+		let inputEmail = document.getElementById("inputEmail");
 		let inputSenha = document.getElementById("inputSenha");
 
-		let emailTelefone = inputEmailTelefone.value;
+		let email = inputEmail.value;
 		let senha = inputSenha.value;
 	}
 </script>
