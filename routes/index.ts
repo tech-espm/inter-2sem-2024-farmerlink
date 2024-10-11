@@ -13,7 +13,7 @@ class IndexRoute {
 		res.render("index/sobre", opcoes);
 	}
 
-	public async produtos(req: app.Request, res: app.Response) {
+	public async produtosExemploRafa(req: app.Request, res: app.Response) {
 		let produtoA = {
 			id: 1,
 			nome: "Produto A",
@@ -39,7 +39,7 @@ class IndexRoute {
 			produtos: produtosVindosDoBanco
 		};
 
-		res.render("index/produtos", opcoes);
+		res.render("index/produtosExemploRafa", opcoes);
 	}
 
 	public async noticias(req: app.Request, res: app.Response) {
@@ -74,13 +74,22 @@ class IndexRoute {
 		res.render("index/login", opcoes);
 	}
 
-	public async destaques(req: app.Request, res: app.Response) {
+	public async agricultores(req: app.Request, res: app.Response) {
 		let opcoes = {
-			titulo: "Destaque do Mês"
+			titulo: "Agricultores"
 		};
 
-		res.render("index/destaque", opcoes);
+		res.render("index/agricultores", opcoes);
 	}
+
+	public async produtos(req: app.Request, res: app.Response) {
+		let opcoes = {
+			titulo: "Produtos"
+		};
+
+		res.render("index/produtos", opcoes);
+	}
+
 }
 
 export = IndexRoute;

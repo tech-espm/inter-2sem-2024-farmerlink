@@ -1,25 +1,129 @@
+<style>
+    h1 {
+        font-weight: bold;
+        font-size: 30px;
+    }
+
+    h2 {
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+	.imagem-fundo-teste {
+		background-image: url(/public/img/fundo_cadastro.png);
+		background-repeat: no-repeat;
+		min-height: 1440px;
+	}
+
+	.coluna-padding-top {
+		padding-top: 100px;
+	}
+
+	.texto-negrito {
+		font-weight: bold;
+	}
+
+    .padding-fundo {
+        min-height: 1440px;
+    }
+
+    .fundo-amarelo {
+        background-color: #feffd6;
+        padding: 20px;
+        border-radius: 30px;
+		border-style: solid;
+		border-color: #114f2d;
+    }
+
+	.coluna-centralizar {
+		text-align: center;
+	}
+
+    .fundo-branco {
+        background-color: white;
+        padding: 20px;
+        border-radius: 30px;
+		border-style: solid;
+		border-color: #114f2d;
+    }
+</style>
+
+<div class="imagem-fundo-teste coluna-padding-top">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-4 offset-md-4">
+				<h1 class="coluna-centralizar padding-bottom-texto">
+					Produtos
+				</h1>
+			</div>
+			<div class="col-md-8 offset-md-2">
+				<form class="d-flex padding-bottom-texto" role="search">
+					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-success" type="submit">Search</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-2 offset-md-2 mb-3 fundo-branco">
+				<img src="/public/img/campo_noticias.jpg" alt="Foto do campo">
+				<h2>
+					Título exemplo
+				</h2>
+				<p>
+					Texto exemplo
+				</p>
+			</div>
+			<div class="col-md-2 mb-3 fundo-branco">
+				<img src="/public/img/campo_noticias.jpg" alt="Foto do campo">
+				<h2>
+					Título exemplo
+				</h2>
+				<p>
+					Texto exemplo
+				</p>
+			</div>
+			<div class="col-md-2 mb-3 fundo-branco">
+				<img src="/public/img/campo_noticias.jpg" alt="Foto do campo">
+				<h2>
+					Título exemplo
+				</h2>
+				<p>
+					Texto exemplo
+				</p>
+			</div>
+			<div class="col-md-2 mb-3 fundo-branco">
+				<img src="/public/img/campo_noticias.jpg" alt="Foto do campo">
+				<h2>
+					Título exemplo
+				</h2>
+				<p>
+					Texto exemplo
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
 <div class="container-fluid">
-
-	<h1>Sou a página de produtos!</h1>
-
-	<p>Listagem de produtos (<%= produtos.length %> produtos no total)</p>
-
-	<% for (let contador = 0; contador < produtos.length; contador++) { %>
-
-		<h2>
-			<%= produtos[contador].nome %>
-		</h2>
-
-		<p>
-			Id: <%= produtos[contador].id %>
-		</p>
-
-		<p>
-			Valor: R$ <%= produtos[contador].valor %>
-		</p>
-
-		<hr />
-
-	<% } %>
-
+	<div class="row">
+		<div class="col-md-3 offset-md-1 coluna-centralizar">
+			<p>
+			<img src="/public/img/entrega_rapida.png" width="50px" alt="Ícone de caixa"/>
+				Entrega rápida
+			</p>
+		</div>
+		<div class="col-md-4 coluna-centralizar">
+			<p>
+			<img src="/public/img/qualidade_garantida.png" width="50px" alt="Ícone sinal positivo"/>
+				Qualidade garantida
+			</p>
+		</div>
+		<div class="col-md-3 coluna-centralizar">
+			<p>
+			<img src="/public/img/eco_friendly.png" width="50px" alt="Ícone folha"/>
+				Eco friendly
+			</p>
+		</div>
+	</div>
 </div>
