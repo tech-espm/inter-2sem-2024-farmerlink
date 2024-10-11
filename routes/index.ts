@@ -50,14 +50,6 @@ class IndexRoute {
 		res.render("index/noticias", opcoes);
 	}
 
-	public async perfil(req: app.Request, res: app.Response) {
-		let opcoes = {
-			titulo: "Perfil do Agricultor"
-		};
-
-		res.render("index/perfil", opcoes);
-	}
-
 	public async cadastro(req: app.Request, res: app.Response) {
 		let opcoes = {
 			titulo: "Cadastro"
@@ -80,14 +72,6 @@ class IndexRoute {
 		};
 
 		res.render("index/agricultores", opcoes);
-	}
-
-	public async produtos(req: app.Request, res: app.Response) {
-		let opcoes = {
-			titulo: "Produtos"
-		};
-
-		res.render("index/produtos", opcoes);
 	}
 
 }
