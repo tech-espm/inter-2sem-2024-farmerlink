@@ -1,208 +1,337 @@
 <style>
+  h1 {
+    font-weight: bold;
+    font-size: 30px;
+  }
 
-	h1 {
-		font-weight: bold;
-		font-size: 30px;
-	}
+  h2 {
+    font-weight: bold;
+    font-size: 25px;
+  }
 
-	h2 {
-		font-weight: bold;
-		font-size: 25px;
-	}
+  .imagem-fundo {
+    background-image: url(/public/img/fundo_cadastro.png);
+    background-repeat: no-repeat;
+    min-height: 1440px;
+  }
 
-	.imagem-fundo {
-		background-image: url(/public/img/fundo_cadastro.png);
-		background-repeat: no-repeat;
-		min-height: 1440px;
-	}
+  .coluna-centralizar {
+    text-align: center;
+  }
 
-	.coluna-centralizar {
-		text-align: center;
-	}
+  .coluna-padding-top {
+    padding-top: 100px;
+  }
 
-	.coluna-padding-top {
-		padding-top: 100px;
-	}
+  .formatar-link-cadastrar {
+    color: #114f2d;
+    font-weight: bold;
+  }
 
-	.formatar-link-cadastrar {
-		color: #114f2d;
-		font-weight: bold;
-	}
+  .centralizar-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 
-	.centralizar-img {
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		padding-top: 20px;
-		padding-bottom: 20px;
-	}
+  .img-coluna-1 {
+    background-image: url(/public/img/img_colunas_1.png);
+    background-size: cover;
+    padding: 342px 0px 0px 0px;
+    border-radius: 30px;
+  }
 
-	.img-coluna-1 {
-		background-image: url(/public/img/img_colunas_1.png);
-		background-size: cover;
-		padding: 342px 0px 0px 0px;
-		border-radius: 30px;
-    }
+  .img-coluna-2 {
+    background-image: url(/public/img/img_colunas_2.png);
+    background-size: cover;
+    padding: 342px 0px 0px 0px;
+    border-radius: 30px;
+  }
 
-	.img-coluna-2 {
-		background-image: url(/public/img/img_colunas_2.png);
-		background-size: cover;
-		padding: 342px 0px 0px 0px;
-		border-radius: 30px;
-    }
+  .img-coluna-3 {
+    background-image: url(/public/img/img_colunas_3.png);
+    background-size: cover;
+    padding: 342px 0px 0px 0px;
+    border-radius: 30px;
+  }
 
-	.img-coluna-3 {
-		background-image: url(/public/img/img_colunas_3.png);
-		background-size: cover;
-		padding: 342px 0px 0px 0px;
-		border-radius: 30px;
-    }
+  .img-coluna-4 {
+    background-image: url(/public/img/img_colunas_4.png);
+    background-size: cover;
+    padding: 342px 0px 0px 0px;
+    border-radius: 30px;
+  }
 
-	.img-coluna-4 {
-		background-image: url(/public/img/img_colunas_4.png);
-		background-size: cover;
-		padding: 342px 0px 0px 0px;
-		border-radius: 30px;
-    }
+  .padding-right-left-dados {
+    padding-left: 20px;
+  }
 
-	.padding-right-left-dados {
-		padding-left: 20px;
-	}
+  .padding-bottom-texto {
+    padding-bottom: 20px;
+  }
 
-	.padding-bottom-texto {
-		padding-bottom: 20px;
-	}
+  .padding-top-texto {
+    padding-top: 40px;
+  }
 
-	.padding-top-texto {
-		padding-top: 40px;
-	}
+  .padding-bottom-botao {
+    padding-bottom: 40px;
+  }
 
-	.padding-bottom-botao {
-		padding-bottom: 40px;
-	}
+  .padding-bottom-input {
+    padding-bottom: 10px;
+  }
 
-	.padding-bottom-input {
-		padding-bottom: 10px;
-	}
-
-	.padding-top-botao {
-		padding-top: 30px;
-	}
-
+  .padding-top-botao {
+    padding-top: 30px;
+  }
 </style>
 
 <div class="imagem-fundo">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-4 offset-md-4 coluna-centralizar coluna-padding-top">
-				<h1>
-					Junte-se a nós
-				</h1>
-				<p class="padding-bottom-texto">
-					Torne-se um farmer ou compre de nossos farmers
-				</p>
-			</div>
-		</div>
-	</div>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-2">
-			</div>
-			<div class="col-md-2 m-1 img-coluna-1">
-			</div>
-			<div class="col-md-2 img-coluna-2 m-1">
-			</div>
-			<div class="col-md-2 img-coluna-3 m-1">
-			</div>
-			<div class="col-md-2 img-coluna-4 m-1">
-			</div>
-		</div>
-	</div>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-8 offset-md-2">
-				<div class="col-md-10 offset-md-1 padding-right-left-dados">
-					<div class="padding-top-texto padding-bottom-input">
-						<div class="mb-2">
-							<label for="inputNomeCompleto" class="form-label">Nome completo</label>
-							<input type="text" id="inputNomeCompleto" class="form-control" maxlength="100"/>
-						</div>
-					</div>
-					<div class="padding-bottom-input">
-						<div class="mb-2">
-							<label for="inputEmail" class="form-label">E-mail</label>
-							<input type="email" id="inputEmail" class="form-control" maxlength="70"/>
-						</div>
-					</div>
-					<div class="padding-bottom-input">
-						<div class="mb-2">
-							<label for="inputTelefone" class="form-label">Telefone</label>
-							<input type="number" id="inputTelefone" class="form-control" maxlength="70"/>
-						</div>
-					</div>
-					<div class="padding-bottom-input">
-						<div class="mb-2">
-							<label for="inputCPF" class="form-label">CPF</label>
-							<input type="number" id="inputCPF" class="form-control" maxlength="11" maxlength="70"/>
-						</div>
-					</div>
-					<div class="padding-bottom-input">
-						<div class="mb-2">
-							<label for="inputDataDeNascimento" class="form-label">Data de nascimento</label>
-							<input type="date" id="inputDataDeNascimento" class="form-control" min="1"/>
-						</div>
-					</div>
-					<div>
-						<div class="d-grid padding-top-botao">
-							<button type="button" onclick="efetuaefetuarCadastro()" class="btn btn-primary">Cadastrar</button>
-						</div>
-					</div>
-					<div class="col-md-6 offset-md-3">
-						<p class="coluna-centralizar padding-top-botao">
-							Já tem uma conta?
-							<a href="https://google.com" target="_blank" class="formatar-link-cadastrar">Login</a>
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 offset-md-4 coluna-centralizar coluna-padding-top">
+        <h1>Junte-se a nós</h1>
+        <p class="padding-bottom-texto">
+          Torne-se um farmer ou compre de nossos farmers
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-2 m-1 img-coluna-1"></div>
+      <div class="col-md-2 img-coluna-2 m-1"></div>
+      <div class="col-md-2 img-coluna-3 m-1"></div>
+      <div class="col-md-2 img-coluna-4 m-1"></div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="col-md-10 offset-md-1 padding-right-left-dados">
+          <div class="padding-top-texto padding-bottom-input">
+            <div class="mb-2">
+              <label for="inputNomeCompleto" class="form-label"
+                >Nome completo</label
+              >
+              <input
+                type="text"
+                id="inputNomeCompleto"
+                class="form-control"
+                maxlength="100"
+              />
+            </div>
+          </div>
+          <div class="padding-bottom-input">
+            <div class="mb-2">
+              <label for="inputEmail" class="form-label">E-mail</label>
+              <input
+                type="email"
+                id="inputEmail"
+                class="form-control"
+                maxlength="70"
+              />
+            </div>
+          </div>
+          <div class="padding-bottom-input">
+            <div class="mb-2">
+              <label for="inputTelefone" class="form-label">Telefone</label>
+              <input
+                type="tel"
+                id="inputTelefone"
+                class="form-control"
+                autocomplete="off"
+                maxlength="14"
+              />
+            </div>
+          </div>
+          <div class="padding-bottom-input">
+            <div class="mb-2">
+              <label for="inputCPF" class="form-label">CPF</label>
+              <input
+                type="text"
+                id="inputCPF"
+                class="form-control"
+                autocomplete="off"
+                maxlength="14"
+              />
+            </div>
+          </div>
+          <div class="padding-bottom-input">
+            <div class="mb-2">
+              <label for="inputDataDeNascimento" class="form-label"
+                >Data de nascimento</label
+              >
+              <input
+                type="date"
+                id="inputDataDeNascimento"
+                class="form-control"
+                min="1"
+              />
+            </div>
+          </div>
+          <div class="padding-bottom-input">
+            <div class="mb-2">
+              <label for="inputCEP" class="form-label">CEP</label>
+              <input
+                type="text"
+                id="inputCEP"
+                class="form-control"
+                maxlength="9"
+              />
+            </div>
+          </div>
+          <div>
+            <div class="d-grid padding-top-botao">
+              <button
+                type="button"
+                onclick="efetuarCadastro()"
+                class="btn btn-primary"
+              >
+                Cadastrar
+              </button>
+            </div>
+          </div>
+          <div class="col-md-6 offset-md-3">
+            <p class="coluna-centralizar padding-top-botao">
+              Já tem uma conta?
+              <a href="/login" class="formatar-link-cadastrar">Login</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-3 offset-md-1 coluna-centralizar">
-			<p>
-			<img src="/public/img/entrega_rapida.png" width="50px" alt="Ícone de caixa"/>
-				Entrega rápida
-			</p>
-		</div>
-		<div class="col-md-4 coluna-centralizar">
-			<p>
-			<img src="/public/img/qualidade_garantida.png" width="50px" alt="Ícone sinal positivo"/>
-				Qualidade garantida
-			</p>
-		</div>
-		<div class="col-md-3 coluna-centralizar">
-			<p>
-			<img src="/public/img/eco_friendly.png" width="50px" alt="Ícone folha"/>
-				Eco friendly
-			</p>
-		</div>
-	</div>
+  <div class="row">
+    <div class="col-md-3 offset-md-1 coluna-centralizar">
+      <p>
+        <img
+          src="/public/img/entrega_rapida.png"
+          width="50px"
+          alt="Ícone de caixa"
+        />
+        Entrega rápida
+      </p>
+    </div>
+    <div class="col-md-4 coluna-centralizar">
+      <p>
+        <img
+          src="/public/img/qualidade_garantida.png"
+          width="50px"
+          alt="Ícone sinal positivo"
+        />
+        Qualidade garantida
+      </p>
+    </div>
+    <div class="col-md-3 coluna-centralizar">
+      <p>
+        <img
+          src="/public/img/eco_friendly.png"
+          width="50px"
+          alt="Ícone folha"
+        />
+        Eco friendly
+      </p>
+    </div>
+  </div>
 </div>
 
 <script>
-	function efetuarCadastro() {
-		let inputNomeCompleto = document.getElementById("inputNomeCompleto");
-		let inputEmail = document.getElementById("inputEmail");
-		let inputTelefone = document.getElementById("inputTelefone");
-		let inputCPF = document.getElementById("inputCPF");
-		let inputDataDeNascimento = document.getElementById("inputDataDeNascimento");
+  function efetuarCadastro() {
+    let inputNomeCompleto = document.getElementById("inputNomeCompleto");
+    let inputEmail = document.getElementById("inputEmail");
+    let inputTelefone = document.getElementById("inputTelefone");
+    let inputCPF = document.getElementById("inputCPF");
+    let inputDataDeNascimento = document.getElementById(
+      "inputDataDeNascimento"
+    );
+    let inputCEP = document.getElementById("inputCEP");
 
-		let nomeCompleto = inputEmailTelefone.value;
-		let email = inputSenha.value;
-		let telefone = parseInt(inputTelefone.value);
-		let cpf = parseInt(inputCPF.value);
-		let dataDeNascimento = parseInt(inputDataDeNascimento.value);
-	}
+    let nomeCompleto = inputNomeCompleto.value;
+    let email = inputEmail.value;
+    let telefone = inputTelefone.value;
+    let cpf = inputCPF.value;
+    let dataDeNascimento = inputDataDeNascimento.value;
+    let cep = inputCEP.value;
+
+    if (!nomeCompleto) {
+      console.log("Nome completo vazio!");
+      return;
+    } else {
+      console.log("Nome completo : " + nomeCompleto);
+    }
+
+    if (!email) {
+      console.log("E-mail vazio!");
+      return;
+    } else {
+      console.log("E-mail: " + email);
+    }
+
+    if (!telefone) {
+      console.log("Telefone vazio!");
+      return;
+    } else {
+      console.log("Telefone: " + telefone);
+    }
+
+    if (!dataDeNascimento) {
+      console.log("Data de nascimento vazia!");
+      return;
+    } else {
+      console.log("Data de nascimento: " + dataDeNascimento);
+    }
+
+    if (!cep) {
+      console.log("CEP vazio!");
+      return;
+    } else {
+      console.log("CEP: " + cep);
+    }
+  }
+
+  const mascaraInputCPF = document.querySelector("#inputCPF");
+  mascaraInputCPF.addEventListener("keypress", () => {
+    let inputLengthCPF = mascaraInputCPF.value.length;
+
+    if (inputLengthCPF === 3 || inputLengthCPF === 7) {
+      mascaraInputCPF.value += ".";
+    }
+    if (inputLengthCPF === 11) {
+      mascaraInputCPF.value += "-";
+    }
+  });
+
+  const mascaraInputTelefone = document.querySelector("#inputTelefone");
+  mascaraInputTelefone.addEventListener("keypress", () => {
+    let inputLengthTelefone = mascaraInputTelefone.value.length;
+
+    if (inputLengthTelefone === 0) {
+      mascaraInputTelefone.value += "(";
+    }
+    if (inputLengthTelefone === 3) {
+      mascaraInputTelefone.value += ")";
+    }
+    if (inputLengthTelefone === 4) {
+      mascaraInputTelefone.value += " ";
+    }
+    if (inputLengthTelefone === 9) {
+      mascaraInputTelefone.value += "-";
+    }
+  });
+
+  const mascaraInputCEP = document.querySelector("#inputCEP");
+  mascaraInputCEP.addEventListener("keypress", () => {
+    let inputLengthCEP = mascaraInputCEP.value.length;
+
+    if (inputLengthCEP === 5) {
+      mascaraInputCEP.value += "-";
+    }
+  });
 </script>

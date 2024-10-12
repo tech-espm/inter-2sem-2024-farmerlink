@@ -1,106 +1,156 @@
 <style>
+  h1 {
+    font-weight: bold;
+    font-size: 30px;
+  }
 
-	h1 {
-		font-weight: bold;
-		font-size: 30px;
-	}
+  h2 {
+    font-weight: bold;
+    font-size: 25px;
+  }
+  .imagem-fundo {
+    background-image: url(/public/img/fundo_login.png);
+    background-repeat: no-repeat;
+    min-height: 716px;
+  }
 
-	h2 {
-		font-weight: bold;
-		font-size: 25px;
-	}
-	.imagem-fundo {
-		background-image: url(/public/img/fundo_login.png);
-		background-repeat: no-repeat;
-		min-height: 716px;
-	}
+  .centralizar {
+    text-align: center;
+  }
 
-	.centralizar {
-		text-align: center;
-	}
+  .coluna-padding-top {
+    padding-top: 100px;
+  }
 
-	.coluna-padding-top {
-		padding-top: 100px;
-	}
+  .formatar-link-cadastrar {
+    color: #114f2d;
+    font-weight: bold;
+  }
 
-	.formatar-link-cadastrar {
-		color: #114f2d;
-		font-weight: bold;
-	}
+  .centralizar-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 
-	.centralizar-img {
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		padding-top: 20px;
-		padding-bottom: 20px;
-	}
-
-	.padding-top-botao {
-		padding-top: 30px;
-	}
-
+  .padding-top-botao {
+    padding-top: 30px;
+  }
 </style>
 
 <div class="imagem-fundo">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-4 offset-md-4 coluna-padding-top">
-				<h1 class="centralizar">
-					Entre na sua conta
-				</h1>
-				<img src="/public/img/icone_farmer_3.png" width="100px" alt="Ícone fazendeiro Farmer Link" class="centralizar-img"/>
-				<div class="mb-2">
-					<label for="inputEmail" class="form-label">E-mail</label>
-					<input type="text" id="inputEmail" class="form-control" maxlength="100" size="40px"/>
-				</div>
-				<div class="mb-2">
-					<label for="inputSenha" class="form-label">Senha</label>
-					<input type="password" id="inputSenha" class="form-control" maxlength="100" size="40px"/>
-				</div>
-				<div class="d-grid padding-top-botao">
-					<button type="button" onclick="efetuarLogin()" class="btn btn-primary">Entrar</button>
-				</div>
-				<p class="centralizar padding-top-botao">
-					<a href="https://google.com" target="_blank" class="formatar-link-cadastrar">Esqueci minha senha</a>
-				</p>
-				<p class="centralizar">
-					Novo na Farmer Link?
-					<a href="https://google.com" target="_blank" class="formatar-link-cadastrar">Cadastrar</a>
-				</p>
-			</div>
-		</div>
-	</div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 offset-md-4 coluna-padding-top">
+        <h1 class="centralizar">Entre na sua conta</h1>
+        <img
+          src="/public/img/icone_farmer_3.png"
+          width="100px"
+          alt="Ícone fazendeiro Farmer Link"
+          class="centralizar-img"
+        />
+        <div class="mb-2">
+          <label for="inputEmail" class="form-label">E-mail</label>
+          <input
+            type="text"
+            id="inputEmail"
+            class="form-control"
+            maxlength="100"
+            size="40px"
+          />
+        </div>
+        <div class="mb-2">
+          <label for="inputSenha" class="form-label">Senha</label>
+          <input
+            type="password"
+            id="inputSenha"
+            class="form-control"
+            maxlength="100"
+            size="40px"
+          />
+        </div>
+        <div class="d-grid padding-top-botao">
+          <button
+            type="button"
+            onclick="efetuarLogin()"
+            class="btn btn-primary"
+          >
+            Entrar
+          </button>
+        </div>
+        <p class="centralizar padding-top-botao">
+          <a
+            href="https://google.com"
+            target="_blank"
+            class="formatar-link-cadastrar"
+            >Esqueci minha senha</a
+          >
+        </p>
+        <p class="centralizar">
+          Novo na Farmer Link?
+          <a href="/cadastro" class="formatar-link-cadastrar">Cadastrar</a>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-3 offset-md-1 centralizar">
-			<p>
-			<img src="/public/img/entrega_rapida.png" width="50px" alt="Ícone de caixa"/>
-				Entrega rápida
-			</p>
-		</div>
-		<div class="col-md-4 centralizar">
-			<p>
-			<img src="/public/img/qualidade_garantida.png" width="50px" alt="Ícone sinal positivo"/>
-				Qualidade garantida
-			</p>
-		</div>
-		<div class="col-md-3 centralizar">
-			<p>
-			<img src="/public/img/eco_friendly.png" width="50px" alt="Ícone folha"/>
-				Eco friendly
-			</p>
-		</div>
-	</div>
+  <div class="row">
+    <div class="col-md-3 offset-md-1 centralizar">
+      <p>
+        <img
+          src="/public/img/entrega_rapida.png"
+          width="50px"
+          alt="Ícone de caixa"
+        />
+        Entrega rápida
+      </p>
+    </div>
+    <div class="col-md-4 centralizar">
+      <p>
+        <img
+          src="/public/img/qualidade_garantida.png"
+          width="50px"
+          alt="Ícone sinal positivo"
+        />
+        Qualidade garantida
+      </p>
+    </div>
+    <div class="col-md-3 centralizar">
+      <p>
+        <img
+          src="/public/img/eco_friendly.png"
+          width="50px"
+          alt="Ícone folha"
+        />
+        Eco friendly
+      </p>
+    </div>
+  </div>
 </div>
 
 <script>
-	function efetuarLogin() {
-		let inputEmail = document.getElementById("inputEmail");
-		let inputSenha = document.getElementById("inputSenha");
+  function efetuarLogin() {
+    let inputEmail = document.getElementById("inputEmail");
+    let inputSenha = document.getElementById("inputSenha");
 
-		let email = inputEmail.value;
-		let senha = inputSenha.value;
-	}
+    let email = inputEmail.value;
+    let senha = inputSenha.value;
+
+    if (!email) {
+      console.log("E-mail vazio!");
+      return;
+    } else {
+      console.log("E-mail: " + email);
+    }
+
+    if (!senha) {
+      console.log("Senha vazia!");
+      return;
+    } else {
+      console.log("Senha: " + senha);
+    }
+  }
 </script>

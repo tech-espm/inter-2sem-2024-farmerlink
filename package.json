@@ -13,6 +13,7 @@
   "main": "src/app.js",
   "dependencies": {
     "dotenv": "16.4.5",
+    "jquery-mask-plugin": "^1.14.16",
     "teem": "0.0.26"
   },
   "devDependencies": {
