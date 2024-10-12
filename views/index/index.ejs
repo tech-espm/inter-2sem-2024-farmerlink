@@ -10,10 +10,32 @@
 		font-size: 25px;
 	}
 
-	.imagem-fundo {
-		background-image: url(/public/img/v2-landing_page_fundo.png);
+	img {
+		border-radius: 25px;
+	}
+
+	.imagem-fundo-1 {
+		background-image: url(/public/img/fundo_landing_page_1.png);
 		background-repeat: no-repeat;
-		min-height: 530px;
+		min-height: 544px;
+	}
+
+	.imagem-fundo-2 {
+		background-image: url(/public/img/fundo_amarelo_landing_page.png);
+		background-repeat: no-repeat;
+		min-height: 544px;
+	}
+
+	.imagem-fundo-3 {
+		background-image: url(/public/img/fundo_verde_landing_page.png);
+		background-repeat: no-repeat;
+		min-height: 544px;
+	}
+
+	.imagem-fundo-4 {
+		background-image: url(/public/img/fundo_amarelo_landing_page.png);
+		background-repeat: no-repeat;
+		min-height: 544px;
 	}
 
 	.coluna-centralizar {
@@ -22,6 +44,10 @@
 
 	.coluna-padding-top {
 		padding-top: 100px;
+	}
+
+	.coluna-padding-right {
+		padding-right: 75px;
 	}
 
 	.coluna-padding-left {
@@ -40,9 +66,15 @@
 		padding-bottom: 20px;
 	}
 
+	.centralizar-img {
+        display: flex;
+        align-items: center;
+		justify-content: center;
+    }
+
 </style>
 
-<div class="imagem-fundo">
+<div class="imagem-fundo-1">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-5 offset-md-1 coluna-padding-top coluna-padding-left">
@@ -81,6 +113,75 @@
 			<img src="/public/img/eco_friendly.png" width="50px" alt="Ícone folha"/>
 				Eco friendly
 			</p>
+		</div>
+	</div>
+</div>
+<hr/>
+<div class="imagem-fundo-2">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-5 offset-md-1 centralizar-img coluna-padding-top">
+				<img src="/public/img/fazenda.jpg" alt="Por do sol na fazenda" width="350px">
+			</div>
+			<div class="col-md-5 coluna-padding-top coluna-padding-right">
+				<h1>
+					Bem-vindo à FarmerLink!
+				</h1>
+				<p class="coluna-justificar espacamento-top-texto">
+					Descubra um mundo onde a agricultura orgânica ganha vida! Na Farmer Link, conectamos você diretamente aos produtores locais que cultivam com paixão e respeito pela natureza.
+				</p>
+				<p class="coluna-justificar">
+					Todos os produtos são livres de agrotóxicos, cheios de sabor e nutrientes, diretamente do campo para a sua mesa.
+				</p>
+				<p class="coluna-justificar espacamento-bottom-texto">
+					Venha sentir o sabor genuíno dos alimentos frescos e saudáveis!
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<hr/>
+<div class="imagem-fundo-3">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-5 offset-md-1 coluna-padding-top coluna-padding-left">
+				<h1>
+					Conheça nossos produtores e seus produtos orgânicos!
+				</h1>
+				<p class="coluna-justificar espacamento-top-texto">
+					Por trás de cada produto, existe uma história inspiradora. Apresentamos a você os agricultores dedicados que colocam amor e cuidado em cada colheita, transformando sementes em sustento para a comunidade.
+				</p>
+				<p class="coluna-justificar espacamento-bottom-texto">
+					Explore suas jornadas e descubra como, de frutas suculentas a verduras fresquinhas, nossa seleção é cuidadosamente escolhida para levar até você o melhor da safra.
+				</p>
+			</div>
+			<div class="col-md-5 centralizar-img coluna-padding-top">
+				<img src="/public/img/cesta_frutas_legumes.jpg" alt="Cesta de frutas" width="350px">
+			</div>
+		</div>
+	</div>
+</div>
+<hr/>
+<div class="imagem-fundo-4">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-5 offset-md-1 centralizar-img coluna-padding-top">
+				<img src="/public/img/fazendeiro_landing_page.jpeg" alt="Fazendeiro em sua fazenda" width="350px">
+			</div>
+			<div class="col-md-5 coluna-padding-top coluna-padding-right">
+				<h1>
+					Junte-se à comunidade FarmerLink!
+				</h1>
+				<p class="coluna-justificar espacamento-top-texto">
+					Seja parte de um movimento que valoriza a saúde, o meio ambiente e o comércio justo. Cadastre-se agora e:
+				</p>
+				<p class="coluna-justificar espacamento-bottom-texto">
+					✅ Fique por dentro das novidades; <br/>✅ Ofertas exclusivas; <br/>✅ Dicas sobre vida sustentável; <br/>✅ Construa um futuro mais verde!
+				</p>
+				<div class="d-grid gap-2">
+					<button type="button" onclick="direcionarCadastro()" class="btn btn-primary">Cadastro</button>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
