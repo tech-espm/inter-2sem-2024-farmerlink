@@ -1,66 +1,183 @@
 ﻿<style>
 
+	h1 {
+		color: white;
+		font-size: 55px;
+	}
+
+	h2 {
+		font-weight: bold;
+		font-size: 30px
+	}
+
+	p {
+		font-size: 15px;
+	}
+
 	img {
-		border-radius: 25px;
+		border-radius: 15px;
+	}
+
+	.p-texto-branco {
+		color: white;
+	}
+
+	.justificar-texto {
+		text-align: justify;
+	}
+
+	.centralizar-texto {
+		text-align: center;
 	}
 
 	.coluna-centralizar {
 		text-align: center;
 	}
 
-	.coluna-padding-top {
-		padding-top: 100px;
+	.coluna-padding-top-parte-1 {
+		padding-top: 110px;
 	}
-
-	.coluna-padding-right {
-		padding-right: 75px;
-	}
-
-	.coluna-padding-left {
-		padding-left: 75px;
-	}
-
-	.coluna-justificar {
-		text-align: justify;
-	}
-
-	.espacamento-top-texto {
+	
+	.coluna-padding-bottom-top {
+		padding-bottom: 20px;
 		padding-top: 20px;
 	}
 
-	.espacamento-bottom-texto {
-		padding-bottom: 20px;
+	.coluna-padding-top {
+		padding-top: 20px;
 	}
 
-	.centralizar-img {
-        display: flex;
-        align-items: center;
-		justify-content: center;
-    }
+	.h2-verde {
+		color: #568C03;
+	}
+
+	.espacamento-fundo-pequeno {
+		min-height: 272px;
+	}
+
+	.espacamento-fundo-grande {
+		min-height: 544px;
+	}
+
+	#container3D {
+		position: relative;
+	}
+
+	#overlay {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+
+	.coluna-padding-top-parte-2 {
+		padding-top: 80px;
+	}
+
+	.plano-fundo-papelao {
+		background-image: url(/public/img/fundo_papel.png);
+		background-repeat: no-repeat;
+		min-height: 544px;
+	}
+
+	.espacamento-retangulos {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.coluna-padding-top-parte-4 {
+		padding-top: 70px;
+	}
 
 </style>
-<div id="container3D"></div>
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-3 offset-md-1 coluna-centralizar">
-			<p>
-			<img src="/public/img/entrega_rapida.png" width="50px" alt="Ícone de caixa"/>
-				Entrega rápida
-			</p>
-		</div>
-		<div class="col-md-4 coluna-centralizar">
-			<p>
-			<img src="/public/img/qualidade_garantida.png" width="50px" alt="Ícone sinal positivo"/>
-				Qualidade garantida
-			</p>
-		</div>
-		<div class="col-md-3 coluna-centralizar">
-			<p>
-			<img src="/public/img/eco_friendly.png" width="50px" alt="Ícone folha"/>
-				Eco friendly
-			</p>
+<div id="container3D">
+	<div id="overlay">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-4 offset-md-1 coluna-padding-top-parte-1">
+					<h1>
+						A feira agora está online!
+					</h1>
+					<p class="justificar-texto coluna-padding-bottom-top p-texto-branco">
+						Apoio quem cultiva com carinho e descubra alimentos de qualidade com quem mais entende.
+					</p>
+					<div class="d-grid">
+						<a href="/agricultores" class="btn btn-primary">Agricultores</a>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
+</div>
+
+<div class="espacamento-fundo-pequeno">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-10 centralizar-texto offset-md-1 coluna-padding-top-parte-2">
+				<h2 class="h2-verde">
+					Bem-vindo(a) à FarmerLink!
+				</h2>
+				<p class="coluna-padding-bottom-top">
+					<b>Aqui conectamos você diretamente aos produtores locais que cultivam com paixão e respeito pela natureza.
+					<br/>
+					Venha sentir o sabor genuíno dos alimentos frescos e saudáveis!</b>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="plano-fundo-papelao">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-10 offset-md-1">
+				<div class="row">
+				<div class="espacamento-retangulos coluna-padding-top-parte-1">
+					<div class="col-md-3 retangulo-fundo-azul coluna-centralizar">
+						<img src="/public/img/retangulo_azul.png" alt="">
+					</div>
+					<div class="col-md-3 retangulo-fundo-verde offset-md-1">
+						<img src="/public/img/retangulo_laranja.png" alt="">
+					</div>
+					<div class="col-md-3 retangulo-fundo-laranja offset-md-1">
+						<img src="/public/img/retangulo_verde.png" alt="">
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="espacamento-fundo-pequeno">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-5 offset-md-1">
+			</div>
+			<div class="col-md-4 offset-md-1 coluna-padding-top-parte-4">
+				<h2>
+					Junte-se à comunidade FarmerLink!
+				</h2>
+				<p class="justificar-texto coluna-padding-top">
+					Seja parte de um movimento que valoriza a saúde, o meio ambiente e o comércio justo. Cadastre-se agora e:
+				</p>
+				<p>
+					✅ Fique por dentro das novidades;
+					<br>
+					✅ Ofertas exclusivas;
+					<br>
+					✅ Dicas sobre vida sustentável;
+					<br>
+					✅ Construa um futuro mais verde!
+				</p>
+				<div class="d-grid coluna-padding-top">
+					<a href="/cadastro" class="btn btn-primary">Cadastrar</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="img-teste">
+	<h1>oi</h1>
 </div>
 
 <script type="importmap">
