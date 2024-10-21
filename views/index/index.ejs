@@ -1,41 +1,7 @@
 ﻿<style>
 
-	h1 {
-		font-weight: bold;
-		font-size: 30px;
-	}
-
-	h2 {
-		font-weight: bold;
-		font-size: 25px;
-	}
-
 	img {
 		border-radius: 25px;
-	}
-
-	.imagem-fundo-1 {
-		background-image: url(/public/img/fundo_landing_page_1.png);
-		background-repeat: no-repeat;
-		min-height: 544px;
-	}
-
-	.imagem-fundo-2 {
-		background-image: url(/public/img/fundo_amarelo_landing_page.png);
-		background-repeat: no-repeat;
-		min-height: 544px;
-	}
-
-	.imagem-fundo-3 {
-		background-image: url(/public/img/fundo_verde_landing_page.png);
-		background-repeat: no-repeat;
-		min-height: 544px;
-	}
-
-	.imagem-fundo-4 {
-		background-image: url(/public/img/fundo_amarelo_landing_page.png);
-		background-repeat: no-repeat;
-		min-height: 544px;
 	}
 
 	.coluna-centralizar {
@@ -73,27 +39,7 @@
     }
 
 </style>
-
-<div class="imagem-fundo-1">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-5 offset-md-1 coluna-padding-top coluna-padding-left">
-				<h1>
-					Conheça nossos Farmers, ou se torne um deles!
-				</h1>
-				<p class="coluna-justificar espacamento-top-texto">
-					De frutas a verduras, a seleção dos nossos agricultores é cuidadosamente escolhida para levar até você o melhor da colheita.
-				</p>
-				<p class="coluna-justificar espacamento-bottom-texto">
-					Descubra produtos livres de agrotóxicos, cheios de nutrientes e sabor. Direto do campo para sua mesa!
-				</p>
-				<div class="d-grid gap-2">
-					<button type="button" onclick="direcionarProdutores()" class="btn btn-primary">Produtores</button>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+<div id="container3D"></div>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-3 offset-md-1 coluna-centralizar">
@@ -116,72 +62,61 @@
 		</div>
 	</div>
 </div>
-<hr/>
-<div class="imagem-fundo-2">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-5 offset-md-1 centralizar-img coluna-padding-top">
-				<img src="/public/img/fazenda.jpg" alt="Por do sol na fazenda" width="350px">
-			</div>
-			<div class="col-md-5 coluna-padding-top coluna-padding-right">
-				<h1>
-					Bem-vindo à FarmerLink!
-				</h1>
-				<p class="coluna-justificar espacamento-top-texto">
-					Descubra um mundo onde a agricultura orgânica ganha vida! Na Farmer Link, conectamos você diretamente aos produtores locais que cultivam com paixão e respeito pela natureza.
-				</p>
-				<p class="coluna-justificar">
-					Todos os produtos são livres de agrotóxicos, cheios de sabor e nutrientes, diretamente do campo para a sua mesa.
-				</p>
-				<p class="coluna-justificar espacamento-bottom-texto">
-					Venha sentir o sabor genuíno dos alimentos frescos e saudáveis!
-				</p>
-			</div>
-		</div>
-	</div>
-</div>
-<hr/>
-<div class="imagem-fundo-3">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-5 offset-md-1 coluna-padding-top coluna-padding-left">
-				<h1>
-					Conheça nossos produtores e seus produtos orgânicos!
-				</h1>
-				<p class="coluna-justificar espacamento-top-texto">
-					Por trás de cada produto, existe uma história inspiradora. Apresentamos a você os agricultores dedicados que colocam amor e cuidado em cada colheita, transformando sementes em sustento para a comunidade.
-				</p>
-				<p class="coluna-justificar espacamento-bottom-texto">
-					Explore suas jornadas e descubra como, de frutas suculentas a verduras fresquinhas, nossa seleção é cuidadosamente escolhida para levar até você o melhor da safra.
-				</p>
-			</div>
-			<div class="col-md-5 centralizar-img coluna-padding-top">
-				<img src="/public/img/cesta_frutas_legumes.jpg" alt="Cesta de frutas" width="350px">
-			</div>
-		</div>
-	</div>
-</div>
-<hr/>
-<div class="imagem-fundo-4">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-5 offset-md-1 centralizar-img coluna-padding-top">
-				<img src="/public/img/fazendeiro_landing_page.jpeg" alt="Fazendeiro em sua fazenda" width="350px">
-			</div>
-			<div class="col-md-5 coluna-padding-top coluna-padding-right">
-				<h1>
-					Junte-se à comunidade FarmerLink!
-				</h1>
-				<p class="coluna-justificar espacamento-top-texto">
-					Seja parte de um movimento que valoriza a saúde, o meio ambiente e o comércio justo. Cadastre-se agora e:
-				</p>
-				<p class="coluna-justificar espacamento-bottom-texto">
-					✅ Fique por dentro das novidades; <br/>✅ Ofertas exclusivas; <br/>✅ Dicas sobre vida sustentável; <br/>✅ Construa um futuro mais verde!
-				</p>
-				<div class="d-grid gap-2">
-					<button type="button" onclick="direcionarCadastro()" class="btn btn-primary">Cadastro</button>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+
+<script type="importmap">
+	{
+		"imports": {
+			"three": "https://cdn.jsdelivr.net/npm/three@v0.169.0/build/three.module.js",
+			"three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.169.0/examples/jsm/"
+		}
+	}
+</script>
+<script type="module">
+	import * as THREE from 'three';
+	import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+	import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+	let scene, camera, renderer, model;
+
+	function init() {
+		scene = new THREE.Scene();
+
+		const textureLoader = new THREE.TextureLoader();
+		const backgroundTexture = textureLoader.load("/public/img/v5-plantinha.png");
+		scene.background = backgroundTexture;
+
+		camera = new THREE.PerspectiveCamera(45, 1200 / 544, 0.1, 1000);
+		camera.position.set(-2.9, 2.6, 8);
+
+		renderer = new THREE.WebGLRenderer({ antialias: true });
+		renderer.setSize(1200, 544);
+		document.getElementById("container3D").appendChild(renderer.domElement);
+
+		const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+		scene.add(ambientLight);
+
+		const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
+		directionalLight.position.set(5, 20, 7.5);
+		scene.add(directionalLight);
+
+		const loader = new GLTFLoader();
+		loader.load("/public/model/platinha_verde_claro.glb", (gltf) => {
+		model = gltf.scene;
+		scene.add(model);
+		});
+
+		animate();
+	}
+
+	function animate() {
+		requestAnimationFrame(animate);
+
+		if (model) {
+			model.rotation.y += 0.01;
+		}
+
+		renderer.render(scene, camera);
+		}
+
+	init();
+</script>
