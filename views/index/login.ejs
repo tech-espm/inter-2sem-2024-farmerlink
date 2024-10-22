@@ -1,57 +1,75 @@
 <style>
-  h1 {
-    font-weight: bold;
-    font-size: 30px;
-  }
 
-  h2 {
-    font-weight: bold;
-    font-size: 25px;
-  }
-  .imagem-fundo {
-    background-image: url(/public/img/fundo_login.png);
-    background-repeat: no-repeat;
-    min-height: 716px;
-  }
+  h1 {
+		color: white;
+		font-size: 55px;
+	}
+
+	h2 {
+		font-weight: bold;
+		font-size: 30px
+	}
+
+	p {
+		font-size: 15px;
+	}
+
+	img {
+		border-radius: 15px;
+		max-width: 100%;
+	}
 
   .centralizar {
     text-align: center;
   }
 
-  .coluna-padding-top {
-    padding-top: 100px;
+  .fundo-bege {
+    background-color: #f8efe5;
+    min-height: 544px;
   }
 
-  .formatar-link-cadastrar {
-    color: #114f2d;
-    font-weight: bold;
-  }
+	.coluna-padding-top {
+		padding-top: 35px;
+	}
 
-  .centralizar-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
+  .padding-bottom-texto {
+    padding-bottom: 40px;
   }
 
   .padding-top-botao {
-    padding-top: 30px;
+    padding-top: 25px;
   }
+
+  .img-fundo-coluna {
+    background-image: url(/public/img/v3-chocolate.png);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    margin-top: 35px;
+  }
+
+  .padding-left-texto {
+    padding-left: 10px;
+  }
+
+  .padding-top-selos {
+    padding-top: 15px;
+  }
+
+  .padding-top-logo {
+    padding-top: 80px;
+  }
+
 </style>
 
-<div class="imagem-fundo">
+<div class="fundo-bege">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-4 offset-md-4 coluna-padding-top">
-        <h1 class="centralizar">Entre na sua conta</h1>
-        <img
-          src="/public/img/icone_farmer_3.png"
-          width="100px"
-          alt="Ícone fazendeiro Farmer Link"
-          class="centralizar-img"
-        />
-        <div class="mb-2">
+      <div class="col-lg-4 offset-lg-1 padding-top-logo">
+        <img src="/public/img/logo_oficial.svg" alt="Logo FarmerLink">
+      </div>
+      <div class="col-lg-4 offset-lg-2 coluna-padding-top img-fundo-coluna px-5 padding-left-texto">
+        <h2 class="centralizar padding-bottom-texto">Entre na sua conta</h2>
+        <div class="mb-2 padding-left-texto">
           <label for="inputEmail" class="form-label">E-mail</label>
           <input
             type="text"
@@ -61,7 +79,7 @@
             size="40px"
           />
         </div>
-        <div class="mb-2">
+        <div class="mb-2 padding-left-texto">
           <label for="inputSenha" class="form-label">Senha</label>
           <input
             type="password"
@@ -71,7 +89,7 @@
             size="40px"
           />
         </div>
-        <div class="d-grid padding-top-botao">
+        <div class="d-grid padding-top-botao padding-left-texto">
           <button
             type="button"
             onclick="efetuarLogin()"
@@ -80,7 +98,7 @@
             Entrar
           </button>
         </div>
-        <p class="centralizar padding-top-botao">
+        <p class="centralizar padding-top-botao padding-right-texto padding-left-texto">
           <a
             href="https://google.com"
             target="_blank"
@@ -88,7 +106,7 @@
             >Esqueci minha senha</a
           >
         </p>
-        <p class="centralizar">
+        <p class="centralizar padding-bottom-texto padding-right-texto padding-left-texto">
           Novo na Farmer Link?
           <a href="/cadastro" class="formatar-link-cadastrar">Cadastrar</a>
         </p>
@@ -96,9 +114,11 @@
     </div>
   </div>
 </div>
+
+
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-3 offset-md-1 centralizar">
+    <div class="col-md-3 offset-md-1 centralizar padding-top-selos">
       <p>
         <img
           src="/public/img/entrega_rapida.png"
@@ -108,7 +128,7 @@
         Entrega rápida
       </p>
     </div>
-    <div class="col-md-4 centralizar">
+    <div class="col-md-4 centralizar padding-top-selos">
       <p>
         <img
           src="/public/img/qualidade_garantida.png"
@@ -118,7 +138,7 @@
         Qualidade garantida
       </p>
     </div>
-    <div class="col-md-3 centralizar">
+    <div class="col-md-3 centralizar padding-top-selos">
       <p>
         <img
           src="/public/img/eco_friendly.png"
