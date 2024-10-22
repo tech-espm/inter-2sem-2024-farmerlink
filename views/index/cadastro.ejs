@@ -1,216 +1,160 @@
 <style>
   h1 {
-    font-weight: bold;
-    font-size: 30px;
-  }
+		color: #568C03;
+		font-size: 55px;
+	}
 
-  h2 {
-    font-weight: bold;
-    font-size: 25px;
-  }
+	h2 {
+		font-weight: bold;
+		font-size: 25px
+	}
 
-  .imagem-fundo {
-    background-image: url(/public/img/fundo_cadastro.png);
-    background-repeat: no-repeat;
-    min-height: 1440px;
-  }
+	p {
+		font-size: 15px;
+	}
 
-  .coluna-centralizar {
+	img {
+		border-radius: 15px;
+		max-width: 100%;
+	}
+
+  .centralizar {
     text-align: center;
   }
 
-  .coluna-padding-top {
-    padding-top: 100px;
+  .fundo-bege {
+    background-color: #f8efe5;
+    min-height: 1500px;
   }
 
-  .formatar-link-cadastrar {
-    color: #114f2d;
-    font-weight: bold;
-  }
-
-  .centralizar-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-
-  .img-coluna-1 {
-    background-image: url(/public/img/img_colunas_1.png);
-    background-size: cover;
-    padding: 342px 0px 0px 0px;
-    border-radius: 25px;
-  }
-
-  .img-coluna-2 {
-    background-image: url(/public/img/img_colunas_2.png);
-    background-size: cover;
-    padding: 342px 0px 0px 0px;
-    border-radius: 25px;
-  }
-
-  .img-coluna-3 {
-    background-image: url(/public/img/img_colunas_3.png);
-    background-size: cover;
-    padding: 342px 0px 0px 0px;
-    border-radius: 25px;
-  }
-
-  .img-coluna-4 {
-    background-image: url(/public/img/img_colunas_4.png);
-    background-size: cover;
-    padding: 342px 0px 0px 0px;
-    border-radius: 25px;
-  }
-
-  .padding-right-left-dados {
-    padding-left: 20px;
-  }
+	.coluna-padding-top {
+		padding-top: 45px;
+	}
 
   .padding-bottom-texto {
-    padding-bottom: 20px;
-  }
-
-  .padding-top-texto {
-    padding-top: 40px;
-  }
-
-  .padding-bottom-botao {
     padding-bottom: 40px;
   }
 
-  .padding-bottom-input {
-    padding-bottom: 10px;
-  }
-
   .padding-top-botao {
-    padding-top: 30px;
+    padding-top: 25px;
   }
-</style>
 
-<div class="imagem-fundo">
+  .img-fundo-coluna {
+    background-image: url(/public/img/fundo-cadastro.png);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    margin-top: 35px;
+  }
+
+  .padding-left-texto {
+    padding-left: 35px;
+  }
+
+  .padding-top-selos {
+    padding-top: 15px;
+  }
+
+  .padding-top-logo {
+    padding-top: 80px;
+  }
+
+  .padding-right-texto {
+    padding-right: 45px;
+  }
+
+</style>
+<div class="fundo-bege">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-4 offset-md-4 coluna-centralizar coluna-padding-top">
-        <h1>Junte-se a nós</h1>
-        <p class="padding-bottom-texto">
-          Torne-se um farmer ou compre de nossos farmers
+      <div class="col-md-6 offset-md-3 coluna-padding-top img-fundo-coluna padding-left-texto padding-right-texto">
+        <h2 class="centralizar padding-left-texto">Junte-se a nós</h2>
+        <div class="centralizar padding-top-selos padding-left-texto">
+          <img src="/public/img/logo_oficial.svg" alt="Logo FarmerLink" width="100px">
+        </div>
+        <div class="mb-2 padding-left-texto padding-top-selos">
+          <label for="inputNomeCompleto" class="form-label"
+            >Nome completo</label
+          >
+          <input
+            type="text"
+            id="inputNomeCompleto"
+            class="form-control"
+            maxlength="100"
+          />
+        </div>
+        <div class="mb-2 padding-left-texto">
+          <label for="inputEmail" class="form-label">E-mail</label>
+          <input
+            type="text"
+            id="inputEmail"
+            class="form-control"
+            maxlength="100"
+            size="40px"
+          />
+        </div>
+        <div class="mb-2 padding-left-texto">
+          <label for="inputTelefone" class="form-label">Telefone</label>
+          <input
+            type="tel"
+            id="inputTelefone"
+            class="form-control"
+            autocomplete="off"
+            maxlength="14"
+          />
+        </div>
+        <div class="mb-2 padding-left-texto">
+          <label for="inputCPF" class="form-label">CPF</label>
+          <input
+            type="text"
+            id="inputCPF"
+            class="form-control"
+            autocomplete="off"
+            maxlength="14"
+            oninput="this.value = this.value.replace(/[^0-9.-]/g, '')" required
+          />
+        </div>
+        <div class="mb-2 padding-left-texto">
+          <label for="inputDataDeNascimento" class="form-label"
+            >Data de nascimento</label
+          >
+          <input
+            type="date"
+            id="inputDataDeNascimento"
+            class="form-control"
+            min="1"
+          />
+        </div>
+        <div class="mb-2 padding-left-texto">
+          <label for="inputCEP" class="form-label">CEP</label>
+          <input
+            type="text"
+            id="inputCEP"
+            class="form-control"
+            maxlength="9"
+          />
+        </div>
+        <div class="d-grid padding-top-botao padding-left-texto">
+          <button
+            type="button"
+            onclick="efetuarCadastro()"
+            class="btn btn-primary"
+          >
+            Cadastrar
+          </button>
+        </div>
+        <p class="centralizar padding-left-texto padding-top-botao padding-bottom-texto">
+          Já tem uma conta?
+          <a href="/login" class="formatar-link-cadastrar">Login</a>
         </p>
       </div>
     </div>
   </div>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-2 m-1 img-coluna-1"></div>
-      <div class="col-md-2 img-coluna-2 m-1"></div>
-      <div class="col-md-2 img-coluna-3 m-1"></div>
-      <div class="col-md-2 img-coluna-4 m-1"></div>
-    </div>
-  </div>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-8 offset-md-2">
-        <div class="col-md-10 offset-md-1 padding-right-left-dados">
-          <div class="padding-top-texto padding-bottom-input">
-            <div class="mb-2">
-              <label for="inputNomeCompleto" class="form-label"
-                >Nome completo</label
-              >
-              <input
-                type="text"
-                id="inputNomeCompleto"
-                class="form-control"
-                maxlength="100"
-              />
-            </div>
-          </div>
-          <div class="padding-bottom-input">
-            <div class="mb-2">
-              <label for="inputEmail" class="form-label">E-mail</label>
-              <input
-                type="email"
-                id="inputEmail"
-                class="form-control"
-                maxlength="70"
-              />
-            </div>
-          </div>
-          <div class="padding-bottom-input">
-            <div class="mb-2">
-              <label for="inputTelefone" class="form-label">Telefone</label>
-              <input
-                type="tel"
-                id="inputTelefone"
-                class="form-control"
-                autocomplete="off"
-                maxlength="14"
-              />
-            </div>
-          </div>
-          <div class="padding-bottom-input">
-            <div class="mb-2">
-              <label for="inputCPF" class="form-label">CPF</label>
-              <input
-                type="text"
-                id="inputCPF"
-                class="form-control"
-                autocomplete="off"
-                maxlength="14"
-                oninput="this.value = this.value.replace(/[^0-9.-]/g, '')" required
-              />
-            </div>
-          </div>
-          <div class="padding-bottom-input">
-            <div class="mb-2">
-              <label for="inputDataDeNascimento" class="form-label"
-                >Data de nascimento</label
-              >
-              <input
-                type="date"
-                id="inputDataDeNascimento"
-                class="form-control"
-                min="1"
-              />
-            </div>
-          </div>
-          <div class="padding-bottom-input">
-            <div class="mb-2">
-              <label for="inputCEP" class="form-label">CEP</label>
-              <input
-                type="text"
-                id="inputCEP"
-                class="form-control"
-                maxlength="9"
-              />
-            </div>
-          </div>
-          <div>
-            <div class="d-grid padding-top-botao">
-              <button
-                type="button"
-                onclick="efetuarCadastro()"
-                class="btn btn-primary"
-              >
-                Cadastrar
-              </button>
-            </div>
-          </div>
-          <div class="col-md-6 offset-md-3">
-            <p class="coluna-centralizar padding-top-botao">
-              Já tem uma conta?
-              <a href="/login" class="formatar-link-cadastrar">Login</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
+
+
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-3 offset-md-1 coluna-centralizar">
+    <div class="col-md-3 offset-md-1 centralizar padding-top-selos">
       <p>
         <img
           src="/public/img/entrega_rapida.png"
@@ -220,7 +164,7 @@
         Entrega rápida
       </p>
     </div>
-    <div class="col-md-4 coluna-centralizar">
+    <div class="col-md-4 centralizar padding-top-selos">
       <p>
         <img
           src="/public/img/qualidade_garantida.png"
@@ -230,7 +174,7 @@
         Qualidade garantida
       </p>
     </div>
-    <div class="col-md-3 coluna-centralizar">
+    <div class="col-md-3 centralizar padding-top-selos">
       <p>
         <img
           src="/public/img/eco_friendly.png"
