@@ -24,7 +24,7 @@
 
   .fundo-bege {
     background-color: #f8efe5;
-    min-height: 1500px;
+    min-height: 918px;
   }
 
 	.coluna-padding-top {
@@ -59,7 +59,7 @@
   }
 
   .padding-right-texto {
-    padding-right: 45px;
+    padding-right: 42px;
   }
 
 </style>
@@ -79,7 +79,7 @@
             type="text"
             id="inputNomeCompleto"
             class="form-control"
-            maxlength="100"
+            maxlength="50"
           />
         </div>
         <div class="mb-2 padding-left-texto">
@@ -88,8 +88,7 @@
             type="text"
             id="inputEmail"
             class="form-control"
-            maxlength="100"
-            size="40px"
+            maxlength="50"
           />
         </div>
         <div class="mb-2 padding-left-texto">
@@ -98,8 +97,6 @@
             type="tel"
             id="inputTelefone"
             class="form-control"
-            autocomplete="off"
-            maxlength="14"
           />
         </div>
         <div class="mb-2 padding-left-texto">
@@ -108,9 +105,6 @@
             type="text"
             id="inputCPF"
             class="form-control"
-            autocomplete="off"
-            maxlength="14"
-            oninput="this.value = this.value.replace(/[^0-9.-]/g, '')" required
           />
         </div>
         <div class="mb-2 padding-left-texto">
@@ -121,7 +115,6 @@
             type="date"
             id="inputDataDeNascimento"
             class="form-control"
-            min="1"
           />
         </div>
         <div class="mb-2 padding-left-texto">
@@ -130,7 +123,6 @@
             type="text"
             id="inputCEP"
             class="form-control"
-            maxlength="9"
           />
         </div>
         <div class="d-grid padding-top-botao padding-left-texto">
@@ -188,6 +180,18 @@
 </div>
 
 <script>
+  const SPMaskBehavior = function (val) {
+    return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+  },
+  spOptions = {
+    onKeyPress: function(val, e, field, options) {
+      field.mask(SPMaskBehavior.apply({}, arguments), options);
+    }
+  };
+  $("#inputTelefone").mask(SPMaskBehavior, spOptions);
+  $("#inputCPF").mask("000.000.000-00", {reverse: true});
+  $("#inputCEP").mask("00000-000");
+
   function efetuarCadastro() {
     let inputNomeCompleto = document.getElementById("inputNomeCompleto");
     let inputEmail = document.getElementById("inputEmail");
@@ -241,6 +245,7 @@
     }
   }
 
+  /*
   const mascaraInputCPF = document.querySelector("#inputCPF");
   mascaraInputCPF.addEventListener("keypress", () => {
     let inputLengthCPF = mascaraInputCPF.value.length;
@@ -279,4 +284,5 @@
       mascaraInputCEP.value += "-";
     }
   });
+  */
 </script>
