@@ -7,39 +7,10 @@ class IndexRoute {
 
 	public async sobre(req: app.Request, res: app.Response) {
 		let opcoes = {
-			titulo: "Sobre"
+			titulo: "Sobre nós"
 		};
 
-		res.render("index/sobre", opcoes);
-	}
-
-	public async produtosExemploRafa(req: app.Request, res: app.Response) {
-		let produtoA = {
-			id: 1,
-			nome: "Produto A",
-			valor: 25
-		};
-
-		let produtoB = {
-			id: 2,
-			nome: "Produto B",
-			valor: 15
-		};
-
-		let produtoC = {
-			id: 3,
-			nome: "Produto C",
-			valor: 100
-		};
-
-		let produtosVindosDoBanco = [ produtoA, produtoB, produtoC ];
-
-		let opcoes = {
-			titulo: "Listagem de Produtos",
-			produtos: produtosVindosDoBanco
-		};
-
-		res.render("index/produtosExemploRafa", opcoes);
+		res.render("index/sobre-nos", opcoes);
 	}
 
 	public async noticias(req: app.Request, res: app.Response) {
@@ -52,26 +23,26 @@ class IndexRoute {
 
 	public async cadastro(req: app.Request, res: app.Response) {
 		let opcoes = {
-			titulo: "Cadastro"
+			titulo: "Cadastrar"
 		};
 
-		res.render("index/cadastro", opcoes);
+		res.render("index/cadastrar", opcoes);
 	}
 
 	public async login(req: app.Request, res: app.Response) {
 		let opcoes = {
-			titulo: "Login"
+			titulo: "Entrar"
 		};
 
-		res.render("index/login", opcoes);
+		res.render("index/entrar", opcoes);
 	}
 
 	public async agricultores(req: app.Request, res: app.Response) {
 		let opcoes = {
-			titulo: "Agricultores"
+			titulo: "Produtores"
 		};
 
-		res.render("index/agricultores", opcoes);
+		res.render("index/produtores", opcoes);
 	}
 
 }
