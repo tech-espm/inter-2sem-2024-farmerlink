@@ -6,7 +6,7 @@ class IndexRoute {
 		res.render("index/index");
 	}
 
-	public async sobre(req: app.Request, res: app.Response) {
+	public async 'sobre-nos'(req: app.Request, res: app.Response) {
 		let opcoes = {
 			titulo: "Sobre nós"
 		};
@@ -22,7 +22,7 @@ class IndexRoute {
 		res.render("index/noticias", opcoes);
 	}
 
-	public async cadastro(req: app.Request, res: app.Response) {
+	public async cadastrar(req: app.Request, res: app.Response) {
 		let opcoes = {
 			titulo: "Cadastrar"
 		};
@@ -30,7 +30,7 @@ class IndexRoute {
 		res.render("index/cadastrar", opcoes);
 	}
 
-	public async login(req: app.Request, res: app.Response) {
+	public async entrar(req: app.Request, res: app.Response) {
 		let opcoes = {
 			titulo: "Entrar"
 		};
@@ -38,12 +38,20 @@ class IndexRoute {
 		res.render("index/entrar", opcoes);
 	}
 
-	public async agricultores(req: app.Request, res: app.Response) {
+	public async fazendeiros(req: app.Request, res: app.Response) {
 		let opcoes = {
-			titulo: "Produtores"
+			titulo: "Fazendeiros"
 		};
 
-		res.render("index/produtores", opcoes);
+		res.render("index/fazendeiros", opcoes);
+	}
+
+	public async perfil(req: app.Request, res: app.Response) {
+		let opcoes = {
+			titulo: "Perfil"
+		};
+
+		res.render("index/perfil", opcoes);
 	}
 
 	@app.http.post()

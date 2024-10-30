@@ -39,3 +39,12 @@ h1 {
 	color: white;
 	text-decoration: none;
 }
+
+.buttonzinho {
+	background-color: #568C03;
+	border: none;
+}
+
+.buttonzinho:hover {
+	background-color: #406902;
+}

@@ -24,7 +24,7 @@
 
   .fundo-bege {
     background-color: #f8efe5;
-    min-height: 918px;
+    min-height: 998px;
   }
 
 	.coluna-padding-top {
@@ -40,7 +40,7 @@
   }
 
   .img-fundo-coluna {
-    background-image: url(/public/img/fundo-cadastro.png);
+    background-image: url(/public/img/cadastro.png);
     background-size: auto 100%;
     background-repeat: no-repeat;
     margin-top: 35px;
@@ -125,18 +125,26 @@
             class="form-control"
           />
         </div>
+        <div class="mb-2 padding-left-texto">
+          <label for="selectOpcoes" class="form-label">Tipo da conta</label>
+          <select id="selectOpcoes" class="form-select">
+            <option value="">Selecione...</option>
+            <option value="a">Cliente</option>
+            <option value="b">Fazendeiro</option>
+          </select>
+        </div>
         <div class="d-grid padding-top-botao padding-left-texto">
           <button
             type="button"
             onclick="efetuarCadastro()"
-            class="btn btn-primary"
+            class="btn btn-primary buttonzinho"
           >
             Cadastrar
           </button>
         </div>
         <p class="centralizar padding-left-texto padding-top-botao padding-bottom-texto">
           Já tem uma conta?
-          <a href="/login" class="formatar-link-cadastrar">Login</a>
+          <a href="/entrar">Entrar</a>
         </p>
       </div>
     </div>
