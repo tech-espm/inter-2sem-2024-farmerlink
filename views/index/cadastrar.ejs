@@ -133,6 +133,12 @@
             <option value="b">Fazendeiro</option>
           </select>
         </div>
+
+        <div class="mb-2 padding-left-texto">
+          <label class="form-label" for="catalogo">Catálogo</label>
+          <div id="catalogo"></div>
+        </div>
+      
         <div class="d-grid padding-top-botao padding-left-texto">
           <button
             type="button"
@@ -187,7 +193,14 @@
   </div>
 </div>
 
+<script type="text/javascript" src="/public/js/ckeditor/ckeditor.js"></script>
+
 <script>
+
+  CKEDITOR.replace("catalogo");
+
+  // CKEDITOR.instances.catalogo.getData()
+
   const SPMaskBehavior = function (val) {
     return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
   },
