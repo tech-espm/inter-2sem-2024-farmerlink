@@ -21,25 +21,43 @@
 
     .plano-de-fundo {
         background-image: url(/public/img/tomate_fundo_perfil.jpg);
-        min-height: 505px;
+        min-height: 400px;
         background-size: cover;
+    }
+
+    .espacamento-perfil {
+        min-height: 400px;
     }
 
     .fundo-bege {
 		background-color: #f8efe5;;
-		min-height: 1365px;
+		min-height: 965px;
 	}
+
+    .centralizar-conteudo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .padding-top-nome-resumo {
+        padding-top: 130px;
+    }
+
+    .fonte-cor-preta {
+        color: black;
+    }
 </style>
 
 <div class="fundo-bege">
     <div class="plano-de-fundo">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-3 offset-md-1">
-                    <img src="/public/img/icone_farmer_1.png" alt="">
+                <div class="col-md-3 offset-md-1 centralizar-conteudo espacamento-perfil">
+                    <img src="/public/img/icone_farmer_1.png" alt="Foto de perfil FarmerLink" class="centralizar-conteudo">
                 </div>
-                <div class="col-md-7">
-                    <h2>
+                <div class="col-md-7 espacamento-perfil padding-top-nome-resumo">
+                    <h2 class="pb-3">
                         Nome
                     </h2>
                     <p>
@@ -49,28 +67,52 @@
             </div>
         </div>
     </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10 offset-md-1 d-grid">
+                <label class="form-label" for="catalogo" style="font-size: 30px; padding-top: 10px; padding-bottom: 5px; color: #568C03; font-weight: bold;">Editar Catálogo</label>
+                <div id="catalogo"></div>
+                <div class="d-grid pt-3">
+                    <button
+                    type="button"
+                    onclick="editarCatalogo()"
+                    class="btn btn-primary buttonzinho"
+                  >
+                    Salvar
+                  </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
 
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-3 offset-md-1 coluna-centralizar">
-			<p>
+		<div class="col-md-3 offset-md-1 coluna-centralizar pt-3">
+			<p class="fonte-cor-preta">
 			<img src="/public/img/entrega_rapida.png" width="50px" alt="Ícone de caixa"/>
 				Entrega rápida
 			</p>
 		</div>
-		<div class="col-md-4 coluna-centralizar">
-			<p>
+		<div class="col-md-4 coluna-centralizar pt-3">
+			<p class="fonte-cor-preta">
 			<img src="/public/img/qualidade_garantida.png" width="50px" alt="Ícone sinal positivo"/>
 				Qualidade garantida
 			</p>
 		</div>
-		<div class="col-md-3 coluna-centralizar">
-			<p>
+		<div class="col-md-3 coluna-centralizar pt-3">
+			<p class="fonte-cor-preta">
 			<img src="/public/img/eco_friendly.png" width="50px" alt="Ícone folha"/>
 				Eco friendly
 			</p>
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript" src="/public/js/ckeditor/ckeditor.js"></script>
+
+<script>
+    CKEDITOR.replace("catalogo");
+
+    // CKEDITOR.instances.catalogo.getData()
+</script>
