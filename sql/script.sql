@@ -27,3 +27,52 @@ CREATE TABLE fazendeiro (
   KEY exclusao_IX (exclusao),
   CONSTRAINT id_FK FOREIGN KEY (id) REFERENCES usuario (id) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+UPDATE usuario
+SET exclusao = NOW()
+WHERE id = id_do_usuario;
+
+DELETE from usuario
+WHERE id = id_do_usuario;
+
+-- Stored Procedure para exclusão do usuário
+DELIMITER //
+
+CREATE PROCEDURE deletar_usuario_fisicamente(IN usuario_id INT)
+BEGIN
+    DELETE FROM usuario WHERE id = usuario_id;
+END //
+
+DELIMITER ;
+
+-- Stored Procedure para promover o usuário a fazendeiro
+DELIMITER //
+
+CREATE PROCEDURE tornar_fazendeiro(IN usuario_id INT, IN resumo_fazendeiro VARCHAR(150), IN catalogo_fazendeiro MEDIUMTEXT)
+BEGIN
+    DECLARE usuario_existe INT;
+    
+    -- Verificar se o usuário existe
+    SELECT COUNT(*) INTO usuario_existe
+    FROM usuario
+    WHERE id = usuario_id;
+
+    IF usuario_existe > 0 THEN
+        -- Inserir na tabela fazendeiro
+        INSERT INTO fazendeiro (id, resumo, catalogo)
+        VALUES (usuario_id, resumo_fazendeiro, catalogo_fazendeiro);
+    ELSE
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Usuário não encontrado';
+    END IF;
+END //
+
+DELIMITER ;
+
+-- Stored Procedures
+
+-- Excluir fisicamente um usuário
+ CALL deletar_usuario_fisicamente(id_do_usuario);
+
+ -- Tornar um usuário fazendeiro
+ CALL tornar_fazendeiro(id_do_usuario, 'Resumo do fazendeiro', 'Catálogo inicial');
+
