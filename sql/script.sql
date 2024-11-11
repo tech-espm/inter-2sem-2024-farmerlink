@@ -76,3 +76,39 @@ DELIMITER ;
  -- Tornar um usuário fazendeiro
  CALL tornar_fazendeiro(id_do_usuario, 'Resumo do fazendeiro', 'Catálogo inicial');
 
+ -- burrice
+ SELECT u.id, u.nome, u.email, u.telefone, u.cpf, u.nascimento, u.cep, f.resumo, f.catalogo
+FROM usuario u
+INNER JOIN fazendeiro f ON u.id = f.id;
+
+
+
+-- burrice pt2
+DELIMITER //
+
+CREATE PROCEDURE tornar_fazendeiro(
+    IN usuario_id INT,
+    IN resumo_fazendeiro VARCHAR(150),
+    IN catalogo_fazendeiro MEDIUMTEXT
+)
+BEGIN
+    DECLARE usuario_existe INT;
+
+    SELECT COUNT(*) INTO usuario_existe
+    FROM usuario u
+    LEFT JOIN fazendeiro f ON u.id = f.id
+    WHERE u.id = usuario_id AND f.id IS NULL;
+
+    IF usuario_existe > 0 THEN
+        INSERT INTO fazendeiro (id, resumo, catalogo)
+        VALUES (usuario_id, resumo_fazendeiro, catalogo_fazendeiro);
+    ELSE
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Usuário não encontrado ou já é fazendeiro';
+    END IF;
+END //
+
+DELIMITER ;
+
+CALL tornar_fazendeiro(id_do_usuario, 'Resumo do fazendeiro', 'Catálogo inicial');
+
+
