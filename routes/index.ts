@@ -1,4 +1,5 @@
 ﻿import app = require("teem");
+import Usuario = require("../models/usuario");
 import Fazendeiro = require("../models/fazendeiro");
 
 class IndexRoute {
@@ -40,8 +41,21 @@ class IndexRoute {
 
 	public async fazendeiros(req: app.Request, res: app.Response) {
 		let opcoes = {
-			titulo: "Fazendeiros"
+			titulo: "Fazendeiros",
+			fazendeiros: null,
 		};
+
+		await app.sql.connect(async (sql) => {
+
+			opcoes.fazendeiros = await sql.query(`
+				SELECT
+					u.id, u.nome, u.email, u.telefone, u.cep, f.resumo
+				FROM usuario u
+				INNER JOIN fazendeiro f ON f.id = u.id
+				WHERE u.exclusao IS NULL
+			`); 
+
+		});
 
 		res.render("index/fazendeiros", opcoes);
 	}
@@ -52,6 +66,35 @@ class IndexRoute {
 		};
 
 		res.render("index/perfil", opcoes);
+	}
+
+	@app.http.post()
+	public async criarUsuario(req: app.Request, res: app.Response) {
+		// Os dados enviados via POST ficam dentro de req.body
+		let usuario: Usuario = req.body;
+
+		// É sempre muito importante validar os dados do lado do servidor,
+		// mesmo que eles tenham sido validados do lado do cliente!!!
+		if (!usuario) {
+			res.status(400);
+			res.json("Dados inválidos");
+			return;
+		}
+
+		if (!usuario.nome) {
+			res.status(400);
+			res.json("Nome inválido");
+			return;
+		}
+
+		await app.sql.connect(async (sql) => {
+
+			// As interrogações serão substituídas pelos valores passados ao final, na ordem passada.
+			await sql.query("INSERT INTO usuario (nome, email, telefone, cpf, nascimento, cep) VALUES (?, ?, ?, ?, ?, ?)", [usuario.nome, usuario.email, usuario.telefone, usuario.cpf, usuario.nascimento, usuario.cep]); 
+
+		});
+
+		res.json(true);
 	}
 
 	@app.http.post()

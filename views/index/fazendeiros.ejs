@@ -102,6 +102,13 @@
 	}
 </style>
 
+<% for (let i = 0; i < fazendeiros.length; i = i + 1) { %>
+<div>
+	<h1><%= fazendeiros[i].nome %></h1>
+	<p><%= fazendeiros[i].resumo %></p>
+</div>
+<% } %>
+
 <div class="imagem-fundo-teste">
 	<div class="container-fluid">
 		<div class="row">

@@ -28,37 +28,20 @@ CREATE TABLE fazendeiro (
   CONSTRAINT id_FK FOREIGN KEY (id) REFERENCES usuario (id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-UPDATE usuario
-SET exclusao = NOW()
-WHERE id = id_do_usuario;
 
-DELETE from usuario
-WHERE id = id_do_usuario;
 
--- Stored Procedure para exclusão do usuário
-DELIMITER //
-
-CREATE PROCEDURE deletar_usuario_fisicamente(IN usuario_id INT)
-BEGIN
-    DELETE FROM usuario WHERE id = usuario_id;
-END //
-
-DELIMITER ;
-
--- Stored Procedure para promover o usuário a fazendeiro
+-- promover o usuário a fazendeiro
 DELIMITER //
 
 CREATE PROCEDURE tornar_fazendeiro(IN usuario_id INT, IN resumo_fazendeiro VARCHAR(150), IN catalogo_fazendeiro MEDIUMTEXT)
 BEGIN
     DECLARE usuario_existe INT;
     
-    -- Verificar se o usuário existe
     SELECT COUNT(*) INTO usuario_existe
     FROM usuario
     WHERE id = usuario_id;
 
     IF usuario_existe > 0 THEN
-        -- Inserir na tabela fazendeiro
         INSERT INTO fazendeiro (id, resumo, catalogo)
         VALUES (usuario_id, resumo_fazendeiro, catalogo_fazendeiro);
     ELSE
@@ -68,19 +51,16 @@ END //
 
 DELIMITER ;
 
--- Stored Procedures
-
--- Excluir fisicamente um usuário
- CALL deletar_usuario_fisicamente(id_do_usuario);
-
- -- Tornar um usuário fazendeiro
+ -- Stored procedure; tornar um usuário fazendeiro
  CALL tornar_fazendeiro(id_do_usuario, 'Resumo do fazendeiro', 'Catálogo inicial');
+
+
+
 
  -- burrice
  SELECT u.id, u.nome, u.email, u.telefone, u.cpf, u.nascimento, u.cep, f.resumo, f.catalogo
 FROM usuario u
 INNER JOIN fazendeiro f ON u.id = f.id;
-
 
 
 -- burrice pt2
@@ -94,21 +74,18 @@ CREATE PROCEDURE tornar_fazendeiro(
 BEGIN
     DECLARE usuario_existe INT;
 
+    -- Pra verificar se o usuário existe e ainda não é fazendeiro
     SELECT COUNT(*) INTO usuario_existe
     FROM usuario u
     LEFT JOIN fazendeiro f ON u.id = f.id
     WHERE u.id = usuario_id AND f.id IS NULL;
 
-    IF usuario_existe > 0 THEN
+    IF usuario_existe > 0 AND CHAR_LENGTH(resumo_fazendeiro) > 0 THEN -- CHAR_LENGTH -> para verificar o comprimento de uma string em termos de quantidade de caracteres
         INSERT INTO fazendeiro (id, resumo, catalogo)
         VALUES (usuario_id, resumo_fazendeiro, catalogo_fazendeiro);
     ELSE
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Usuário não encontrado ou já é fazendeiro';
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Usuário não encontrado, já é fazendeiro, ou resumo inválido';
     END IF;
 END //
 
 DELIMITER ;
-
-CALL tornar_fazendeiro(id_do_usuario, 'Resumo do fazendeiro', 'Catálogo inicial');
-
-
