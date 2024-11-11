@@ -2,16 +2,21 @@
     h1 {
         font-weight: bold;
         font-size: 30px;
+		color: black;
     }
 
     h2 {
         font-weight: bold;
         font-size: 25px;
+		color: white;
     }
 
+	p {
+		color: white;
+	}
+
 	.imagem-fundo-teste {
-		background-image: url(/public/img/fundo_cadastro.png);
-		background-repeat: no-repeat;
+		background-color: #f8efe5;
 		min-height: 1440px;
 	}
 
@@ -27,12 +32,34 @@
         min-height: 1440px;
     }
 
-    .fundo-amarelo {
-        background-color: #feffd6;
+    .fundo-imagem-1 {
+        background-image: url(/public/img/tomate_fundo_perfil.jpg);
         padding: 20px;
         border-radius: 30px;
 		border-style: solid;
-		border-color: #114f2d;
+		border-color: #568C03;
+		background-position: center;
+		background-size: cover;
+    }
+
+	.fundo-imagem-2 {
+        background-image: url(/public/img/alface_fundo_perfil.png);
+        padding: 20px;
+        border-radius: 30px;
+		border-style: solid;
+		border-color: #568C03;
+		background-position: center;
+		background-size: cover;
+    }
+
+	.fundo-imagem-3 {
+        background-image: url(/public/img/trigo_fundo_perfil.png);
+        padding: 20px;
+        border-radius: 30px;
+		border-style: solid;
+		border-color: #568C03;
+		background-position: center;
+		background-size: cover;
     }
 
 	.coluna-centralizar {
@@ -42,16 +69,6 @@
 	.padding-bottom-texto {
 		padding-bottom: 20px;
 	}
-
-    .vertical-center {
-        display: flex;
-        align-items: center;
-    }
-
-	.horizontal-center {
-        display: flex;
-		justify-content: center;
-    }
 
 	.margin-top-bottom {
 		margin-top: 1rem;
@@ -65,116 +82,88 @@
 	.margin-bottom {
 		margin-bottom: 30px;
 	}
+
+	.centralizar-conteudo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+	.padding-top-nome-resumo {
+        padding-top: 25px;
+    }
+
+	.coluna-padding-top {
+		padding-top: 110px;
+	}
+
+	.fonte-preta {
+		color: black;
+	}
 </style>
 
-<div class="imagem-fundo-teste coluna-padding-top">
+<div class="imagem-fundo-teste">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-4 offset-md-4">
-				<h1 class="coluna-centralizar padding-bottom-texto">
-					Agricultores
+			<div class="col-md-4 offset-md-4 coluna-padding-top coluna-centralizar pb-3">
+				<h1 class="padding-bottom-texto">
+					Fazendeiros
 				</h1>
+				<img src="/public/img/logo_oficial.svg" alt="Logo FarmerLink" width="150px">
 			</div>
-			<div class="col-md-8 offset-md-2">
+			<div class="col-md-8 offset-md-2 pb-3 pt-3">
 				<form class="d-flex padding-bottom-texto" role="search">
-					<input class="form-control me-2" type="search" placeholder="Nome do(a) agricultor(a)" aria-label="Pesquisar">
-					<button class="btn btn-primary" type="submit">Pesquisar</button>
+					<input class="form-control me-2" type="search" placeholder="Nome do(a) fazendeiro(a)" aria-label="Pesquisar">
+					<button class="btn btn-primary buttonzinho" type="submit">Pesquisar</button>
 				</form>
 			</div>
 		</div>
 	</div>
+
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-8 offset-md-2 fundo-amarelo margin-bottom">
+			<div class="col-md-10 offset-md-1 fundo-imagem-1 margin-bottom">
 				<div class="row align-center">
-					<div class="col-md-2 vertical-center horizontal-center">
-						<img src="/public/img/icone_farmer_2.png" width="100px" alt="Foto de perfil">
+					<div class="col-md-3 centralizar-conteudo">
+						<img src="/public/img/icone_farmer_1.png" width="170px" alt="Foto de perfil">
 					</div>
-					<div class="col-md-4">
-						<p class="texto-negrito vertical-center margin-top-bottom">
-							<img src="/public/img/icone_assinatura.png" width="30px" alt="Ícone identidade" class="margin-icone">
-							Joana Ferreira
+					<div class="col-md-9 padding-top-nome-resumo">
+						<h2 class="pb-3">
+							Nome
+						</h2>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor obcaecati mollitia deserunt eligendi officia, architecto molestiae distinctio, consectetur illum vel aut temporibus, possimus eos delectus. Totam hic ex explicabo cupiditate!
 						</p>
-						<p class="texto-negrito vertical-center margin-top-bottom">
-							<img src="/public/img/icone_localizacao.png" width="30px" alt="Ícone localização" class="margin-icone">
-							Atibaia (SP)
-						</p>
-					</div>
-					<div class="col-md-3 vertical-center">
-						<ul class="margin-top-bottom">
-							<li>🥕Cenoura</li>
-							<li>🥬Alface</li>
-							<li>🍅Tomate</li>
-						</ul>
-					</div>
-					<div class="col-md-3 vertical-center">
-						<ul class="margin-top-bottom">
-							<li>🍇Uva</li>
-							<li>🥝Kiwi</li>
-							<li>🍍Abacaxi</li>
-						</ul>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-8 offset-md-2 fundo-amarelo margin-bottom">
+			<div class="col-md-10 offset-md-1 fundo-imagem-2 margin-bottom">
 				<div class="row align-center">
-					<div class="col-md-2 vertical-center horizontal-center">
-						<img src="/public/img/icone_farmer_1.png" width="100px" alt="Foto de perfil">
+					<div class="col-md-3 centralizar-conteudo">
+						<img src="/public/img/icone_farmer_2.png" width="170px" alt="Foto de perfil">
 					</div>
-					<div class="col-md-4">
-						<p class="texto-negrito vertical-center margin-top-bottom">
-							<img src="/public/img/icone_assinatura.png" width="30px" alt="Ícone identidade" class="margin-icone">
-							Eduardo Silva
+					<div class="col-md-9 padding-top-nome-resumo">
+						<h2 class="pb-3">
+							Nome
+						</h2>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor obcaecati mollitia deserunt eligendi officia, architecto molestiae distinctio, consectetur illum vel aut temporibus, possimus eos delectus. Totam hic ex explicabo cupiditate!
 						</p>
-						<p class="texto-negrito vertical-center margin-top-bottom">
-							<img src="/public/img/icone_localizacao.png" width="30px" alt="Ícone localização" class="margin-icone">
-							Paraty (RJ)
-						</p>
-					</div>
-					<div class="col-md-3 vertical-center">
-						<ul class="margin-top-bottom">
-							<li>🍉Melancia</li>
-							<li>🍊Tangirina</li>
-							<li>🍈Melão</li>
-						</ul>
-					</div>
-					<div class="col-md-3 vertical-center">
-						<ul class="margin-top-bottom">
-							<li>🥔Batata</li>
-							<li>🍏Maça verde</li>
-							<li>🍌Banana</li>
-						</ul>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-8 offset-md-2 fundo-amarelo margin-bottom">
+			<div class="col-md-10 offset-md-1 fundo-imagem-3 margin-bottom">
 				<div class="row align-center">
-					<div class="col-md-2 vertical-center horizontal-center">
-						<img src="/public/img/icone_farmer_3.png" width="100px" alt="Foto de perfil">
+					<div class="col-md-3 centralizar-conteudo">
+						<img src="/public/img/icone_farmer_3.png" width="170px" alt="Foto de perfil">
 					</div>
-					<div class="col-md-4">
-						<p class="texto-negrito vertical-center margin-top-bottom">
-							<img src="/public/img/icone_assinatura.png" width="30px" alt="Ícone identidade" class="margin-icone">
-							João da Silva
+					<div class="col-md-9 padding-top-nome-resumo">
+						<h2 class="pb-3">
+							Nome
+						</h2>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor obcaecati mollitia deserunt eligendi officia, architecto molestiae distinctio, consectetur illum vel aut temporibus, possimus eos delectus. Totam hic ex explicabo cupiditate!
 						</p>
-						<p class="texto-negrito vertical-center margin-top-bottom">
-							<img src="/public/img/icone_localizacao.png" width="30px" alt="Ícone localização" class="margin-icone">
-							Bento Gonçalves (RS)
-						</p>
-					</div>
-					<div class="col-md-3 vertical-center">
-						<ul class="margin-top-bottom">
-							<li>🥕Cenoura</li>
-							<li>🥬Alface</li>
-							<li>🍅Tomate</li>
-						</ul>
-					</div>
-					<div class="col-md-3 vertical-center">
-						<ul class="margin-top-bottom">
-							<li>🍑Pêssego</li>
-							<li>🍒Cereja</li>
-							<li>🍇Uva</li>
-						</ul>
 					</div>
 				</div>
 			</div>
@@ -183,20 +172,20 @@
 </div>
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-3 offset-md-1 coluna-centralizar">
-			<p>
+		<div class="col-md-3 offset-md-1 coluna-centralizar pt-3">
+			<p class="fonte-preta">
 			<img src="/public/img/entrega_rapida.png" width="50px" alt="Ícone de caixa"/>
 				Entrega rápida
 			</p>
 		</div>
-		<div class="col-md-4 coluna-centralizar">
-			<p>
+		<div class="col-md-4 coluna-centralizar pt-3">
+			<p class="fonte-preta">
 			<img src="/public/img/qualidade_garantida.png" width="50px" alt="Ícone sinal positivo"/>
 				Qualidade garantida
 			</p>
 		</div>
-		<div class="col-md-3 coluna-centralizar">
-			<p>
+		<div class="col-md-3 coluna-centralizar pt-3">
+			<p class="fonte-preta">
 			<img src="/public/img/eco_friendly.png" width="50px" alt="Ícone folha"/>
 				Eco friendly
 			</p>
