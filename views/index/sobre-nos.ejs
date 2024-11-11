@@ -1,18 +1,113 @@
 <style>
+
+	h1 {
+		color: #568C03;
+		font-size: 30px;
+	}
+
+	h2 {
+		font-weight: bold;
+		font-size: 25px
+	}
+
+	p {
+		font-size: 15px;
+	}
 	::selection {
 		color: white;
 		background: #568C03;
 	}
+
+	.espacamento-fundo-bege {
+		min-height: 544px;
+		background-color: #f8efe5;
+	}
+
+	.espacamento-fundo-branco {
+		min-height: 544px;
+	}
+
+	.justificar-texto {
+		text-align: justify;
+	}
+
+	.coluna-padding-top {
+		padding-top: 110px;
+	}
+
+	.coluna-padding-top-pequeno {
+		padding-top: 20px;
+	}
+
+	.centralizar-logo {
+		text-align: center;
+		padding-top: 80px;
+	}
+
+	.coluna-centralizar {
+		text-align: center;
+	}
 </style>
 
+<div class="espacamento-fundo-bege">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-4 offset-md-1 coluna-padding-top">
+				<h1>
+					Sobre nós
+				</h1>
+				<p class="justificar-texto coluna-padding-top-pequeno">
+					Nosso grupo é composto por estudantes do 2º semestre de Sistemas de Informação (ESPM) – Ana Carolina Frank, Enzo Godoy, Julia Akemi Mullis, Marcela Martini, Maria Luiza de Souza, Rafael Lucena e Rafael Ghirelli.
+				</p>
+				<p class="justificar-texto">
+					Desenvolvemos o FarmerLink como parte de um projeto de Programação Web, com o objetivo de criar um impacto social positivo alinhado aos Objetivos de Desenvolvimento Sustentável da Organização das Nações Unidas.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="espacamento-fundo-branco">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-4 offset-md-1 centralizar-logo">
+				<img src="/public/img/logo_oficial.svg" alt="Logo FarmerLink" width="400px">
+			</div>
+			<div class="col-md-4 offset-md-2 coluna-padding-top">
+				<h1>
+					Sobre o projeto
+				</h1>
+				<p class="justificar-texto coluna-padding-top-pequeno">
+					FarmerLink é uma plataforma que conecta pequenos fazendeiros diretamente com consumidores, promovendo a agricultura sustentável e o consumo responsável.
+				</p>
+				<p class="justificar-texto">
+					Nossa proposta é recriar o ambiente de uma feira tradicional, mas com a conveniência do mundo online.
+				</p>
+				<p class="justificar-texto">
+					Aqui, você poderá conhecer a origem dos produtos que consome, entrar em contato diretamente com os produtores e apoiar a agricultura local.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
 <div class="container-fluid">
-
-	<h1>
-		Sobre
-	</h1>
-
-	<p>
-		Sobre nós! 😊
-	</p>
-
+	<div class="row">
+		<div class="col-md-3 offset-md-1 coluna-centralizar pt-3">
+			<p>
+			<img src="/public/img/entrega_rapida.png" width="50px" alt="Ícone de caixa"/>
+				Entrega rápida
+			</p>
+		</div>
+		<div class="col-md-4 coluna-centralizar pt-3">
+			<p>
+			<img src="/public/img/qualidade_garantida.png" width="50px" alt="Ícone sinal positivo"/>
+				Qualidade garantida
+			</p>
+		</div>
+		<div class="col-md-3 coluna-centralizar pt-3">
+			<p>
+			<img src="/public/img/eco_friendly.png" width="50px" alt="Ícone folha"/>
+				Eco friendly
+			</p>
+		</div>
+	</div>
 </div>

@@ -36,7 +36,7 @@
 
     .fundo-bege {
 		background-color: #f8efe5;
-		min-height: 965px;
+		min-height: 1040px;
 	}
 
     .centralizar-conteudo {
@@ -52,6 +52,10 @@
     .fonte-cor-preta {
         color: black;
     }
+
+    .justificar-resumo {
+        text-align: justify;
+    }
 </style>
 
 <div class="fundo-bege">
@@ -65,7 +69,7 @@
                     <h2 class="pb-3">
                         Nome
                     </h2>
-                    <p>
+                    <p class="justificar-resumo">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor obcaecati mollitia deserunt eligendi officia, architecto molestiae distinctio, consectetur illum vel aut temporibus, possimus eos delectus. Totam hic ex explicabo cupiditate!
                     </p>
                 </div>
@@ -75,7 +79,16 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-10 offset-md-1 d-grid">
-                <label class="form-label" for="catalogo" style="font-size: 30px; padding-top: 10px; padding-bottom: 5px; color: #568C03; font-weight: bold;">Editar Catálogo</label>
+                <div class="mt-3 padding-left-texto">
+                    <label class="form-label" for="inputResumo">Editar Resumo</label>
+                    <input
+                      type="text"
+                      id="inputResumo"
+                      class="form-control"
+                      maxlength="150"
+                    />
+                  </div>
+                <label class="form-label mt-3" for="catalogo">Editar Catálogo</label>
                 <div id="catalogo"></div>
                 <div class="d-grid pt-3">
                     <button
