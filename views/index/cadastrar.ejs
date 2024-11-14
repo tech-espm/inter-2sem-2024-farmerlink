@@ -227,14 +227,14 @@
     let inputResumo = document.getElementById('inputResumo');
     let selectOpcoes = document.getElementById("selectOpcoes");
 
-    let nomeCompleto = inputNomeCompleto.value;
-    let email = inputEmail.value;
-    let telefone = inputTelefone.value;
-    let cpf = inputCPF.value;
+    let nomeCompleto = inputNomeCompleto.value.normalize().trim();
+    let email = inputEmail.value.normalize().trim();
+    let telefone = inputTelefone.value.normalize().trim();
+    let cpf = inputCPF.value.normalize().trim();
     let dataDeNascimento = inputDataDeNascimento.value;
-    let cep = inputCEP.value;
-    let resumo = inputResumo.value;
-    let catalogo = CKEDITOR.instances.inputCatalogo.getData();
+    let cep = inputCEP.value.normalize().trim();
+    let resumo = inputResumo.value.normalize().trim();
+    let catalogo = CKEDITOR.instances.inputCatalogo.getData().normalize().trim();
     let opcao = selectOpcoes.value;
 
     if (!nomeCompleto) {
@@ -273,7 +273,7 @@
     }
 
     if (!opcao) {
-      console.log("CEP vazio!");
+      console.log("Opção inválida!");
       return;
     }
 
@@ -297,25 +297,78 @@
         });
 
         if (!response.ok) {
-          console.log("Erro");
-          return;
+					console.log("Ocorreu um erro ao criar o cliente.");
+					return;
         }
 
-        console.log("OK");
+        inputNomeCompleto.value = "";
+				inputEmail.value = "";
+				inputTelefone.value = "";
+				inputCPF.value = "";
+        inputCEP.value = "";
+        inputDataDeNascimento.value = "";
+        selectOpcoes.value = "";
+
+        console.log("Cliente criado com sucesso!");
       } catch (ex) {
-        console.log("Erro");
+        console.log("Ocorreu um erro de rede ao criar o livro: " + ex.message);
       }
+
     } else {
+
+      if (!resumo) {
+      console.log("Resumo inválido!");
+      return;
+      } else {
+      console.log("Resumo: " + resumo);
+      };
+
+      if (!catalogo) {
+      console.log("Catálogo inválido!");
+      return;
+      } else {
+      console.log("Catálogo: " + catalogo);
+      };
+
       let fazendeiro = {
         nome: nomeCompleto,
         email: email,
         telefone: telefone,
         cpf: cpf,
-        data: dataDeNascimento,
+        nascimento: dataDeNascimento,
         cep: cep,
         resumo: resumo,
         catalogo: catalogo
       };
+
+      try {
+        let response = await fetch("/criarFazendeiro", {
+          method: "POST",
+          body: JSON.stringify(fazendeiro),
+          headers: {
+            "content-type": "application/json"
+          }
+        });
+
+        if (!response.ok) {
+					console.log("Ocorreu um erro ao criar o(a) fazendeiro(a).");
+					return;
+        }
+
+        inputNomeCompleto.value = "";
+				inputEmail.value = "";
+				inputTelefone.value = "";
+				inputCPF.value = "";
+        inputCEP.value = '';
+        inputDataDeNascimento.value = "";
+        selectOpcoes.value = "";
+        inputResumo.value = "";
+
+        console.log("Fazendeiro criado com sucesso!");
+
+      } catch (ex) {
+        console.log("Ocorreu um erro de rede ao criar o(a) fazendeiro(a): " + ex.message);
+      }
     }
   }
 
