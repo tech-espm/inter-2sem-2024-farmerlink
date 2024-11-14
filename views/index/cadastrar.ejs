@@ -140,8 +140,8 @@
             />
           </div>
           <div class="mt-3">
-            <label class="form-label" for="catalogo">Catálogo</label>
-            <div id="catalogo"></div>
+            <label class="form-label" for="inputCatalogo">Catálogo</label>
+            <div id="inputCatalogo"></div>
           </div>
         </div>
       
@@ -203,7 +203,7 @@
 
 <script>
 
-  CKEDITOR.replace("catalogo");
+  CKEDITOR.replace("inputCatalogo");
 
   // CKEDITOR.instances.catalogo.getData()
 
@@ -219,15 +219,15 @@
   $("#inputCPF").mask("000.000.000-00", {reverse: true});
   $("#inputCEP").mask("00000-000");
 
-  function efetuarCadastro() {
+  async function efetuarCadastro() {
     let inputNomeCompleto = document.getElementById("inputNomeCompleto");
     let inputEmail = document.getElementById("inputEmail");
     let inputTelefone = document.getElementById("inputTelefone");
     let inputCPF = document.getElementById("inputCPF");
-    let inputDataDeNascimento = document.getElementById(
-      "inputDataDeNascimento"
-    );
+    let inputDataDeNascimento = document.getElementById("inputDataDeNascimento");
     let inputCEP = document.getElementById("inputCEP");
+    let inputResumo = document.getElementById('inputResumo');
+    let inputCatalogo = document.getElementById('inputCatalogo');
 
     let nomeCompleto = inputNomeCompleto.value;
     let email = inputEmail.value;
@@ -235,6 +235,8 @@
     let cpf = inputCPF.value;
     let dataDeNascimento = inputDataDeNascimento.value;
     let cep = inputCEP.value;
+    let resumo = inputResumo.value;
+    let catalogo = inputCatalogo.value;
 
     if (!nomeCompleto) {
       console.log("Nome completo vazio!");
@@ -269,6 +271,26 @@
       return;
     } else {
       console.log("CEP: " + cep);
+    }
+
+    let cliente = {
+				nome: nomeCompleto,
+				email: email,
+				telefone: telefone,
+				cpf: cpf,
+        data: dataDeNascimento,
+        cep: cep
+		}
+
+    let fazendeiro = {
+      nome: nomeCompleto,
+      email: email,
+      telefone: telefone,
+      cpf: cpf,
+      data: dataDeNascimento,
+      cep: cep,
+      resumo: resumo,
+      catalogo: catalogo
     }
   }
 
