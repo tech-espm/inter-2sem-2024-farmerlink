@@ -2,17 +2,17 @@
     h1 {
         font-weight: bold;
         font-size: 30px;
-        color: black;
+        color: white;
     }
 
     h2 {
         font-weight: bold;
         font-size: 25px;
-        color: black;
+        color: white;
     }
 
     p {
-        color: black;
+        color: white;
     }
 
     ::selection {
@@ -25,7 +25,7 @@
 	}
 
     .plano-de-fundo {
-        background-image: url(/public/img/trigo_fundo_perfil.png);
+        background-image: url(/public/img/tomate_fundo_perfil.jpg);
         min-height: 400px;
         background-size: cover;
     }
@@ -36,7 +36,7 @@
 
     .fundo-bege {
 		background-color: #f8efe5;
-		min-height: 1100px;
+		min-height: 930px;
 	}
 
     .centralizar-conteudo {
@@ -46,7 +46,7 @@
     }
 
     .padding-top-nome-resumo {
-        padding-top: 130px;
+        padding-top: 85px;
     }
 
     .fonte-cor-preta {
@@ -56,22 +56,6 @@
     .justificar-resumo {
         text-align: justify;
     }
-
-    .fundinho-verde {
-        background-color: white;
-        border-radius: 15px;
-        border-color: #114f2d;
-        border-style: solid;
-        border-width: 5px;
-    }
-
-    .margin-top {
-        margin-top: 30px;
-    }
-
-    .fonte-branca {
-        color: white;
-    }
 </style>
 
 <div class="fundo-bege">
@@ -79,26 +63,33 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-3 offset-md-1 centralizar-conteudo espacamento-perfil">
-                    <img src="/public/img/icone_farmer_3.png" alt="Foto de perfil FarmerLink" class="centralizar-conteudo">
+                    <img src="/public/img/icone_farmer_1.png" alt="Foto de perfil FarmerLink" class="centralizar-conteudo">
                 </div>
                 <div class="col-md-7 espacamento-perfil padding-top-nome-resumo">
-                    <h2 class="pb-3 fonte-branca">
-                        <%= fazendeiro.nome %>
-                    </h2>
-                    <p class="justificar-resumo fonte-branca">
-                        <b><%= fazendeiro.telefone %></b>
-                    </p>
-                    <p class="justificar-resumo fonte-branca">
-                        <%= fazendeiro.resumo %>
-                    </p>
+                    <label class="form-label" for="nome" style="color: white;">Nome</label>
+                    <input id="nome" class="form-control" maxlength="150" value="<%= fazendeiro.nome %>" />
+                    <label class="form-label" for="telefone" style="color: white; padding-top: 10px;">Telefone</label>
+                    <input id="telefone" class="form-control" maxlength="150" value="<%= fazendeiro.telefone %>" />
+                    <label class="form-label" for="resumo" style="color: white; padding-top: 10px;">Resumo</label>
+                    <input id="resumo" class="form-control" maxlength="150" value="<%= fazendeiro.resumo %>" />
                 </div>
             </div>
         </div>
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-10 offset-md-1 d-grid fundinho-verde margin-top">
-                <%- fazendeiro.catalogo %>
+            <div class="col-md-10 offset-md-1 d-grid">
+                <label class="form-label" for="inputCatalogo" style="padding-top: 10px;">Catálogo</label>
+                <div id="inputCatalogo"><%- fazendeiro.catalogo %></div>
+                <div class="d-grid pt-3">
+                    <button
+                    type="button"
+                    onclick="editarCatalogo()"
+                    class="btn btn-primary buttonzinho"
+                  >
+                    Salvar
+                  </button>
+                </div>
             </div>
         </div>
     </div>
@@ -130,7 +121,7 @@
 <script type="text/javascript" src="/public/js/ckeditor/ckeditor.js"></script>
 
 <script>
-    CKEDITOR.replace("catalogo");
 
-    // CKEDITOR.instances.catalogo.getData()
+    CKEDITOR.replace("inputCatalogo");
+    //let catalogo = CKEDITOR.instances.inputCatalogo.getData().normalize().trim();
 </script>
