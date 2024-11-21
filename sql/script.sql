@@ -97,3 +97,40 @@ DELIMITER ;
 --	<p><%= fazendeiros[i].resumo %></p>
 --</div>
 --<% } %>
+
+--tenho que ver com o rafa
+
+INSERT INTO fazendeiro (id, resumo, catalogo)
+SELECT u.id, 'Resumo do fazendeiro', 'Catálogo inicial'
+FROM usuario u
+LEFT JOIN fazendeiro f ON u.id = f.id
+WHERE u.id = 1 AND f.id IS NULL;
+
+
+DELIMITER //
+
+CREATE TRIGGER promover_para_fazendeiro
+AFTER INSERT ON usuario
+FOR EACH ROW
+BEGIN
+    IF NEW.email LIKE '%fazendeiro%' THEN
+        INSERT INTO fazendeiro (id, resumo, catalogo)
+        VALUES (NEW.id, 'Resumo automático', 'Catálogo gerado automaticamente');
+    END IF;
+END //
+
+DELIMITER ;
+
+
+CREATE VIEW fazendeiro_view AS
+SELECT u.id, u.nome, u.email, f.resumo, f.catalogo
+FROM usuario u
+LEFT JOIN fazendeiro f ON u.id = f.id
+WHERE f.id IS NOT NULL;
+
+WITH usuario_para_promover AS (
+    SELECT u.id
+    FROM usuario u
+    LEFT JOIN fazendeiro f ON u.id = f.id
+    WHERE u.id = 1 AND f.id IS NULL
+)
