@@ -89,3 +89,11 @@ BEGIN
 END //
 
 DELIMITER ;
+
+
+--<% for (let i = 0; i < fazendeiros.length; i = i + 1) { %>
+--<div>
+--	<h1><%= fazendeiros[i].nome %></h1>
+--	<p><%= fazendeiros[i].resumo %></p>
+--</div>
+--<% } %>
