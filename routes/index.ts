@@ -62,14 +62,14 @@ class IndexRoute {
 
 	public async fazendeiro(req: app.Request, res: app.Response) {
 		let id = parseInt(req.query["id"] as string);
-		let icone = req.query["icone"] as string; // Obtém o ícone da query string
-		let classe = req.query["classe"] as string; // Obtém a classe da query string
+		let icone = req.query["icone"] as string;
+		let classe = req.query["classe"] as string;
 	
 		let opcoes = {
 			titulo: "Fazendeiro",
 			fazendeiro: null,
-			icone: decodeURIComponent(icone || ""), // Decodifica o parâmetro e evita undefined
-			classe: decodeURIComponent(classe || "") // Decodifica o parâmetro e evita undefined
+			icone: decodeURIComponent(icone || ""),
+			classe: decodeURIComponent(classe || "")
 		};
 	
 		await app.sql.connect(async (sql) => {

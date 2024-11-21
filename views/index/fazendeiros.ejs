@@ -159,16 +159,16 @@
 							<p class="justificar-resumo">
 								<%= fazendeiros[i].resumo %>
 							</p>
-							<button type="button" onclick="validarCampos()" class="btn btn-primary buttonzinho">
-								<a href="/fazendeiro?id=<%= fazendeiros[i].id %>&icone=<%= encodeURIComponent(icones[i % 3]) %>&classe=<%= encodeURIComponent(classes[i % 3]) %>" class="link-none">
+							<a href="/fazendeiro?id=<%= fazendeiros[i].id %>&icone=<%= encodeURIComponent(icones[i % 3]) %>&classe=<%= encodeURIComponent(classes[i % 3]) %>" class="link-none">
+								<button type="button" class="btn btn-primary buttonzinho">
 									Editar Perfil
-								</a>
-							</button>
-							<button type="button" class="btn btn-primary buttonzinho">
-								<a href="/perfil?id=<%= fazendeiros[i].id %>&icone=<%= encodeURIComponent(icones[i % 3]) %>&classe=<%= encodeURIComponent(classes[i % 3]) %>" class="link-none">
+								</button>
+							</a>
+							<a href="/perfil?id=<%= fazendeiros[i].id %>&icone=<%= encodeURIComponent(icones[i % 3]) %>&classe=<%= encodeURIComponent(classes[i % 3]) %>" class="link-none">
+								<button type="button" class="btn btn-primary buttonzinho">
 									Visualização do Cliente
-								</a>
-							</button>
+								</button>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -218,6 +218,7 @@
 			} else {
 				parent.style.display = 'none';
 			}
-		});
+    	});
 	}
+
 </script>
