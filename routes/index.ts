@@ -62,51 +62,57 @@ class IndexRoute {
 
 	public async fazendeiro(req: app.Request, res: app.Response) {
 		let id = parseInt(req.query["id"] as string);
-
+		let icone = req.query["icone"] as string; // Obtém o ícone da query string
+		let classe = req.query["classe"] as string; // Obtém a classe da query string
+	
 		let opcoes = {
 			titulo: "Fazendeiro",
 			fazendeiro: null,
+			icone: decodeURIComponent(icone || ""), // Decodifica o parâmetro e evita undefined
+			classe: decodeURIComponent(classe || "") // Decodifica o parâmetro e evita undefined
 		};
-
+	
 		await app.sql.connect(async (sql) => {
-
 			let lista = await sql.query(`
 				SELECT
 					u.id, u.nome, u.email, u.telefone, u.cep, f.resumo, f.catalogo
 				FROM usuario u
 				INNER JOIN fazendeiro f ON f.id = u.id
-				WHERE u.id = ? and u.exclusao IS NULL
-			`, [id]); 
-
+				WHERE u.id = ? AND u.exclusao IS NULL
+			`, [id]);
+	
 			opcoes.fazendeiro = lista[0];
 		});
-
+	
 		res.render("index/fazendeiro", opcoes);
 	}
 
 	public async perfil(req: app.Request, res: app.Response) {
 		let id = parseInt(req.query["id"] as string);
-
+		let icone = req.query["icone"] as string;
+		let classe = req.query["classe"] as string;
+	
 		let opcoes = {
 			titulo: "Fazendeiro",
 			fazendeiro: null,
+			icone: decodeURIComponent(icone || ""),
+			classe: decodeURIComponent(classe || ""),
 		};
-
+	
 		await app.sql.connect(async (sql) => {
-
 			let lista = await sql.query(`
 				SELECT
 					u.id, u.nome, u.email, u.telefone, u.cep, f.resumo, f.catalogo
 				FROM usuario u
 				INNER JOIN fazendeiro f ON f.id = u.id
-				WHERE u.id = ? and u.exclusao IS NULL
-			`, [id]); 
-
+				WHERE u.id = ? AND u.exclusao IS NULL
+			`, [id]);
+	
 			opcoes.fazendeiro = lista[0];
 		});
-
+	
 		res.render("index/perfil", opcoes);
-	}
+	}	
 
 	@app.http.post()
 	public async criarUsuario(req: app.Request, res: app.Response) {

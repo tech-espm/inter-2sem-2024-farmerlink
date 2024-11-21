@@ -242,40 +242,40 @@
       return;
     } else {
       console.log("Nome completo : " + nomeCompleto);
-    }
+    };
 
     if (!email) {
       console.log("E-mail vazio!");
       return;
     } else {
       console.log("E-mail: " + email);
-    }
+    };
 
     if (!telefone) {
       console.log("Telefone vazio!");
       return;
     } else {
       console.log("Telefone: " + telefone);
-    }
+    };
 
     if (!dataDeNascimento) {
       console.log("Data de nascimento vazia!");
       return;
     } else {
       console.log("Data de nascimento: " + dataDeNascimento);
-    }
+    };
 
     if (!cep) {
       console.log("CEP vazio!");
       return;
     } else {
       console.log("CEP: " + cep);
-    }
+    };
 
     if (!opcao) {
       console.log("Opção inválida!");
       return;
-    }
+    };
 
     if (opcao == "a") {
       let cliente = {
@@ -311,7 +311,7 @@
 
         console.log("Cliente criado com sucesso!");
       } catch (ex) {
-        console.log("Ocorreu um erro de rede ao criar o livro: " + ex.message);
+        console.log("Ocorreu um erro de rede ao criar o cliente: " + ex.message);
       }
 
     } else {
@@ -367,7 +367,7 @@
 
         document.getElementById("divFazendeiro").className = "d-none";
 
-        console.log("Fazendeiro criado com sucesso!");
+        console.log("Fazendeiro(a) criado com sucesso!");
 
       } catch (ex) {
         console.log("Ocorreu um erro de rede ao criar o(a) fazendeiro(a): " + ex.message);

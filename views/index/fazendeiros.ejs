@@ -17,7 +17,7 @@
 
 	.imagem-fundo-teste {
 		background-color: #f8efe5;
-		min-height: 1200px;
+		min-height: 500px;
 	}
 
 	.coluna-padding-top {
@@ -90,7 +90,7 @@
     }
 
 	.padding-top-nome-resumo {
-        padding-top: 25px;
+        padding-top: 20px;
     }
 
 	.coluna-padding-top {
@@ -107,7 +107,9 @@
 
 	.link-none {
 		text-decoration: none;
+		color: white;
 	}
+
 </style>
 
 <div class="imagem-fundo-teste">
@@ -120,12 +122,12 @@
 				<img src="/public/img/logo_oficial.svg" alt="Logo FarmerLink" width="150px">
 			</div>
 			<div class="col-md-10 offset-md-1 pb-3 pt-3">
-				<form class="d-flex padding-bottom-texto" role="search">
-					<input class="form-control me-2" type="search" placeholder="Nome do(a) fazendeiro(a)" aria-label="Pesquisar">
-					<button class="btn btn-primary buttonzinho" type="submit">
+				<form class="d-flex padding-bottom-texto" role="search" onsubmit="preventSubmit(event)">
+					<input id="searchBar" class="form-control me-2" type="search" placeholder="Nome do(a) fazendeiro(a)" aria-label="Pesquisar" oninput="search()">
+					<button class="btn btn-primary buttonzinho" type="button" onclick="search()">
 						Pesquisar
 					</button>
-				</form>
+				</form>				
 			</div>
 		</div>
 	</div>
@@ -145,23 +147,31 @@
 				];
 			%>
 			<% for (let i = 0; i < fazendeiros.length; i = i + 1) { %>
-			<a href="/fazendeiro?id=<%= fazendeiros[i].id %>" class="link-none">
 				<div class="col-md-10 offset-md-1 <%= classes[i % 3] %> margin-bottom">
 					<div class="row align-center">
 						<div class="col-md-3 centralizar-conteudo">
 							<img src="<%= icones[i % 3] %>" width="170px" alt="Foto de perfil">
 						</div>
 						<div class="col-md-9 padding-top-nome-resumo">
-							<h2 class="pb-3">
+							<h2 class="pb-3 fazendeiroClass">
 								<%= fazendeiros[i].nome %>
 							</h2>
 							<p class="justificar-resumo">
 								<%= fazendeiros[i].resumo %>
 							</p>
+							<button type="button" onclick="validarCampos()" class="btn btn-primary buttonzinho">
+								<a href="/fazendeiro?id=<%= fazendeiros[i].id %>&icone=<%= encodeURIComponent(icones[i % 3]) %>&classe=<%= encodeURIComponent(classes[i % 3]) %>" class="link-none">
+									Editar Perfil
+								</a>
+							</button>
+							<button type="button" class="btn btn-primary buttonzinho">
+								<a href="/perfil?id=<%= fazendeiros[i].id %>&icone=<%= encodeURIComponent(icones[i % 3]) %>&classe=<%= encodeURIComponent(classes[i % 3]) %>" class="link-none">
+									Visualização do Cliente
+								</a>
+							</button>
 						</div>
 					</div>
 				</div>
-			</a>
 			<% } %>
 		</div>
 	</div>
@@ -188,3 +198,26 @@
 		</div>
 	</div>
 </div>
+
+<script>
+    function preventSubmit(event) {
+        event.preventDefault();
+    }
+
+	function search() {
+		let input = document.getElementById('searchBar').value.toLowerCase();
+
+		let fazendeiros = document.querySelectorAll('.fazendeiroClass');
+
+		fazendeiros.forEach(fazendeiro => {
+			let parent = fazendeiro.closest('.col-md-10');
+			if (input === "") {
+				parent.style.display = '';
+			} else if (fazendeiro.innerText.toLowerCase().includes(input)) {
+				parent.style.display = '';
+			} else {
+				parent.style.display = 'none';
+			}
+		});
+	}
+</script>

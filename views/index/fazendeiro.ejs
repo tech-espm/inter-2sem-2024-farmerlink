@@ -24,8 +24,20 @@
 		text-align: center;
 	}
 
-    .plano-de-fundo {
+    .fundo-imagem-1 {
         background-image: url(/public/img/tomate_fundo_perfil.jpg);
+        min-height: 400px;
+        background-size: cover;
+    }
+
+	.fundo-imagem-2 {
+        background-image: url(/public/img/alface_fundo_perfil.png);
+        min-height: 400px;
+        background-size: cover;
+    }
+
+	.fundo-imagem-3 {
+        background-image: url(/public/img/trigo_fundo_perfil.png);
         min-height: 400px;
         background-size: cover;
     }
@@ -46,7 +58,7 @@
     }
 
     .padding-top-nome-resumo {
-        padding-top: 85px;
+        padding-top: 78px;
     }
 
     .fonte-cor-preta {
@@ -59,23 +71,24 @@
 </style>
 
 <div class="fundo-bege">
-    <div class="plano-de-fundo">
+    <div class="<%= classe %>">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-3 offset-md-1 centralizar-conteudo espacamento-perfil">
-                    <img src="/public/img/icone_farmer_1.png" alt="Foto de perfil FarmerLink" class="centralizar-conteudo">
+                    <img src="<%= icone %>" alt="Foto de perfil FarmerLink" class="centralizar-conteudo">
                 </div>
                 <div class="col-md-7 espacamento-perfil padding-top-nome-resumo">
-                    <label class="form-label" for="nome" style="color: white;">Nome</label>
-                    <input id="nome" class="form-control" maxlength="150" value="<%= fazendeiro.nome %>" />
-                    <label class="form-label" for="telefone" style="color: white; padding-top: 10px;">Telefone</label>
-                    <input id="telefone" class="form-control" maxlength="150" value="<%= fazendeiro.telefone %>" />
-                    <label class="form-label" for="resumo" style="color: white; padding-top: 10px;">Resumo</label>
-                    <input id="resumo" class="form-control" maxlength="150" value="<%= fazendeiro.resumo %>" />
+                    <label class="form-label" for="inputNomeCompleto" style="color: white;">Nome</label>
+                    <input id="inputNomeCompleto" class="form-control" maxlength="150" value="<%= fazendeiro.nome %>" />
+                    <label class="form-label" for="inputTelefone" style="color: white; padding-top: 10px;">Telefone</label>
+                    <input id="inputTelefone" class="form-control" maxlength="150" value="<%= fazendeiro.telefone %>" />
+                    <label class="form-label" for="inputResumo" style="color: white; padding-top: 10px;">Resumo</label>
+                    <input id="inputResumo" class="form-control" maxlength="150" value="<%= fazendeiro.resumo %>" />
                 </div>
             </div>
         </div>
     </div>
+    
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-10 offset-md-1 d-grid">
@@ -84,7 +97,7 @@
                 <div class="d-grid pt-3">
                     <button
                     type="button"
-                    onclick="editarCatalogo()"
+                    onclick="editarFazendeiro()"
                     class="btn btn-primary buttonzinho"
                   >
                     Salvar
@@ -125,3 +138,86 @@
     CKEDITOR.replace("inputCatalogo");
     //let catalogo = CKEDITOR.instances.inputCatalogo.getData().normalize().trim();
 </script>
+
+<script>
+    const SPMaskBehavior = function (val) {
+      return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+    },
+    spOptions = {
+      onKeyPress: function(val, e, field, options) {
+        field.mask(SPMaskBehavior.apply({}, arguments), options);
+      }
+    };
+    $("#inputTelefone").mask(SPMaskBehavior, spOptions);
+  
+    async function editarFazendeiro() {
+        let inputNomeCompleto = document.getElementById("inputNomeCompleto");
+        let inputTelefone = document.getElementById("inputTelefone");
+        let inputResumo = document.getElementById('inputResumo');
+
+        let nomeCompleto = inputNomeCompleto.value.normalize().trim();
+        let telefone = inputTelefone.value.normalize().trim();
+        let resumo = inputResumo.value.normalize().trim();
+        let catalogo = CKEDITOR.instances.inputCatalogo.getData().normalize().trim();
+  
+        if (!nomeCompleto) {
+            console.log("Nome completo vazio!");
+            return;
+        } else {
+            console.log("Nome completo : " + nomeCompleto);
+        }
+  
+        if (!telefone) {
+            console.log("Telefone vazio!");
+            return;
+        } else {
+            console.log("Telefone: " + telefone);
+        }
+
+        if (!resumo) {
+            console.log("Resumo inválido!");
+            return;
+        } else {
+            console.log("Resumo: " + resumo);
+        };
+  
+        if (!catalogo) {
+            console.log("Catálogo inválido!");
+            return;
+            } else {
+            console.log("Catálogo: " + catalogo);
+        };
+  
+        let fazendeiro = {
+            nome: nomeCompleto,
+            email: email,
+            telefone: telefone,
+            resumo: resumo,
+            catalogo: catalogo
+        };
+
+        try {
+        let response = await fetch("/editarFazendeiro", {
+            method: "POST",
+            body: JSON.stringify(fazendeiro),
+            headers: {
+            "content-type": "application/json"
+            }
+        });
+
+        if (!response.ok) {
+            console.log("Ocorreu um erro ao editar o(a) fazendeiro(a).");
+            return;
+        }
+
+        inputNomeCompleto.value = "";
+        inputEmail.value = "";
+        inputTelefone.value = "";
+        inputResumo.value = "";
+        CKEDITOR.instances.inputCatalogo.setData("");
+
+        console.log("Fazendeiro(a) editado(a) com sucesso!");
+      } catch (ex) {
+        console.log("Ocorreu um erro de rede ao editar o(a) fazendeiro(a): " + ex.message);
+      }
+    }
