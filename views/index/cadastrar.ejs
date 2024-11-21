@@ -1,27 +1,27 @@
 <style>
   h1 {
-		color: black;
-		font-size: 30px;
-	}
+    color: black;
+    font-size: 30px;
+  }
 
-	h2 {
-		font-weight: bold;
-		font-size: 25px
-	}
+  h2 {
+    font-weight: bold;
+    font-size: 25px
+  }
 
-	p {
-		font-size: 15px;
-	}
+  p {
+    font-size: 15px;
+  }
 
-	img {
-		border-radius: 15px;
-		max-width: 100%;
-	}
+  img {
+    border-radius: 15px;
+    max-width: 100%;
+  }
 
   ::selection {
-		color: white;
-		background: #568C03;
-	}
+    color: white;
+    background: #568C03;
+  }
 
   .centralizar {
     text-align: center;
@@ -29,12 +29,12 @@
 
   .fundo-bege {
     background-color: #f8efe5;
-    min-height: 998px;
+    min-height: 1000px;
   }
 
-	.coluna-padding-top {
-		padding-top: 110px;
-	}
+  .coluna-padding-top {
+    padding-top: 110px;
+  }
 
   .padding-bottom-texto {
     padding-bottom: 40px;
@@ -45,37 +45,28 @@
   }
 
   .img-fundo-coluna {
-    background-image: url(/public/img/cadastro.png);
+    background-image: url(/public/img/3_teste_cadastro.png);
     background-size: auto 100%;
     background-repeat: no-repeat;
     margin-top: 35px;
-  }
-
-  .padding-left-texto {
-    padding-left: 35px;
   }
 
   .padding-top-logo {
     padding-top: 80px;
   }
 
-  .padding-right-texto {
-    padding-right: 42px;
-  }
-  
-
 </style>
 <div class="fundo-bege">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-10 offset-md-1 coluna-padding-top padding-left-texto padding-right-texto">
-        <h1 class="centralizar padding-left-texto">
+      <div class="col-md-10 offset-md-1 coluna-padding-top">
+        <h1 class="centralizar">
           Junte-se a nós
         </h1>
-        <div class="centralizar pt-3 padding-left-texto">
+        <div class="centralizar pt-3">
           <img src="/public/img/logo_oficial.svg" alt="Logo FarmerLink" width="150px">
         </div>
-        <div class="mb-2 padding-left-texto pt-3">
+        <div class="mb-2 pt-3">
           <label for="inputNomeCompleto" class="form-label"
             >Nome completo</label
           >
@@ -86,7 +77,7 @@
             maxlength="50"
           />
         </div>
-        <div class="mt-3 padding-left-texto">
+        <div class="mt-3">
           <label for="inputEmail" class="form-label">E-mail</label>
           <input
             type="text"
@@ -95,7 +86,7 @@
             maxlength="50"
           />
         </div>
-        <div class="mt-3 padding-left-texto">
+        <div class="mt-3">
           <label for="inputTelefone" class="form-label">Telefone</label>
           <input
             type="tel"
@@ -103,7 +94,7 @@
             class="form-control"
           />
         </div>
-        <div class="mt-3 padding-left-texto">
+        <div class="mt-3">
           <label for="inputCPF" class="form-label">CPF</label>
           <input
             type="text"
@@ -111,7 +102,7 @@
             class="form-control"
           />
         </div>
-        <div class="mt-3 padding-left-texto">
+        <div class="mt-3">
           <label for="inputDataDeNascimento" class="form-label"
             >Data de nascimento</label
           >
@@ -121,7 +112,7 @@
             class="form-control"
           />
         </div>
-        <div class="mt-3 padding-left-texto">
+        <div class="mt-3">
           <label for="inputCEP" class="form-label">CEP</label>
           <input
             type="text"
@@ -129,7 +120,7 @@
             class="form-control"
           />
         </div>
-        <div class="mt-3 padding-left-texto">
+        <div class="mt-3">
           <label for="selectOpcoes" class="form-label">Tipo da conta</label>
           <select id="selectOpcoes" class="form-select" onchange="atualizarUIFazendeiro()">
             <option value="">Selecione...</option>
@@ -139,7 +130,7 @@
         </div>
 
         <div id="divFazendeiro" class="d-none">
-          <div class="mt-3 padding-left-texto">
+          <div class="mt-3">
             <label class="form-label" for="inputResumo">Resumo</label>
             <input
               type="text"
@@ -148,13 +139,13 @@
               maxlength="150"
             />
           </div>
-          <div class="mt-3 padding-left-texto">
-            <label class="form-label" for="catalogo">Catálogo</label>
-            <div id="catalogo"></div>
+          <div class="mt-3">
+            <label class="form-label" for="inputCatalogo">Catálogo</label>
+            <div id="inputCatalogo"></div>
           </div>
         </div>
       
-        <div class="d-grid padding-top-botao padding-left-texto">
+        <div class="d-grid padding-top-botao">
           <button
             type="button"
             onclick="efetuarCadastro()"
@@ -163,7 +154,7 @@
             Cadastrar
           </button>
         </div>
-        <p class="centralizar padding-left-texto padding-top-botao padding-bottom-texto">
+        <p class="centralizar padding-top-botao padding-bottom-texto">
           Já tem uma conta?
           <a href="/entrar">Entrar</a>
         </p>
@@ -212,9 +203,7 @@
 
 <script>
 
-  CKEDITOR.replace("catalogo");
-
-  // CKEDITOR.instances.catalogo.getData()
+  CKEDITOR.replace("inputCatalogo");
 
   const SPMaskBehavior = function (val) {
     return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
@@ -228,22 +217,25 @@
   $("#inputCPF").mask("000.000.000-00", {reverse: true});
   $("#inputCEP").mask("00000-000");
 
-  function efetuarCadastro() {
+  async function efetuarCadastro() {
     let inputNomeCompleto = document.getElementById("inputNomeCompleto");
     let inputEmail = document.getElementById("inputEmail");
     let inputTelefone = document.getElementById("inputTelefone");
     let inputCPF = document.getElementById("inputCPF");
-    let inputDataDeNascimento = document.getElementById(
-      "inputDataDeNascimento"
-    );
+    let inputDataDeNascimento = document.getElementById("inputDataDeNascimento");
     let inputCEP = document.getElementById("inputCEP");
+    let inputResumo = document.getElementById('inputResumo');
+    let selectOpcoes = document.getElementById("selectOpcoes");
 
-    let nomeCompleto = inputNomeCompleto.value;
-    let email = inputEmail.value;
-    let telefone = inputTelefone.value;
-    let cpf = inputCPF.value;
+    let nomeCompleto = inputNomeCompleto.value.normalize().trim();
+    let email = inputEmail.value.normalize().trim();
+    let telefone = inputTelefone.value.normalize().trim();
+    let cpf = inputCPF.value.normalize().trim();
     let dataDeNascimento = inputDataDeNascimento.value;
-    let cep = inputCEP.value;
+    let cep = inputCEP.value.normalize().trim();
+    let resumo = inputResumo.value.normalize().trim();
+    let catalogo = CKEDITOR.instances.inputCatalogo.getData().normalize().trim();
+    let opcao = selectOpcoes.value;
 
     if (!nomeCompleto) {
       console.log("Nome completo vazio!");
@@ -278,6 +270,108 @@
       return;
     } else {
       console.log("CEP: " + cep);
+    }
+
+    if (!opcao) {
+      console.log("Opção inválida!");
+      return;
+    }
+
+    if (opcao == "a") {
+      let cliente = {
+        nome: nomeCompleto,
+        email: email,
+        telefone: telefone,
+        cpf: cpf,
+        nascimento: dataDeNascimento,
+        cep: cep
+      };
+
+      try {
+        let response = await fetch("/criarUsuario", {
+          method: "POST",
+          body: JSON.stringify(cliente),
+          headers: {
+            "content-type": "application/json"
+          }
+        });
+
+        if (!response.ok) {
+					console.log("Ocorreu um erro ao criar o cliente.");
+					return;
+        }
+
+        inputNomeCompleto.value = "";
+				inputEmail.value = "";
+				inputTelefone.value = "";
+				inputCPF.value = "";
+        inputCEP.value = "";
+        inputDataDeNascimento.value = "";
+        selectOpcoes.value = "";
+
+        console.log("Cliente criado com sucesso!");
+      } catch (ex) {
+        console.log("Ocorreu um erro de rede ao criar o livro: " + ex.message);
+      }
+
+    } else {
+
+      if (!resumo) {
+      console.log("Resumo inválido!");
+      return;
+      } else {
+      console.log("Resumo: " + resumo);
+      };
+
+      if (!catalogo) {
+      console.log("Catálogo inválido!");
+      return;
+      } else {
+      console.log("Catálogo: " + catalogo);
+      };
+
+      let fazendeiro = {
+        nome: nomeCompleto,
+        email: email,
+        telefone: telefone,
+        cpf: cpf,
+        nascimento: dataDeNascimento,
+        cep: cep,
+        resumo: resumo,
+        catalogo: catalogo
+      };
+
+      try {
+        let response = await fetch("/criarFazendeiro", {
+          method: "POST",
+          body: JSON.stringify(fazendeiro),
+          headers: {
+            "content-type": "application/json"
+          }
+        });
+
+        if (!response.ok) {
+					console.log("Ocorreu um erro ao criar o(a) fazendeiro(a).");
+					return;
+        }
+
+        inputNomeCompleto.value = "";
+				inputEmail.value = "";
+				inputTelefone.value = "";
+				inputCPF.value = "";
+        inputCEP.value = '';
+        inputDataDeNascimento.value = "";
+        selectOpcoes.value = "";
+        inputResumo.value = "";
+        CKEDITOR.instances.inputCatalogo.setData("");
+
+        document.getElementById("divFazendeiro").className = "d-none";
+
+        console.log("Fazendeiro criado com sucesso!");
+
+      } catch (ex) {
+        console.log("Ocorreu um erro de rede ao criar o(a) fazendeiro(a): " + ex.message);
+      }
     }
   }
 

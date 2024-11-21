@@ -60,10 +60,50 @@ class IndexRoute {
 		res.render("index/fazendeiros", opcoes);
 	}
 
-	public async perfil(req: app.Request, res: app.Response) {
+	public async fazendeiro(req: app.Request, res: app.Response) {
+		let id = parseInt(req.query["id"] as string);
+
 		let opcoes = {
-			titulo: "Perfil"
+			titulo: "Fazendeiro",
+			fazendeiro: null,
 		};
+
+		await app.sql.connect(async (sql) => {
+
+			let lista = await sql.query(`
+				SELECT
+					u.id, u.nome, u.email, u.telefone, u.cep, f.resumo, f.catalogo
+				FROM usuario u
+				INNER JOIN fazendeiro f ON f.id = u.id
+				WHERE u.id = ? and u.exclusao IS NULL
+			`, [id]); 
+
+			opcoes.fazendeiro = lista[0];
+		});
+
+		res.render("index/fazendeiro", opcoes);
+	}
+
+	public async perfil(req: app.Request, res: app.Response) {
+		let id = parseInt(req.query["id"] as string);
+
+		let opcoes = {
+			titulo: "Fazendeiro",
+			fazendeiro: null,
+		};
+
+		await app.sql.connect(async (sql) => {
+
+			let lista = await sql.query(`
+				SELECT
+					u.id, u.nome, u.email, u.telefone, u.cep, f.resumo, f.catalogo
+				FROM usuario u
+				INNER JOIN fazendeiro f ON f.id = u.id
+				WHERE u.id = ? and u.exclusao IS NULL
+			`, [id]); 
+
+			opcoes.fazendeiro = lista[0];
+		});
 
 		res.render("index/perfil", opcoes);
 	}

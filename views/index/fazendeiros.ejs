@@ -17,7 +17,7 @@
 
 	.imagem-fundo-teste {
 		background-color: #f8efe5;
-		min-height: 1440px;
+		min-height: 1200px;
 	}
 
 	.coluna-padding-top {
@@ -100,14 +100,15 @@
 	.fonte-preta {
 		color: black;
 	}
-</style>
 
-<% for (let i = 0; i < fazendeiros.length; i = i + 1) { %>
-<div>
-	<h1><%= fazendeiros[i].nome %></h1>
-	<p><%= fazendeiros[i].resumo %></p>
-</div>
-<% } %>
+	.justificar-resumo {
+        text-align: justify;
+    }
+
+	.link-none {
+		text-decoration: none;
+	}
+</style>
 
 <div class="imagem-fundo-teste">
 	<div class="container-fluid">
@@ -118,10 +119,12 @@
 				</h1>
 				<img src="/public/img/logo_oficial.svg" alt="Logo FarmerLink" width="150px">
 			</div>
-			<div class="col-md-8 offset-md-2 pb-3 pt-3">
+			<div class="col-md-10 offset-md-1 pb-3 pt-3">
 				<form class="d-flex padding-bottom-texto" role="search">
 					<input class="form-control me-2" type="search" placeholder="Nome do(a) fazendeiro(a)" aria-label="Pesquisar">
-					<button class="btn btn-primary buttonzinho" type="submit">Pesquisar</button>
+					<button class="btn btn-primary buttonzinho" type="submit">
+						Pesquisar
+					</button>
 				</form>
 			</div>
 		</div>
@@ -129,51 +132,37 @@
 
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-10 offset-md-1 fundo-imagem-1 margin-bottom">
-				<div class="row align-center">
-					<div class="col-md-3 centralizar-conteudo">
-						<img src="/public/img/icone_farmer_1.png" width="170px" alt="Foto de perfil">
-					</div>
-					<div class="col-md-9 padding-top-nome-resumo">
-						<h2 class="pb-3">
-							Nome
-						</h2>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor obcaecati mollitia deserunt eligendi officia, architecto molestiae distinctio, consectetur illum vel aut temporibus, possimus eos delectus. Totam hic ex explicabo cupiditate!
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-10 offset-md-1 fundo-imagem-2 margin-bottom">
-				<div class="row align-center">
-					<div class="col-md-3 centralizar-conteudo">
-						<img src="/public/img/icone_farmer_2.png" width="170px" alt="Foto de perfil">
-					</div>
-					<div class="col-md-9 padding-top-nome-resumo">
-						<h2 class="pb-3">
-							Nome
-						</h2>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor obcaecati mollitia deserunt eligendi officia, architecto molestiae distinctio, consectetur illum vel aut temporibus, possimus eos delectus. Totam hic ex explicabo cupiditate!
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-10 offset-md-1 fundo-imagem-3 margin-bottom">
-				<div class="row align-center">
-					<div class="col-md-3 centralizar-conteudo">
-						<img src="/public/img/icone_farmer_3.png" width="170px" alt="Foto de perfil">
-					</div>
-					<div class="col-md-9 padding-top-nome-resumo">
-						<h2 class="pb-3">
-							Nome
-						</h2>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor obcaecati mollitia deserunt eligendi officia, architecto molestiae distinctio, consectetur illum vel aut temporibus, possimus eos delectus. Totam hic ex explicabo cupiditate!
-						</p>
+			<%
+				let icones = [
+					'/public/img/icone_farmer_1.png',
+					'/public/img/icone_farmer_2.png',
+					'/public/img/icone_farmer_3.png',
+				];
+				let classes = [
+					'fundo-imagem-1',
+					'fundo-imagem-2',
+					'fundo-imagem-3',
+				];
+			%>
+			<% for (let i = 0; i < fazendeiros.length; i = i + 1) { %>
+			<a href="/fazendeiro?id=<%= fazendeiros[i].id %>" class="link-none">
+				<div class="col-md-10 offset-md-1 <%= classes[i % 3] %> margin-bottom">
+					<div class="row align-center">
+						<div class="col-md-3 centralizar-conteudo">
+							<img src="<%= icones[i % 3] %>" width="170px" alt="Foto de perfil">
+						</div>
+						<div class="col-md-9 padding-top-nome-resumo">
+							<h2 class="pb-3">
+								<%= fazendeiros[i].nome %>
+							</h2>
+							<p class="justificar-resumo">
+								<%= fazendeiros[i].resumo %>
+							</p>
+						</div>
 					</div>
 				</div>
-			</div>
+			</a>
+			<% } %>
 		</div>
 	</div>
 </div>
