@@ -4,18 +4,27 @@
     <a href="https://www.espm.br/cursos-de-graduacao/sistemas-de-informacao/"><img src="https://raw.githubusercontent.com/tech-espm/misc-template/main/logo.png" alt="Sistemas de Informação ESPM" style="width: 375px;"/></a>
 </p>
 
-# [Nome do Projeto] (por exemplo, Sistema de Gerenciamento da ESPM Júnior)
+# FarmerLink
 
 ### 2024-02
 
 ## Integrantes
-- [Nome do integrante 1 e link do portifólio](https://github.com/tech-espm/)
-- [Nome do integrante 2 e link do portifólio](https://github.com/tech-espm/)
-- [Nome do integrante 3 e link do portifólio](https://github.com/tech-espm/)
+
+- [Ana Carolina Frank](https://github.com/tech-espm/)
+- [Enzo Godoy](https://github.com/tech-espm/)
+- [Julia Akemi Mullis](https://github.com/tech-espm/)
+- [Marcela Martini](https://github.com/tech-espm/)
+- [Maria Luiza de Souza](https://github.com/tech-espm/)
+- [Rafael Lucena](https://github.com/tech-espm/)
+- [Rafael Ghirelli](https://github.com/tech-espm/)
 
 ## Descrição do Projeto
 
-Descrição do projeto, incluindo o problema original, e o objetivo final. Pode ser em mais de um parágrafo.
+O “FarmerLink” funcionará como uma feira online, onde produtores poderão criar perfis individuais com informações detalhadas sobre suas produções, localizações e histórias.
+
+O projeto propõe a integração digital para superar desafios históricos, como a baixa inserção no mercado e o acesso limitado a tecnologias.
+
+O objetivo é conectar diretamente os pequenos agricultores aos consumidores, promovendo visibilidade e acesso a mercados mais amplos, alinhando-se às demandas do consumidor moderno por qualidade e procedência dos produtos.
 
 # Detalhes de Configuração
 
@@ -32,12 +41,13 @@ Para ajustar o estilo e outras configurações, de preferência, alterar o arqui
 Para funcionar corretamente, devem ser criados os seguintes arquivos/pastas nos caminhos especificados, com o conteúdo especificado:
 
 - O arquivo `.env` deve ser criado em `/`, com o conteúdo abaixo:
+
 ```
-mysqlhost=[HOST DO BANCO]
-mysqlport=[PORTA DO BANCO]
-mysqluser=[USUÁRIO DO BANCO]
-mysqlpassword=[SENHA DO USUÁRIO DO BANCO]
-mysqldatabase=[NOME DO BANCO]
+mysqlhost=localhost
+mysqlport=3306
+mysqluser=root
+mysqlpassword=root
+mysqldatabase=farmerlink
 ```
 
 # Licença
