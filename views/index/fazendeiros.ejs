@@ -123,10 +123,7 @@
 			</div>
 			<div class="col-md-10 offset-md-1 pb-3 pt-3">
 				<form class="d-flex padding-bottom-texto" role="search" onsubmit="preventSubmit(event)">
-					<input id="searchBar" class="form-control me-2" type="search" placeholder="Nome do(a) fazendeiro(a)" aria-label="Pesquisar" oninput="search()">
-					<button class="btn btn-primary buttonzinho" type="button" onclick="search()">
-						Pesquisar
-					</button>
+					<input id="searchBar" class="form-control me-2" type="search" placeholder="Pesquisar nome do(a) fazendeiro(a)" aria-label="Pesquisar" oninput="search()">
 				</form>				
 			</div>
 		</div>
@@ -200,10 +197,6 @@
 </div>
 
 <script>
-    function preventSubmit(event) {
-        event.preventDefault();
-    }
-
 	function search() {
 		let input = document.getElementById('searchBar').value.toLowerCase();
 
@@ -220,5 +213,4 @@
 			}
     	});
 	}
-
 </script>
