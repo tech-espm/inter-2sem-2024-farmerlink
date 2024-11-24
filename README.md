@@ -10,13 +10,13 @@
 
 ## Integrantes
 
-- [Ana Carolina Frank](https://github.com/tech-espm/){:target="\_blank"}
-- [Enzo Godoy](https://github.com/tech-espm/){:target="\_blank"}
-- [Julia Akemi Mullis](https://github.com/tech-espm/){:target="\_blank"}
-- [Marcela Martini](https://github.com/tech-espm/){:target="\_blank"}
-- [Maria Luiza de Souza](https://github.com/tech-espm/){:target="\_blank"}
-- [Rafael Lucena](https://github.com/tech-espm/){:target="\_blank"}
-- [Rafael Ghirelli](https://github.com/tech-espm/){:target="\_blank"}
+- [Ana Carolina Frank](https://github.com/tech-espm/)
+- [Enzo Godoy](https://github.com/tech-espm/)
+- [Julia Akemi Mullis](https://github.com/tech-espm/)
+- [Marcela Martini](https://github.com/tech-espm/)
+- [Maria Luiza de Souza](https://github.com/tech-espm/)
+- [Rafael Lucena](https://github.com/tech-espm/)
+- [Rafael Ghirelli](https://github.com/tech-espm/)
 
 ## Descrição do Projeto
 
