@@ -244,6 +244,12 @@
 
     if (!nomeCompleto) {
       console.log("Nome completo vazio!");
+      Swal.fire({
+        title: "Oops...",
+        text: "Nome completo vazio!",
+        icon: "warning",
+        confirmButtonColor: "#568C03"
+      });
       return;
     } else {
       console.log("Nome completo : " + nomeCompleto);
@@ -251,6 +257,12 @@
 
     if (!email) {
       console.log("E-mail vazio!");
+      Swal.fire({
+        title: "Oops...",
+        text: "E-mail vazio!",
+        icon: "warning",
+        confirmButtonColor: "#568C03"
+      });
       return;
     } else {
       console.log("E-mail: " + email);
@@ -258,6 +270,25 @@
 
     if (!telefone) {
       console.log("Telefone vazio!");
+      Swal.fire({
+        title: "Oops...",
+        text: "Telefone vazio!",
+        icon: "warning",
+        confirmButtonColor: "#568C03"
+      });
+      return;
+    } else {
+      console.log("Telefone: " + telefone);
+    };
+
+    if (!cpf) {
+      console.log("CPF vazio!");
+      Swal.fire({
+        title: "Oops...",
+        text: "CPF vazio!",
+        icon: "warning",
+        confirmButtonColor: "#568C03"
+      });
       return;
     } else {
       console.log("Telefone: " + telefone);
@@ -265,6 +296,12 @@
 
     if (!dataDeNascimento) {
       console.log("Data de nascimento vazia!");
+      Swal.fire({
+        title: "Oops...",
+        text: "Data de nascimento vazia!",
+        icon: "warning",
+        confirmButtonColor: "#568C03"
+      });
       return;
     } else {
       console.log("Data de nascimento: " + dataDeNascimento);
@@ -272,6 +309,12 @@
 
     if (!cep) {
       console.log("CEP vazio!");
+      Swal.fire({
+        title: "Oops...",
+        text: "CEP vazio!",
+        icon: "warning",
+        confirmButtonColor: "#568C03"
+      });
       return;
     } else {
       console.log("CEP: " + cep);
@@ -279,6 +322,12 @@
 
     if (!opcao) {
       console.log("Opção inválida!");
+      Swal.fire({
+        title: "Oops...",
+        text: "Opção inválida!",
+        icon: "warning",
+        confirmButtonColor: "#568C03"
+      });
       return;
     };
 
@@ -303,6 +352,12 @@
 
         if (!response.ok) {
 					console.log("Ocorreu um erro ao criar o cliente.");
+          Swal.fire({
+            title: "Oops...",
+            text: "Ocorreu um erro ao criar o cliente",
+            icon: "error",
+            confirmButtonColor: "#568C03"
+          });
 					return;
         }
 
@@ -314,8 +369,21 @@
         inputDataDeNascimento.value = "";
         selectOpcoes.value = "";
 
-        console.log("Cliente criado com sucesso!");
+        Swal.fire({
+          title: "Parabéns!",
+          text: "Cliente FarmerLink criado com sucesso!",
+          icon: "success",
+          confirmButtonColor: "#568C03"
+        });
+        console.log("Cliente FarmerLink criado com sucesso!");
+
       } catch (ex) {
+        Swal.fire({
+          title: "Oops...",
+          text: "Ocorreu um erro de rede ao criar o cliente: " + ex.message,
+          icon: "error",
+          confirmButtonColor: "#568C03"
+        });
         console.log("Ocorreu um erro de rede ao criar o cliente: " + ex.message);
       }
 
@@ -323,6 +391,12 @@
 
       if (!resumo) {
       console.log("Resumo inválido!");
+      Swal.fire({
+        title: "Oops...",
+        text: "Resumo inválido!",
+        icon: "warning",
+        confirmButtonColor: "#568C03"
+      });
       return;
       } else {
       console.log("Resumo: " + resumo);
@@ -330,6 +404,12 @@
 
       if (!catalogo) {
       console.log("Catálogo inválido!");
+      Swal.fire({
+        title: "Oops...",
+        text: "Catálogo inválido!",
+        icon: "warning",
+        confirmButtonColor: "#568C03"
+      });
       return;
       } else {
       console.log("Catálogo: " + catalogo);
@@ -357,6 +437,12 @@
 
         if (!response.ok) {
 					console.log("Ocorreu um erro ao criar o(a) fazendeiro(a).");
+          Swal.fire({
+            title: "Oops...",
+            text: "Ocorreu um erro de rede ao criar o(a) fazendeiro(a): ",
+            icon: "error",
+            confirmButtonColor: "#568C03"
+          });
 					return;
         }
 
@@ -372,9 +458,21 @@
 
         document.getElementById("divFazendeiro").className = "d-none";
 
-        console.log("Fazendeiro(a) criado com sucesso!");
+        Swal.fire({
+          title: "Parabéns!",
+          text: "Fazendeiro(a) FarmerLink criado com sucesso!",
+          icon: "success",
+          confirmButtonColor: "#568C03"
+        });
+        console.log("Fazendeiro(a) FarmerLink criado com sucesso!");
 
       } catch (ex) {
+        Swal.fire({
+          title: "Oops...",
+          text: "Ocorreu um erro de rede ao criar o(a) fazendeiro(a): " + ex.message,
+          icon: "error",
+          confirmButtonColor: "#568C03"
+        });
         console.log("Ocorreu um erro de rede ao criar o(a) fazendeiro(a): " + ex.message);
       }
     }
