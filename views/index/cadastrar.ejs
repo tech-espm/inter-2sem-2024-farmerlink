@@ -342,6 +342,7 @@
       };
 
       try {
+        waitSwal();
         let response = await fetch("/criarUsuario", {
           method: "POST",
           body: JSON.stringify(cliente),
@@ -427,6 +428,7 @@
       };
 
       try {
+        waitSwal();
         let response = await fetch("/criarFazendeiro", {
           method: "POST",
           body: JSON.stringify(fazendeiro),

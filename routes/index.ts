@@ -181,6 +181,95 @@ class IndexRoute {
 		res.json(true);
 	}
 
+	@app.http.post()
+	public async editarFazendeiro(req: app.Request, res: app.Response) {
+		// Os dados enviados via POST ficam dentro de req.body
+		let fazendeiro: Fazendeiro = req.body;
+
+		// É sempre muito importante validar os dados do lado do servidor,
+		// mesmo que eles tenham sido validados do lado do cliente!!!
+		if (!fazendeiro) {
+			res.status(400);
+			res.json("Dados inválidos");
+			return;
+		}
+
+		if (!fazendeiro.id) {
+			res.status(400);
+			res.json("Id inválido");
+			return;
+		}
+
+		if (!fazendeiro.nome) {
+			res.status(400);
+			res.json("Nome inválido");
+			return;
+		}
+
+		await app.sql.connect(async (sql) => {
+
+			// Todas os comandos SQL devem ser executados aqui dentro do app.sql.connect().
+			await sql.beginTransaction();
+
+			// As interrogações serão substituídas pelos valores passados ao final, na ordem passada.
+			await sql.query("UPDATE usuario SET nome = ?, email = ?, telefone = ?, cpf = ?, nascimento = ?, cep = ? WHERE id = ?", [fazendeiro.nome, fazendeiro.email, fazendeiro.telefone, fazendeiro.cpf, fazendeiro.nascimento, fazendeiro.cep, fazendeiro.id]); 
+ 
+			await sql.query("UPDATE fazendeiro SET resumo = ?, catalogo = ? WHERE id = ?", [fazendeiro.resumo, fazendeiro.catalogo, fazendeiro.id]);
+
+			await sql.commit();
+
+		});
+
+		res.json(true);
+	}
+
+	@app.http.delete()
+	public async excluirFazendeiro(req: app.Request, res: app.Response) {
+		// Os dados enviados via POST ficam dentro de req.body
+		let fazendeiro: Fazendeiro = req.body;
+
+		// É sempre muito importante validar os dados do lado do servidor,
+		// mesmo que eles tenham sido validados do lado do cliente!!!
+		if (!fazendeiro) {
+			res.status(400);
+			res.json("Dados inválidos");
+			return;
+		}
+
+		if (!fazendeiro.id) {
+			res.status(400);
+			res.json("Id inválido");
+			return;
+		}
+
+		let erro: string = null;
+
+		await app.sql.connect(async (sql) => {
+
+			// Todas os comandos SQL devem ser executados aqui dentro do app.sql.connect().
+			await sql.beginTransaction();
+
+			let lista: Fazendeiro[] = await sql.query("SELECT id FROM fazendeiro WHERE id = ?", [fazendeiro.id]);
+			if (!lista.length) {
+				erro = "Fazendeiro não encontrado!";
+				return;
+			}
+
+			await sql.query("DELETE FROM usuario WHERE id = ?", [fazendeiro.id]); 
+
+			await sql.commit();
+
+		});
+
+		if (erro) {
+			res.status(400);
+			res.json(erro);
+			return;
+		}
+
+		res.json(true);
+	}
+
 }
 
 export = IndexRoute;
