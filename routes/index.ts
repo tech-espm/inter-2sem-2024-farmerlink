@@ -75,7 +75,7 @@ class IndexRoute {
 		await app.sql.connect(async (sql) => {
 			let lista = await sql.query(`
 				SELECT
-					u.id, u.nome, u.email, u.telefone, u.cep, f.resumo, f.catalogo
+					u.id, u.nome, u.email, u.telefone, u.cpf, u.nascimento, u.cep, f.resumo, f.catalogo
 				FROM usuario u
 				INNER JOIN fazendeiro f ON f.id = u.id
 				WHERE u.id = ? AND u.exclusao IS NULL
@@ -133,6 +133,36 @@ class IndexRoute {
 			return;
 		}
 
+		if (!usuario.email) {
+			res.status(400);
+			res.json("E-mail inválido");
+			return;
+		}
+
+		if (!usuario.telefone) {
+			res.status(400);
+			res.json("Telefone inválido");
+			return;
+		}
+		
+		if (!usuario.cpf) {
+			res.status(400);
+			res.json("CPF inválido");
+			return;
+		}
+
+		if (!usuario.nascimento) {
+			res.status(400);
+			res.json("Nascimento inválido");
+			return;
+		}
+		
+		if (!usuario.cep) {
+			res.status(400);
+			res.json("CEP inválido");
+			return;
+		}
+
 		await app.sql.connect(async (sql) => {
 
 			// As interrogações serão substituídas pelos valores passados ao final, na ordem passada.
@@ -159,6 +189,48 @@ class IndexRoute {
 		if (!fazendeiro.nome) {
 			res.status(400);
 			res.json("Nome inválido");
+			return;
+		}
+
+		if (!fazendeiro.email) {
+			res.status(400);
+			res.json("E-mail inválido");
+			return;
+		}
+		
+		if (!fazendeiro.telefone) {
+			res.status(400);
+			res.json("Telefone inválido");
+			return;
+		}
+
+		if (!fazendeiro.cpf) {
+			res.status(400);
+			res.json("CPF inválido");
+			return;
+		}
+
+		if (!fazendeiro.nascimento) {
+			res.status(400);
+			res.json("Data de nascimento inválida");
+			return;
+		}
+
+		if (!fazendeiro.cep) {
+			res.status(400);
+			res.json("CEP inválido");
+			return;
+		}
+
+		if (!fazendeiro.resumo) {
+			res.status(400);
+			res.json("Resumo inválido");
+			return;
+		}
+
+		if (!fazendeiro.catalogo) {
+			res.status(400);
+			res.json("Catálogo inválido");
 			return;
 		}
 
@@ -203,6 +275,48 @@ class IndexRoute {
 		if (!fazendeiro.nome) {
 			res.status(400);
 			res.json("Nome inválido");
+			return;
+		}
+
+		if (!fazendeiro.email) {
+			res.status(400);
+			res.json("E-mail inválido");
+			return;
+		}
+		
+		if (!fazendeiro.telefone) {
+			res.status(400);
+			res.json("Telefone inválido");
+			return;
+		}
+
+		if (!fazendeiro.cpf) {
+			res.status(400);
+			res.json("CPF inválido");
+			return;
+		}
+
+		if (!fazendeiro.nascimento) {
+			res.status(400);
+			res.json("Data de nascimento inválida");
+			return;
+		}
+
+		if (!fazendeiro.cep) {
+			res.status(400);
+			res.json("CEP inválido");
+			return;
+		}
+
+		if (!fazendeiro.resumo) {
+			res.status(400);
+			res.json("Resumo inválido");
+			return;
+		}
+
+		if (!fazendeiro.catalogo) {
+			res.status(400);
+			res.json("Catálogo inválido");
 			return;
 		}
 

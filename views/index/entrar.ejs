@@ -1,11 +1,6 @@
 <style>
 
   h1 {
-		color: white;
-		font-size: 55px;
-	}
-
-	h2 {
 		font-weight: bold;
 		font-size: 25px
 	}
@@ -64,16 +59,10 @@
     padding-left: 110px;
   }
 
-  @media (max-width: 768px) { 
-  .img-fundo-coluna {
-    background-image: none;
+  .link-verde {
+    text-decoration: none;
+    color: #568C03;
   }
-}
-
-.link-verde {
-	text-decoration: none;
-	color: #568C03;
-}
 
 </style>
 
@@ -84,7 +73,7 @@
         <img src="/public/img/logo_oficial.svg" alt="Logo FarmerLink" width="350px">
       </div>
       <div class="col-md-4 offset-2 coluna-padding-top img-fundo-coluna px-5 padding-left-texto">
-        <h2 class="centralizar padding-bottom-texto">Entre na sua conta</h2>
+        <h1 class="centralizar padding-bottom-texto">Entre na sua conta</h1>
         <div class="mb-2 padding-left-texto">
           <label for="inputEmail" class="form-label">E-mail</label>
           <input
@@ -114,7 +103,7 @@
             Entrar
           </button>
         </div>
-        <p class="centralizar padding-top-botao padding-right-texto padding-left-texto">
+        <p class="centralizar padding-top-botao padding-left-texto">
           <a
             target="_blank"
             href=""
@@ -122,7 +111,7 @@
             >Esqueci minha senha</a
           >
         </p>
-        <p class="centralizar padding-bottom-texto padding-right-texto padding-left-texto">
+        <p class="centralizar padding-bottom-texto padding-left-texto">
           Novo na Farmer Link?
           <a href="/cadastrar" class="link-verde">Cadastrar</a>
         </p>

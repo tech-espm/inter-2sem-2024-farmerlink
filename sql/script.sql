@@ -10,7 +10,7 @@ CREATE TABLE usuario (
   email varchar(100) NOT NULL,
   telefone varchar(15) NOT NULL,
   cpf varchar(14) NOT NULL,
-  nascimento datetime NOT NULL,
+  nascimento date NOT NULL,
   cep varchar(9) NOT NULL,
   exclusao datetime NULL,
   PRIMARY KEY (id),
@@ -56,14 +56,12 @@ DELIMITER ;
 
 
 
-
- -- burrice
- SELECT u.id, u.nome, u.email, u.telefone, u.cpf, u.nascimento, u.cep, f.resumo, f.catalogo
+/*
+SELECT u.id, u.nome, u.email, u.telefone, u.cpf, u.nascimento, u.cep, f.resumo, f.catalogo
 FROM usuario u
 INNER JOIN fazendeiro f ON u.id = f.id;
 
 
--- burrice pt2
 DELIMITER //
 
 CREATE PROCEDURE tornar_fazendeiro(
@@ -134,3 +132,5 @@ WITH usuario_para_promover AS (
     LEFT JOIN fazendeiro f ON u.id = f.id
     WHERE u.id = 1 AND f.id IS NULL
 )
+
+*/

@@ -32,10 +32,6 @@
 		text-align: justify;
 	}
 
-	.centralizar-texto {
-		text-align: center;
-	}
-
 	.coluna-centralizar {
 		text-align: center;
 	}
@@ -138,7 +134,7 @@
 <div class="espacamento-fundo-pequeno">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-10 centralizar-texto offset-md-1 coluna-padding-top-parte-2">
+			<div class="col-md-10 coluna-centralizar offset-md-1 coluna-padding-top-parte-2">
 				<h2 class="h2-verde">
 					Bem-vindo(a) à FarmerLink!
 				</h2>
@@ -249,7 +245,7 @@
 		scene.add(directionalLight);
 
 		const loader = new GLTFLoader();
-		loader.load("/public/model/platinha_verde_claro.glb", (gltf) => {
+		loader.load("/public/glb/plantinha_3d.glb", (gltf) => {
 		model = gltf.scene;
 		scene.add(model);
 		});

@@ -1,16 +1,4 @@
 <style>
-    h1 {
-        font-weight: bold;
-        font-size: 30px;
-        color: white;
-    }
-
-    h2 {
-        font-weight: bold;
-        font-size: 25px;
-        color: white;
-    }
-
     p {
         color: white;
     }
@@ -65,9 +53,6 @@
         color: black;
     }
 
-    .justificar-resumo {
-        text-align: justify;
-    }
 </style>
 
 <div class="fundo-bege">
@@ -78,10 +63,14 @@
                     <img src="<%= icone %>" alt="Foto de perfil FarmerLink" class="centralizar-conteudo">
                 </div>
                 <div class="col-md-7 espacamento-perfil padding-top-nome-resumo">
+                    <input type="hidden" id="inputId" value="<%= fazendeiro.id %>" />
+                    
                     <label class="form-label" for="inputNomeCompleto" style="color: white;">Nome</label>
-                    <input id="inputNomeCompleto" class="form-control" maxlength="150" value="<%= fazendeiro.nome %>" />
+                    <input id="inputNomeCompleto" class="form-control" maxlength="50" type="text" value="<%= fazendeiro.nome %>" />
+                    
                     <label class="form-label" for="inputTelefone" style="color: white; padding-top: 10px;">Telefone</label>
-                    <input id="inputTelefone" class="form-control" maxlength="150" value="<%= fazendeiro.telefone %>" />
+                    <input id="inputTelefone" class="form-control" type="tel" value="<%= fazendeiro.telefone %>" />
+                    
                     <label class="form-label" for="inputResumo" style="color: white; padding-top: 10px;">Resumo</label>
                     <input id="inputResumo" class="form-control" maxlength="150" value="<%= fazendeiro.resumo %>" />
                 </div>
@@ -92,16 +81,39 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-10 offset-md-1 d-grid">
+                <label class="form-label" for="inputCPF" style="padding-top: 10px;">CPF</label>
+                <input id="inputCPF" class="form-control" type="text" value="<%= fazendeiro.cpf %>" />
+                
+                <label class="form-label" for="inputCEP" style="padding-top: 10px;">CEP</label>
+                <input id="inputCEP" class="form-control" type="text" value="<%= fazendeiro.cep %>" />
+
+                <label class="form-label" for="inputDataDeNascimento" style="padding-top: 10px;">Data de Nascimento</label>
+                <input id="inputDataDeNascimento" class="form-control" type="date" value="<%= fazendeiro.nascimento %>" />
+
+                <label class="form-label" for="inputEmail" style="padding-top: 10px;">E-mail</label>
+                <input id="inputEmail" class="form-control" maxlength="50" type="text" value="<%= fazendeiro.email %>" />
+                
                 <label class="form-label" for="inputCatalogo" style="padding-top: 10px;">Catálogo</label>
                 <div id="inputCatalogo"><%- fazendeiro.catalogo %></div>
-                <div class="d-grid pt-3">
+
+                <div class="d-grid pt-3 pb-3">
                     <button
                     type="button"
                     onclick="editarFazendeiro()"
                     class="btn btn-primary buttonzinho"
                   >
-                    Salvar
+                    Salvar Alterações
                   </button>
+
+                  <hr/>
+
+                  <button
+                  type="button"
+                  onclick="excluirFazendeiro()"
+                  class="btn btn-danger"
+                >
+                  Excluir Conta
+                </button>
                 </div>
             </div>
         </div>
@@ -134,12 +146,11 @@
 <script type="text/javascript" src="/public/js/ckeditor/ckeditor.js"></script>
 
 <script>
-
     CKEDITOR.replace("inputCatalogo");
     //let catalogo = CKEDITOR.instances.inputCatalogo.getData().normalize().trim();
 </script>
 
-<script>
+<script type="text/javascript">
     const SPMaskBehavior = function (val) {
       return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
     },
@@ -149,19 +160,50 @@
       }
     };
     $("#inputTelefone").mask(SPMaskBehavior, spOptions);
+    $("#inputCPF").mask("000.000.000-00", {reverse: true});
+    $("#inputCEP").mask("00000-000");
   
     async function editarFazendeiro() {
         let inputNomeCompleto = document.getElementById("inputNomeCompleto");
         let inputTelefone = document.getElementById("inputTelefone");
+        let inputCPF = document.getElementById("inputCPF");
+        let inputDataDeNascimento = document.getElementById("inputDataDeNascimento");
+        let inputCEP = document.getElementById("inputCEP");
+        let inputEmail = document.getElementById("inputEmail");
         let inputResumo = document.getElementById('inputResumo');
+        let inputId = document.getElementById("inputId");
 
         let nomeCompleto = inputNomeCompleto.value.normalize().trim();
         let telefone = inputTelefone.value.normalize().trim();
+        let cpf = inputCPF.value.normalize().trim();
+        let dataDeNascimento = inputDataDeNascimento.value;
+        let cep = inputCEP.value.normalize().trim();
+        let email = inputEmail.value.normalize().trim();
         let resumo = inputResumo.value.normalize().trim();
         let catalogo = CKEDITOR.instances.inputCatalogo.getData().normalize().trim();
+        let id = parseInt(inputId.value);
+
+        if (!id) {
+            console.log("Id vazio!");
+            Swal.fire({
+                title: "Atenção!",
+                text: "Id vazio.",
+                icon: "warning",
+                confirmButtonColor: "#568C03"
+            });
+            return;
+        } else {
+            console.log("Nome completo : " + nomeCompleto);
+        }
   
         if (!nomeCompleto) {
             console.log("Nome completo vazio!");
+            Swal.fire({
+                title: "Atenção!",
+                text: "Nome vazio.",
+                icon: "warning",
+                confirmButtonColor: "#568C03"
+            });
             return;
         } else {
             console.log("Nome completo : " + nomeCompleto);
@@ -169,13 +211,77 @@
   
         if (!telefone) {
             console.log("Telefone vazio!");
+            Swal.fire({
+                title: "Atenção!",
+                text: "Telefone vazio.",
+                icon: "warning",
+                confirmButtonColor: "#568C03"
+            });
             return;
         } else {
             console.log("Telefone: " + telefone);
         }
 
+        if (!cpf) {
+            console.log("CPF vazio!");
+            Swal.fire({
+                title: "Atenção!",
+                text: "CPF vazio.",
+                icon: "warning",
+                confirmButtonColor: "#568C03"
+            });
+            return;
+        } else {
+            console.log("CPF: " + cpf);
+        }
+        
+        if (!dataDeNascimento) {
+            console.log("Data de nascimento vazia!");
+            Swal.fire({
+                title: "Atenção!",
+                text: "Data de nascimento vazia.",
+                icon: "warning",
+                confirmButtonColor: "#568C03"
+            });
+            return;
+        } else {
+            console.log("Data de nascimento: " + dataDeNascimento);
+        }
+
+        if (!cep) {
+            console.log("CEP vazio!");
+            Swal.fire({
+                title: "Atenção!",
+                text: "CEP vazio.",
+                icon: "warning",
+                confirmButtonColor: "#568C03"
+            });
+            return;
+        } else {
+            console.log("CEP: " + cep);
+        }
+
+        if (!email) {
+            console.log("E-mail vazio!");
+            Swal.fire({
+                title: "Atenção!",
+                text: "E-mail vazio.",
+                icon: "warning",
+                confirmButtonColor: "#568C03"
+            });
+            return;
+        } else {
+            console.log("E-mail: " + email);
+        }
+
         if (!resumo) {
             console.log("Resumo inválido!");
+            Swal.fire({
+                title: "Atenção!",
+                text: "Resumo vazio.",
+                icon: "warning",
+                confirmButtonColor: "#568C03"
+            });
             return;
         } else {
             console.log("Resumo: " + resumo);
@@ -183,41 +289,148 @@
   
         if (!catalogo) {
             console.log("Catálogo inválido!");
+            Swal.fire({
+                title: "Atenção!",
+                text: "Catálogo vazio.",
+                icon: "warning",
+                confirmButtonColor: "#568C03"
+            });
             return;
             } else {
             console.log("Catálogo: " + catalogo);
         };
-  
+
         let fazendeiro = {
+            id: id,
             nome: nomeCompleto,
             email: email,
             telefone: telefone,
+            cpf: cpf,
+            nascimento: dataDeNascimento,
+            cep: cep,
             resumo: resumo,
             catalogo: catalogo
         };
 
         try {
-        let response = await fetch("/editarFazendeiro", {
+            waitSwal();
+            let response = await fetch("/editarFazendeiro", {
             method: "POST",
             body: JSON.stringify(fazendeiro),
             headers: {
-            "content-type": "application/json"
+                "content-type": "application/json"
+            }
+            });
+
+            if (!response.ok) {
+            console.log("Ocorreu um erro ao criar o(a) fazendeiro(a).");
+            Swal.fire({
+                title: "Oops...",
+                text: "Ocorreu um erro de rede ao criar o(a) fazendeiro(a): ",
+                icon: "error",
+                confirmButtonColor: "#568C03"
+            });
+            return;
+            }
+
+            Swal.fire({
+            title: "Sucesso!",
+            text: "Fazendeiro(a) FarmerLink editado(a) com sucesso!",
+            icon: "success",
+            confirmButtonColor: "#568C03"
+            });
+            console.log("Fazendeiro(a) FarmerLink criado com sucesso!");
+
+        } catch (ex) {
+            Swal.fire({
+            title: "Oops...",
+            text: "Ocorreu um erro de rede ao editar o(a) fazendeiro(a): " + ex.message,
+            icon: "error",
+            confirmButtonColor: "#568C03"
+            });
+            console.log("Ocorreu um erro de rede ao editar o(a) fazendeiro(a): " + ex.message);
+        }
+    }
+
+    async function excluirFazendeiro() {
+
+        let inputId = document.getElementById("inputId");
+
+        let id = parseInt(inputId.value);
+
+        if (!id) {
+            console.log("Id vazio!");
+            Swal.fire({
+                title: "Atenção!",
+                text: "Id vazio.",
+                icon: "warning",
+                confirmButtonColor: "#568C03"
+            });
+            return;
+        } else {
+            console.log("Id : " + id);
+        }
+
+        let fazendeiro = {
+            id: id
+        };
+
+        Swal.fire({
+            title: "Você tem certeza?",
+            text: "Essa ação não pode ser revertida!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#568C03",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Sim, excluir conta!",
+            cancelButtonText: "Cancelar"
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    waitSwal();
+                    let response = await fetch("/excluirFazendeiro", {
+                        method: "DELETE",
+                        body: JSON.stringify(fazendeiro),
+                        headers: {
+                            "Content-Type": "application/json"
+                        }
+                    });
+
+                    if (!response.ok) {
+                        console.log("Ocorreu um erro ao excluir a conta.");
+                        Swal.fire({
+                            title: "Oops...",
+                            text: "Ocorreu um erro de rede ao excluir a conta: ",
+                            icon: "error",
+                            confirmButtonColor: "#568C03"
+                        });
+                        return;
+                    }
+
+                    Swal.fire({
+                        title: "Conta excluída!",
+                        text: "Todos os dados da conta foram excluídos.",
+                        icon: "success",
+                        confirmButtonColor: "#568C03",
+                        confirmButtonText: "OK"
+
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = "/";
+                        }
+                    });
+
+                } catch (ex) {
+                    Swal.fire({
+                        title: "Oops...",
+                        text: "Ocorreu um erro: " + ex.message,
+                        icon: "error",
+                        confirmButtonColor: "#568C03"
+                    });
+                    console.error("Erro ao excluir o fazendeiro: ", ex);
+                }
             }
         });
 
-        if (!response.ok) {
-            console.log("Ocorreu um erro ao editar o(a) fazendeiro(a).");
-            return;
-        }
-
-        inputNomeCompleto.value = "";
-        inputEmail.value = "";
-        inputTelefone.value = "";
-        inputResumo.value = "";
-        CKEDITOR.instances.inputCatalogo.setData("");
-
-        console.log("Fazendeiro(a) editado(a) com sucesso!");
-      } catch (ex) {
-        console.log("Ocorreu um erro de rede ao editar o(a) fazendeiro(a): " + ex.message);
-      }
     }
+</script>
