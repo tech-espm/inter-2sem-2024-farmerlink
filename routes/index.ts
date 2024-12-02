@@ -75,7 +75,7 @@ class IndexRoute {
 		await app.sql.connect(async (sql) => {
 			let lista = await sql.query(`
 				SELECT
-					u.id, u.nome, u.email, u.telefone, u.cpf, u.nascimento, u.cep, f.resumo, f.catalogo
+					u.id, u.nome, u.email, u.telefone, u.cpf, date_format(u.nascimento, '%Y-%m-%d') nascimento, u.cep, f.resumo, f.catalogo
 				FROM usuario u
 				INNER JOIN fazendeiro f ON f.id = u.id
 				WHERE u.id = ? AND u.exclusao IS NULL
