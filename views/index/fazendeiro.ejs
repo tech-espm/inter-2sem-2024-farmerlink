@@ -323,10 +323,10 @@
             });
 
             if (!response.ok) {
-            console.log("Ocorreu um erro ao criar o(a) fazendeiro(a).");
+            console.log("Ocorreu um erro ao editar o(a) fazendeiro(a).");
             Swal.fire({
                 title: "Oops...",
-                text: "Ocorreu um erro de rede ao criar o(a) fazendeiro(a): ",
+                text: "Ocorreu um erro de rede ao editar o(a) fazendeiro(a): ",
                 icon: "error",
                 confirmButtonColor: "#568C03"
             });
@@ -339,7 +339,7 @@
             icon: "success",
             confirmButtonColor: "#568C03"
             });
-            console.log("Fazendeiro(a) FarmerLink criado com sucesso!");
+            console.log("Fazendeiro(a) FarmerLink editado(a) com sucesso!");
 
         } catch (ex) {
             Swal.fire({

@@ -149,12 +149,12 @@
 								<%= fazendeiros[i].resumo %>
 							</p>
 							<a href="/fazendeiro?id=<%= fazendeiros[i].id %>&icone=<%= encodeURIComponent(icones[i % 3]) %>&classe=<%= encodeURIComponent(classes[i % 3]) %>" class="link-none">
-								<button type="button" class="btn btn-primary buttonzinho">
+								<button type="button" class="btn btn-primary buttonzinho" onclick="limparSearchBar()">
 									Editar Fazendeiro
 								</button>
 							</a>
 							<a href="/perfil?id=<%= fazendeiros[i].id %>&icone=<%= encodeURIComponent(icones[i % 3]) %>&classe=<%= encodeURIComponent(classes[i % 3]) %>" class="link-none">
-								<button type="button" class="btn btn-primary buttonzinho">
+								<button type="button" class="btn btn-primary buttonzinho" onclick="limparSearchBar()">
 									Visualização do Cliente
 								</button>
 							</a>
@@ -205,4 +205,9 @@
 			}
     	});
 	}
+
+	function limparSearchBar() {
+		document.getElementById('searchBar').value = '';
+	}
+
 </script>

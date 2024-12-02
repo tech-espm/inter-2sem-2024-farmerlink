@@ -354,13 +354,19 @@
         inputDataDeNascimento.value = "";
         selectOpcoes.value = "";
 
-        Swal.fire({
-          title: "Parabéns!",
-          text: "Cliente FarmerLink criado com sucesso!",
-          icon: "success",
-          confirmButtonColor: "#568C03"
-        });
         console.log("Cliente FarmerLink criado com sucesso!");
+        Swal.fire({
+            title: "Parabéns!",
+            text: "Cliente FarmerLink criado com sucesso!",
+            icon: "success",
+            confirmButtonColor: "#568C03",
+            confirmButtonText: "OK"
+
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/fazendeiros";
+            }
+        });
 
       } catch (ex) {
         Swal.fire({
@@ -445,12 +451,17 @@
         document.getElementById("divFazendeiro").className = "d-none";
 
         Swal.fire({
-          title: "Parabéns!",
-          text: "Fazendeiro(a) FarmerLink criado com sucesso!",
-          icon: "success",
-          confirmButtonColor: "#568C03"
+            title: "Parabéns!",
+            text: "Fazendeiro(a) FarmerLink criado com sucesso!",
+            icon: "success",
+            confirmButtonColor: "#568C03",
+            confirmButtonText: "OK"
+
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/fazendeiros";
+            }
         });
-        console.log("Fazendeiro(a) FarmerLink criado com sucesso!");
 
       } catch (ex) {
         Swal.fire({
