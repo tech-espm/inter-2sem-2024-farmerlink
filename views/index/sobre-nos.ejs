@@ -15,7 +15,6 @@
 	}
 	
 	img {
-		border-radius: 15px;
 		max-width: 100%;
 	}
 
@@ -25,7 +24,7 @@
 	}
 
 	.espacamento-fundo-bege {
-		min-height: 544px;
+		min-height: 444px;
 		background-color: #f8efe5;
 	}
 
@@ -55,7 +54,11 @@
 	}
 
 	.padding-top-foto-grupo {
-		padding-top: 85px;
+		padding-top: 65px;
+	}
+
+	.padding-bottom-foto-grupo {
+		padding-bottom: 65px;
 	}
 
 	.link-verde {
@@ -63,12 +66,109 @@
 		color: #568C03;
 	}
 
+	.cor-fonte-verde {
+        color: #568C03;
+    }
+
+    .centralizar-texto {
+        text-align: center;
+    }
+
+    .coluna-padding-top {
+        padding-top: 110px;
+    }
+
+    .background-color-azul {
+        background-color: #8AD1D7;
+        border-radius: 59px;
+    }
+
+	.background-color-laranja {
+		background-color: #FF9652;
+		border-radius: 30px;
+		padding: 30px 30px 15px 30px;
+		text-align: justify;
+	}
+
+    .justificar-texto-caixa-azul {
+        text-align: justify;
+        padding: 30px 30px 15px 30px;
+    }
+
+    .justificar-texto {
+        text-align: justify;
+    }
+
+    .padding-top-parte-1 {
+        padding-top: 120px;
+    }
+    
+    .padding-top-parte-2 {
+        padding-top: 90px;
+    }
+
+    .background-color-verde-escuro {
+        background-color: #114F2D;
+        border-radius: 59px;
+    }
+
+    .justificar-texto-caixa-verde-escuro {
+        text-align: justify;
+        padding: 30px 30px 15px 30px;
+    }
+
+    .cor-fonte-branca {
+        color: white;
+        font-weight: bold;
+    }
+
+    .fundo-bege {
+        background-color: #f8efe5;
+        min-height: 560px;
+    }
+
+	.padding-0-ul {
+		padding: 0px 0px 0px 13px;
+	}
+
+	.cor-fonte-verde-escuro {
+		color: #114F2D;
+	}
+	
+	.espacamento-retangulos {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.coluna-padding-top-principios {
+		padding-top: 25px;
+	}
+
+	.plano-fundo-papelao {
+		background-image: url(/public/img/fundo_papel1.png);
+		background-repeat: no-repeat;
+		height: 544px;
+	}
+
+	.padding-top-qualidades {
+		padding-top: 60px;
+	}
+
+	.padding-top-parte-3 {
+		padding-top: 80px;
+	}
+
+	.conclusao-fonte {
+		font-size: 20px;
+	}
+
+
 </style>
 
 <div class="espacamento-fundo-bege">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-4 offset-md-1 coluna-padding-top">
+			<div class="col-md-5 offset-md-1 coluna-padding-top">
 				<h1>
 					Sobre nós
 				</h1>
@@ -89,30 +189,175 @@
 					<a href="https://github.com/carlosrafaelgn" target="_blank" class="link-verde">Carlos Rafael Gimenes</a>, com o objetivo de gerar um impacto social positivo, alinhado aos Objetivos de Desenvolvimento Sustentável da ONU.
 				</p>
 			</div>
-			<div class="col-md-4 offset-md-2 padding-top-foto-grupo">
-				<img src="/public/img/foto_grupo.jpeg" alt="Foto do grupo">
+			<div class="col-md-4 offset-md-1 padding-top-foto-grupo padding-bottom-foto-grupo">
+				<img src="/public/img/foto_grupo.jpeg" alt="Foto do grupo" width="500px">
 			</div>
 		</div>
 	</div>
 </div>
-<div class="espacamento-fundo-branco">
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-4 offset-md-1 centralizar-logo pb-5">
+			<img src="/public/img/logo_oficial.svg" alt="Logo FarmerLink" width="500px">
+		</div>
+		<div class="col-md-5 offset-md-1 coluna-padding-top">
+			<h1>
+				Sobre o projeto
+			</h1>
+			<p class="justificar-texto coluna-padding-top-pequeno">
+				<a href="https://github.com/tech-espm/inter-2sem-2024-farmerlink" target="_blank" class="link-verde">FarmerLink</a> é uma plataforma que conecta pequenos fazendeiros diretamente com consumidores, promovendo a agricultura sustentável e o consumo responsável.
+			</p>
+			<p class="justificar-texto">
+				Nossa proposta é recriar o ambiente de uma feira tradicional, mas com a conveniência do mundo online.
+			</p>
+			<p class="justificar-texto">
+				Aqui, você poderá conhecer a origem dos produtos que consome, entrar em contato diretamente com os produtores e apoiar a agricultura local.
+			</p>
+		</div>
+	</div>
+</div>
+
+
+<div class="fundo-bege">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 coluna-padding-top pb-5">
+                <h1 class="centralizar-texto">
+                    Por que o FarmerLink é a solução ideal?
+                </h1>
+            </div>
+            <div class="col-lg-8 offset-lg-2 background-color-azul">
+                <p class="justificar-texto-caixa-azul">
+                    <b>Os dados levantados pela pesquisa trazem informações que reforçam o alinhamento do FarmerLink com as tendências de consumo consciente e sustentável no Brasil. Com base nos resultados de nossas pesquisas, apresentamos uma análise que embasa a proposta da plataforma.</b>
+                </p>
+            </div>
+            <div class="col-lg-5 offset-lg-1">
+                <h2 class="cor-fonte-verde padding-top-parte-1 pb-2">
+                    Importância da origem dos alimentos
+                </h2>
+                <p class="justificar-texto">
+                    A maioria dos respondentes considera muito importante conhecer a origem dos alimentos que consome, com destaque para 45% dando nota máxima.
+                </p>
+            </div>
+            <div class="col-lg-5 pt-5">
+                <img src="/public/img/figura-1-dados.png" alt="Quão importante é para você saber as origens dos alimentos que compra?">
+            </div>
+            <div class="col-lg-10 offset-lg-1 pt-3 pb-3">
+                <hr/>
+            </div>
+            <div class="col-lg-5 offset-lg-1">
+                <img src="/public/img/figura-2-dados.png" alt="Você se preocupa com a sustentabilidade ao comprar produtos agrícolas?">
+            </div>
+            <div class="col-lg-5">
+                <h2 class="cor-fonte-verde padding-top-parte-2 pb-2">
+                    Importância da sustentabilidade
+                </h2>
+                <p class="justificar-texto">
+                    70% dos consumidores se preocupam com a sustentabilidade ao comprar produtos agrícolas.
+                </p>
+            </div>
+            <div class="col-md-10 offset-md-1 pt-3 pb-3">
+                <hr/>
+            </div>
+            <div class="col-md-8 offset-md-2 background-color-verde-escuro">
+                <p class="justificar-texto-caixa-verde-escuro cor-fonte-branca">
+                    O FarmerLink não apenas atende a essas demandas, mas também contribui diretamente para os Objetivos de Desenvolvimento Sustentável (ODS). 
+                </p>
+            </div>
+            <div class="col-md-2 offset-md-2 pt-5">
+                <img src="/public/img/erradicacao_da_pobreza.png" alt="ODS 1, Erradicação da Pobreza" width="200px">
+				<ul class="padding-0-ul">
+					<li>
+						Gera renda para pequenos agricultores;
+					</li>
+					<li>
+						Promove sua inclusão econômica. 
+					</li>
+				</ul>
+            </div>
+            <div class="col-md-2 offset-md-1 pt-5">
+                <img src="/public/img/consumo_e_producao_responsaveis.png" alt="ODS 12, Consumo e Produção Responsáveis" width="200px">
+				<ul class="padding-0-ul">
+					<li>
+						Incentivar práticas agroecológicas;
+					</li>
+					<li>
+						Promover o consumo mais consciente.
+					</li>
+				</ul>
+            </div>
+            <div class="col-md-2 offset-md-1 pt-5">
+                <img src="/public/img/acao_contra_a_mudanca_global_do_clima.png" alt="ODS 13, Ação Contra a Mudança Global do Clima" width="200px">
+				<ul class="padding-0-ul">
+					<li>
+						Incentivar as práticas agrícolas sustentáveis;
+					</li>
+					<li>
+						Reduzir as emissões de gases de efeito estufa.
+					</li>
+				</ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="plano-fundo-papelao">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-4 offset-md-1 centralizar-logo">
-				<img src="/public/img/logo_oficial.svg" alt="Logo FarmerLink" width="400px">
+			<div class="col-md-10 offset-md-1 coluna-centralizar padding-top-qualidades">
+				<h2 class="cor-fonte-verde-escuro">
+					O público preocupado com sustentabilidade valoriza a origem dos alimentos, o que reforça a relevância da plataforma.
+				</h2>
 			</div>
-			<div class="col-md-4 offset-md-2 coluna-padding-top">
-				<h1>
-					Sobre o projeto
-				</h1>
-				<p class="justificar-texto coluna-padding-top-pequeno">
-					<a href="https://github.com/tech-espm/inter-2sem-2024-farmerlink" target="_blank" class="link-verde">FarmerLink</a> é uma plataforma que conecta pequenos fazendeiros diretamente com consumidores, promovendo a agricultura sustentável e o consumo responsável.
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-10 offset-md-1">
+				<div class="row">
+				<div class="espacamento-retangulos coluna-padding-top-principios">
+					<div class="col-md-3 coluna-centralizar">
+						<img src="/public/img/retangulo-azul.png" alt="Entrega rápida">
+					</div>
+					<div class="col-md-3 offset-md-1">
+						<img src="/public/img/retangulo-laranja.png" alt="Qualidade garantida">
+					</div>
+					<div class="col-md-3 offset-md-1">
+						<img src="/public/img/retangulo-verde.png" alt="Eco Friendly">
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="fundo-bege">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-4 offset-lg-1">
+				<h2 class="cor-fonte-verde padding-top-parte-3">
+					Testes estatísticos indicam...
+				</h2>
+				<p class="justificar-texto pt-3">
+					Consumidores que gastam mais em feiras têm maior disposição para pagar por produtos agrícolas online, com uma correlação moderada e 33% da variabilidade explicada pelo gasto em feiras.
 				</p>
 				<p class="justificar-texto">
-					Nossa proposta é recriar o ambiente de uma feira tradicional, mas com a conveniência do mundo online.
+					Isso evidencia o potencial de conversão de consumidores que já valorizam produtos frescos e locais.
 				</p>
-				<p class="justificar-texto">
-					Aqui, você poderá conhecer a origem dos produtos que consome, entrar em contato diretamente com os produtores e apoiar a agricultura local.
+			</div>
+			<div class="col-lg-5 pt-5 offset-lg-1 pb-5">
+				<img src="/public/img/feirinha.png" alt="Feira com frutas e legumes">
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="background-color-laranja col-md-10 offset-md-1 cor-fonte-verde-escuro">
+				<p class="conclusao-fonte">
+					<b>Além de eliminar barreiras geográficas, o FarmerLink promove impactos positivos na cadeia produtiva, fortalecendo pequenos agricultores e incentivando um consumo sustentável e responsável.</b>
 				</p>
 			</div>
 		</div>
